@@ -62,12 +62,35 @@ public abstract class Produto {
 		return volume;
 	}
 
-    protected void setMarca(float marca){
+    protected void setMarca(String marca){
 		this.marca = marca;
 	}
 	
-	protected float getMarca(){
+	protected String getMarca(){
 		return marca;
 	}
+	
+    protected void setModelo(String modelo){
+		this.modelo = modelo;
+	}
+	
+	protected String getModelo(){
+		return modelo;
+	}
+	
+    protected void setEstado(String estado){
+		this.estado = estado;
+	}
+	
+	protected String getEstado(){
+		return estado;
+	}
 
+    protected void setCor(String cor){
+		this.cor = cor;
+	}
+	
+	protected String getCor(){
+		return cor;
+	}
 }
