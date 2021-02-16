@@ -3,17 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gabrieloo.ufjf.galpoesestoque;
+package gabrieloo.ufjf.galpoesestoque.produtos;
 
 /**
  *
  * @author gabriel
  */
-public class Cliente {
-    
-    public static void main(String[] args) {
-        System.out.println("Hello World!");
-        System.out.println("Testando");
-    }
+public class HDD extends DispositivoArmazenamento {
     
 }
