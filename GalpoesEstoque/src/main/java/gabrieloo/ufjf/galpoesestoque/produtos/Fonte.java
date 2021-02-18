@@ -13,18 +13,28 @@ import java.util.ArrayList;
  */
 public class Fonte extends Produto {
     
-    int power;
-    boolean PFCAtivo, bivolt, modular;
-    String eficiencia;
+    private static int quantidadeTotalFontes = 0;
+    private int quantidade = 0;
+    private int power;
+    private boolean PFCAtivo, bivolt, modular;
+    private String eficiencia;
     
-    ArrayList<String> plus80;
-    ArrayList<Integer> powers;
+    private static ArrayList<String> plus80;
+    private static ArrayList<Integer> powers;
     
     public Fonte() {
-        this.plus80 = new ArrayList<>();
-        this.powers = new ArrayList<>();
-        adicionaPotencia(powers);
-        adicionaEficiente(plus80);
+        quantidadeTotalFontes++;
+        quantidade++;
+    }
+
+    // <editor-fold defaultstate="collapsed" desc="Getters e Setters">
+    
+    public static int getQuantidadeTotalFontes() {
+        return quantidadeTotalFontes;
+    }
+
+    public int getQuantidade() {
+        return quantidade;
     }
     
     public int getPower() {
@@ -67,7 +77,19 @@ public class Fonte extends Produto {
         this.eficiencia = plus80.get(index);
     }
     
-    private void adicionaEficiente(ArrayList plus80) {
+    // </editor-fold>
+    
+    // <editor-fold defaultstate="collapsed" desc="Metodos de adicao a listas">
+    
+     public static void incializaListasFonte()
+   {
+        plus80 = new ArrayList<>();
+        powers = new ArrayList<>();
+        adicionaPotencia(powers);
+        adicionaEficiencia(plus80);
+    }
+    
+    private static void adicionaEficiencia(ArrayList plus80) {
         plus80.add("Standard");
         plus80.add("Bronze");
         plus80.add("Silver");
@@ -76,9 +98,11 @@ public class Fonte extends Produto {
         plus80.add("Titanium");
     }
     
-    private void adicionaPotencia(ArrayList<Integer> powers) {
+    private static void adicionaPotencia(ArrayList<Integer> powers) {
         for (int i = 300; i < 1001; i += 50) {
             powers.add(i);
         }
     }
+    
+    // </editor-fold>
 }

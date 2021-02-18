@@ -43,6 +43,9 @@ public class AdministraProduto {
         categoria.add("Memórias RAM");
         categoria.add("Placas-mãe");
         categoria.add("Solid State Drives (SSD)");
+        
+        Produto.inicializaListasProdutos();
+        Fonte.incializaListasFonte();
     }
 
     public static void cadastraProduto() {

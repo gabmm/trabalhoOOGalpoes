@@ -18,6 +18,7 @@ public abstract class Produto {
 	
 	protected int setGarantia(int garantia){
 		this.garantia = garantia;
+            return 0;
 	}
 	
 	protected int getGarantia(){

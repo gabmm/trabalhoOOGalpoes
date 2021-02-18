@@ -10,5 +10,8 @@ package gabrieloo.ufjf.galpoesestoque.vendas;
  * @author gabriel
  */
 public class Vendas {
+
+    public Vendas() {
+    }
     
 }

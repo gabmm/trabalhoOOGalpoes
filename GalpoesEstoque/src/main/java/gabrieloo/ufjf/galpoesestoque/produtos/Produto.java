@@ -8,27 +8,27 @@ import java.util.ArrayList;
  */
 public abstract class Produto {
 
-    protected int id, margem;
-    protected int garantia;
-    protected float preco, peso;
-    String cor, marca;
+    private int id, margem;
+    private static int quantidadeTotal = 0;
+    private int garantia;
+    private float preco, peso;
+    private String cor, marca;
 
-    ArrayList<String> cores;
-    ArrayList<String> marcas;
-    ArrayList<Integer> margens;
-    ArrayList<Integer> garantias;
+    private static ArrayList<String> cores;
+    private static ArrayList<String> marcas;
+    private static ArrayList<Integer> margens;
+    private static ArrayList<Integer> garantias;
 
     public Produto() {
-        cores = new ArrayList<>();
-        marcas = new ArrayList<>();
-        margens = new ArrayList<>();
-        garantias = new ArrayList<>();
-        adicionaGarantias(garantias);
-        adicionaMargens(margens);
-        adicionaCores(cores);
-        adicionaMarcas(marcas);
+        quantidadeTotal++;
     }
+    
+    // <editor-fold defaultstate="collapsed" desc="Setters e Getters">
 
+    public static int getQuantidadeTotal() {
+        return quantidadeTotal;
+    }
+    
     public int getId() {
         return id;
     }
@@ -90,8 +90,24 @@ public abstract class Produto {
     public void setMarca(int index) {
         this.marca = marcas.get(index);
     }
+    
+    // </editor-fold>
+    
+    // <editor-fold defaultstate="collapsed" desc="Inicializacao de listas">
+    
+    public static void inicializaListasProdutos()
+    {
+        cores = new ArrayList<>();
+        marcas = new ArrayList<>();
+        margens = new ArrayList<>();
+        garantias = new ArrayList<>();
+        adicionaGarantias(garantias);
+        adicionaMargens(margens);
+        adicionaCores(cores);
+        adicionaMarcas(marcas);
+    }
 
-    private void adicionaCores(ArrayList<String> cores) {
+    private static void adicionaCores(ArrayList<String> cores) {
         cores.add("Vermelho");
         cores.add("Preto");
         cores.add("Azul");
@@ -105,7 +121,7 @@ public abstract class Produto {
         cores.add("Marrom");
     }
 
-    private void adicionaMarcas(ArrayList<String> marcas) {
+    private static void adicionaMarcas(ArrayList<String> marcas) {
         marcas.add("EVGA");
         marcas.add("Asus");
         marcas.add("MSI");
@@ -118,15 +134,49 @@ public abstract class Produto {
         marcas.add("PowerColor");
     }
 
-    private void adicionaMargens(ArrayList<Integer> margens) {
+    private static void adicionaMargens(ArrayList<Integer> margens) {
         for (int i = 0; i < 51; i += 5) {
             margens.add(i);
         }
     }
 
-    private void adicionaGarantias(ArrayList<Integer> garantias) {
+    private static void adicionaGarantias(ArrayList<Integer> garantias) {
         for (int i = 6; i < 37; i += 3) {
             garantias.add(i);
         }
     }
+    
+    // </editor-fold>
+    
+    // <editor-fold defaultstate="collapsed" desc="Metodos de print de listas">
+    
+    public static void mostraMarcas(ArrayList<String> marcas)
+    {
+        for (String marca : marcas) {
+            System.out.println(marca);
+        }
+    }
+    
+    public static void mostraCores(ArrayList<String> cores)
+    {
+        for (String cor : cores) {
+            System.out.println(cor);
+        }
+    }
+    
+    public static void mostraGarantias(ArrayList<Integer> garantias)
+    {
+        for (Integer garantia : garantias) {
+            System.out.println(garantia + " meses");
+        }
+    }
+    
+    public static void mostraMargens(ArrayList<Integer> margens)
+    {
+        for (Integer margem : margens) {
+            System.out.println(margem + "%");
+        }
+    }
+    
+    // </editor-fold>
 }

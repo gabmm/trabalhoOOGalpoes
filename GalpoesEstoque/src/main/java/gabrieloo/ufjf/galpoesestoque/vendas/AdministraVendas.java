@@ -12,4 +12,10 @@ import gabrieloo.ufjf.galpoesestoque.produtos.AdministraProduto;
  * @author gabriel
  */
 public class AdministraVendas {
+    
+    public static void realizaVenda(){
+        Vendas venda = new Vendas();
+        
+        
+    }
 }
