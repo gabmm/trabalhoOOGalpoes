@@ -3,12 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gabrieloo.ufjf.galpoesestoque.produtos;
+package gabrieloo.ufjf.galpoesestoque.vendas;
+
+import gabrieloo.ufjf.galpoesestoque.produtos.AdministraProduto;
 
 /**
  *
  * @author gabriel
  */
-public class Motherboard extends Produto{
-    
+public class AdministraVendas {
 }

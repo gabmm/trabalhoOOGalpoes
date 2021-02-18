@@ -8,49 +8,89 @@ import java.util.ArrayList;
  */
 public abstract class Produto {
 
-    protected int id;
+    protected int id, margem;
     protected int garantia;
-    protected float preco, margem, peso;
+    protected float preco, peso;
     String cor, marca;
 
     ArrayList<String> cores;
     ArrayList<String> marcas;
+    ArrayList<Integer> margens;
+    ArrayList<Integer> garantias;
 
     public Produto() {
         cores = new ArrayList<>();
         marcas = new ArrayList<>();
+        margens = new ArrayList<>();
+        garantias = new ArrayList<>();
+        adicionaGarantias(garantias);
+        adicionaMargens(margens);
         adicionaCores(cores);
         adicionaMarcas(marcas);
     }
 
-    protected abstract int getId();
+    public int getId() {
+        return id;
+    }
 
-    protected abstract void setId(int id);
+    public void setId(int id) {
+        if (id > 0) {
+            this.id = id;
+        }
+    }
 
-    protected abstract void setGarantia(int garantia);
+    public int getGarantia() {
+        return garantia;
+    }
 
-    protected abstract int getGarantia();
+    public void setGarantia(int index) {
+        this.garantia = garantias.get(index);
+    }
 
-    protected abstract void setPreco(float preco);
+    public float getPreco() {
+        return preco;
+    }
 
-    protected abstract float getPreco();
+    public void setPreco(float preco) {
+        if (preco > 0) {
+            this.preco = preco;
+        }
+    }
 
-    protected abstract void setMargem(float margem);
+    public float getMargem() {
+        return margem;
+    }
 
-    protected abstract float getMargem();
+    public void setMargem(int index) {
+        this.margem = margens.get(index);
+    }
 
-    protected abstract void setPeso(float peso);
+    public float getPeso() {
+        return peso;
+    }
 
-    protected abstract float getPeso();
+    public void setPeso(float peso) {
+        if (peso > 0) {
+            this.peso = peso;
+        }
+    }
 
-    protected abstract void setMarca(int index);
+    public String getCor() {
+        return cor;
+    }
 
-    protected abstract String getMarca();
+    public void setCor(int index) {
+        this.cor = cores.get(index);
+    }
 
-    protected abstract void setCor(int index);
+    public String getMarca() {
+        return marca;
+    }
 
-    protected abstract String getCor();
-    
+    public void setMarca(int index) {
+        this.marca = marcas.get(index);
+    }
+
     private void adicionaCores(ArrayList<String> cores) {
         cores.add("Vermelho");
         cores.add("Preto");
@@ -76,5 +116,17 @@ public abstract class Produto {
         marcas.add("Adata");
         marcas.add("Intel");
         marcas.add("PowerColor");
+    }
+
+    private void adicionaMargens(ArrayList<Integer> margens) {
+        for (int i = 0; i < 51; i += 5) {
+            margens.add(i);
+        }
+    }
+
+    private void adicionaGarantias(ArrayList<Integer> garantias) {
+        for (int i = 6; i < 37; i += 3) {
+            garantias.add(i);
+        }
     }
 }

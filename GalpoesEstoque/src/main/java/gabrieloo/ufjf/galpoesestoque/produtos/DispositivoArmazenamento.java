@@ -9,6 +9,6 @@ package gabrieloo.ufjf.galpoesestoque.produtos;
  *
  * @author gabriel
  */
-public abstract class DispositivoArmazenamento {
+public abstract class DispositivoArmazenamento extends Produto{
     
 }
