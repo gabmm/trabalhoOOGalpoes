@@ -9,21 +9,22 @@ import java.util.ArrayList;
 public abstract class Produto {
 
     private int id, margem;
-    private static int quantidadeTotal = 0;
+    protected static int quantidadeTotal = 0;
     private int garantia;
     private float preco, peso;
     private String cor, marca;
 
-    private static ArrayList<String> cores;
-    private static ArrayList<String> marcas;
-    private static ArrayList<Integer> margens;
-    private static ArrayList<Integer> garantias;
+    static ArrayList<String> cores;
+    static ArrayList<String> marcas;
+    static ArrayList<Integer> margens;
+    static ArrayList<Integer> garantias;
 
     public Produto() {
-        quantidadeTotal++;
     }
     
     // <editor-fold defaultstate="collapsed" desc="Setters e Getters">
+    
+    public abstract void adicionaQuantidade(int quantidade);
 
     public static int getQuantidadeTotal() {
         return quantidadeTotal;

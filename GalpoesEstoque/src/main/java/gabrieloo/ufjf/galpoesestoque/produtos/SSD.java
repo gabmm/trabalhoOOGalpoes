@@ -10,5 +10,10 @@ package gabrieloo.ufjf.galpoesestoque.produtos;
  * @author gabriel
  */
 public class SSD extends DispositivoArmazenamento{
+
+    @Override
+    public void adicionaQuantidade(int quantidade) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

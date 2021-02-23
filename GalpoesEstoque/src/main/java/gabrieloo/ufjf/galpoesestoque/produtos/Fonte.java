@@ -19,15 +19,20 @@ public class Fonte extends Produto {
     private boolean PFCAtivo, bivolt, modular;
     private String eficiencia;
     
-    private static ArrayList<String> plus80;
-    private static ArrayList<Integer> powers;
+    static ArrayList<String> plus80;
+    static ArrayList<Integer> powers;
     
     public Fonte() {
-        quantidadeTotalFontes++;
-        quantidade++;
     }
 
     // <editor-fold defaultstate="collapsed" desc="Getters e Setters">
+    
+    @Override
+    public void adicionaQuantidade(int quantidade) {
+        this.quantidade += quantidade;
+        quantidadeTotalFontes += quantidade;
+        quantidadeTotal += quantidade;
+    }
     
     public static int getQuantidadeTotalFontes() {
         return quantidadeTotalFontes;

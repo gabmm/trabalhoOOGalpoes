@@ -23,8 +23,9 @@ public class AdministraProduto {
     private static ArrayList<SSD> listaSSD;
 
     private static ArrayList<String> categoria;
+    private static int categoriaIndex;
 
-    public static void iniciaListas() {
+    public static void inicializacaoListas() {
         listaCPU = new ArrayList<>();
         listaFonte = new ArrayList<>();
         listaGPU = new ArrayList<>();
@@ -43,9 +44,14 @@ public class AdministraProduto {
         categoria.add("Memórias RAM");
         categoria.add("Placas-mãe");
         categoria.add("Solid State Drives (SSD)");
-        
+
         Produto.inicializaListasProdutos();
         Fonte.incializaListasFonte();
+        CPU.iniciaListasCPU();
+        Gabinete.incializaListasGabinete();
+        MemoriaRAM.incializaListasMemoriaRAM();
+        Motherboard.incializaListasMotherboard();
+        GPU.incializaListasGPU();
     }
 
     public static void cadastraProduto() {
@@ -80,8 +86,113 @@ public class AdministraProduto {
         }
     }
     
-    // <editor-fold defaultstate="collapsed" desc="Metodos de adicao a listas">
+    public static void adicionaProdutos(){
+        //int quantidade = leQuantidade();
+        //produto = buscaProduto(leCategoria(), leAtributo());
+        //produto.adicionaQuantidade(quantidade);
+    }
+    
+    public static void editaProduto()
+    {
+        //produto = buscaProduto(leCategoria(), leAtributo());
+        //produto.setAtributo(leNovoAtributo());
+    }
+    
+    // <editor-fold defaultstate="collapsed" desc="Metodos de Busca">
 
+    public static void buscaProduto(int categoriaIndex) {
+        //mostra lista de apenas uma categoria
+    }
+
+    public static <T> ArrayList buscaProduto(int categoriaIndex, T atributo) {
+        ArrayList<Integer> identificadores = new ArrayList<>();
+        
+        switch (categoriaIndex) {
+            case 0:
+                identificadores = buscaCPU(atributo);
+                break;
+            case 1:
+                identificadores = buscaFonte(atributo);
+                break;
+            case 2:
+                identificadores = buscaGPU(atributo);
+                break;
+            case 3:
+                identificadores = buscaGabinete(atributo);
+                break;
+            case 4:
+                identificadores = buscaHDD(atributo);
+                break;
+            case 5:
+                identificadores = buscaRAM(atributo);
+                break;
+            case 6:
+                identificadores = buscaMB(atributo);
+                break;
+            case 7:
+                identificadores = buscaSSD(atributo);
+                break;
+            default:
+                break;
+        }
+        
+        return identificadores;
+    }
+    
+    private static <T> ArrayList buscaCPU(T atributo)
+    {
+        ArrayList<Integer> ids = new ArrayList<>();
+        return ids;
+    }
+    
+    private static <T> ArrayList buscaFonte(T atributo)
+    {
+        ArrayList<Integer> ids = new ArrayList<>();
+        return ids;
+    }
+    
+    private static <T> ArrayList buscaGPU(T atributo)
+    {
+        ArrayList<Integer> ids = new ArrayList<>();
+        return ids;
+    }
+    
+    private static <T> ArrayList buscaGabinete(T atributo)
+    {
+        ArrayList<Integer> ids = new ArrayList<>();
+        return ids;
+    }
+    
+    private static <T> ArrayList buscaHDD(T atributo)
+    {
+        ArrayList<Integer> ids = new ArrayList<>();
+        return ids;
+    }
+    
+    private static <T> ArrayList buscaRAM(T atributo)
+    {
+        ArrayList<Integer> ids = new ArrayList<>();
+        return ids;
+    }
+    
+    private static <T> ArrayList buscaMB(T atributo)
+    {
+        ArrayList<Integer> ids = new ArrayList<>();
+        return ids;
+    }
+    
+    private static <T> ArrayList buscaSSD(T atributo)
+    {
+        ArrayList<Integer> ids = new ArrayList<>();
+        return ids;
+    }
+    
+    
+    
+    // </editor-fold>
+
+    // <editor-fold defaultstate="collapsed" desc="Metodos de adicao a listas">
+    
     public static void adicionaCPU(CPU cpu) {
         listaCPU.add(cpu);
     }
@@ -113,11 +224,10 @@ public class AdministraProduto {
     public static void adicionaSSD(SSD ssd) {
         listaSSD.add(ssd);
     }
-    
+
     // </editor-fold>
     
     // <editor-fold defaultstate="collapsed" desc="Metodos de Sets de produtos">
-
     public static CPU cadastraCPU() {
         CPU cpu = new CPU();
 
@@ -131,8 +241,6 @@ public class AdministraProduto {
         cpu.setMargem(0);
 
         //atributos de fonte
-
-
         return cpu;
     }
 
@@ -171,8 +279,6 @@ public class AdministraProduto {
         gpu.setMargem(0);
 
         //atributos de fonte
-
-
         return gpu;
     }
 
@@ -189,8 +295,6 @@ public class AdministraProduto {
         hdd.setMargem(0);
 
         //atributos de fonte
-
-
         return hdd;
     }
 
@@ -207,8 +311,6 @@ public class AdministraProduto {
         ram.setMargem(0);
 
         //atributos de fonte
-
-
         return ram;
     }
 
@@ -225,8 +327,6 @@ public class AdministraProduto {
         gabinete.setMargem(0);
 
         //atributos de fonte
-
-
         return gabinete;
     }
 
@@ -243,8 +343,6 @@ public class AdministraProduto {
         mb.setMargem(0);
 
         //atributos de fonte
-
-
         return mb;
     }
 
@@ -261,11 +359,8 @@ public class AdministraProduto {
         ssd.setMargem(0);
 
         //atributos de fonte
-
-
         return ssd;
     }
-    
-    // </editor-fold>
 
+    // </editor-fold>
 }
