@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gabrieloo.ufjf.galpoesestoque.pessoas;
+package gabrieloo.ufjf.galpoesestoque;
 
 /**
  *
  * @author gabriel
  */
-public class AdministraPessoa {
+public class Caixa {
     
 }

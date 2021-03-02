@@ -5,15 +5,21 @@
  */
 package gabrieloo.ufjf.galpoesestoque.pessoas;
 
+import gabrieloo.ufjf.galpoesestoque.vendas.Vendas;
+import java.util.ArrayList;
+import java.util.Date;
+
 /**
  *
  * @author gabriel
  */
 public class Cliente extends Usuario {
     
-    public static void main(String[] args) {
-        System.out.println("Hello World!");
-        System.out.println("Testando");
-    }
+    private String endereco;
+    private String telefone;
+    private String email;
+    private Date dataNascimento;
+    private ArrayList<Vendas> ordens;
+    
     
 }
