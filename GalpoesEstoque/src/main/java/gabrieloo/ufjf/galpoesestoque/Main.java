@@ -5,77 +5,97 @@
  */
 package gabrieloo.ufjf.galpoesestoque;
 
-import gabrieloo.ufjf.galpoesestoque.produtos.CPU;
-import gabrieloo.ufjf.galpoesestoque.produtos.DispositivoArmazenamento;
-import gabrieloo.ufjf.galpoesestoque.produtos.Fonte;
-import gabrieloo.ufjf.galpoesestoque.produtos.GPU;
-import gabrieloo.ufjf.galpoesestoque.produtos.MemoriaRAM;
-import gabrieloo.ufjf.galpoesestoque.produtos.Motherboard;
-
 /**
  *
  * @author gabriel
  */
 public class Main {
-    
+
     private static void rotinaInicializacao() {
         AdministraDados.inicializacaoListas();
+
+        AdministraDados.cadastraCPU();
+        AdministraDados.listaCPU.get(0).setMarca(6);
+        AdministraDados.listaCPU.get(0).setPreco(1300);
+        AdministraDados.listaCPU.get(0).setNome("Ryzen 5 3500x");
+        AdministraDados.listaCPU.get(0).setCoreThreads(0);
+
+        AdministraDados.cadastraDA();
+        AdministraDados.listaDA.get(0).setMarca(7);
+        AdministraDados.listaDA.get(0).setPreco(250);
+        AdministraDados.listaDA.get(0).setTipo(0);
+        AdministraDados.listaDA.get(0).setCapacidade(4);
+
+        AdministraDados.cadastraFonte();
+        AdministraDados.listaFonte.get(0).setMarca(3);
+        AdministraDados.listaFonte.get(0).setPreco(500);
+        AdministraDados.listaFonte.get(0).setEficiencia(2);
+        AdministraDados.listaFonte.get(0).setPower(6);
+
+        AdministraDados.cadastraGPU();
+        AdministraDados.listaGPU.get(0).setMarca(0);
+        AdministraDados.listaGPU.get(0).setPreco(2300);
+        AdministraDados.listaGPU.get(0).setNome("RTX 2060");
+        AdministraDados.listaGPU.get(0).setMemoria(6);
+
+        AdministraDados.cadastraRAM();
+        AdministraDados.listaRAM.get(0).setMarca(4);
+        AdministraDados.listaRAM.get(0).setPreco(200);
+        AdministraDados.listaRAM.get(0).setCapacidade(4);
+        AdministraDados.listaRAM.get(0).setClock(2667);
+
+        AdministraDados.cadastraMotherboard();
+        AdministraDados.listaMB.get(0).setMarca(1);
+        AdministraDados.listaMB.get(0).setPreco(770);
+        AdministraDados.listaMB.get(0).setChipset(8);
+        AdministraDados.listaMB.get(0).setTamanho(0);
+
+        AdministraDados.cadastraGerente();
+        AdministraDados.funcionarioLista.get(0).setNome("Jober Arauto");
+        AdministraDados.funcionarioLista.get(0).setEmail("joarauto@galpoes.com");
+        AdministraDados.funcionarioLista.get(0).setSalarioBase(4800);
+
+        AdministraDados.cadastraCliente();
+        AdministraDados.clienteLista.get(0).setNome("Julia Trista");
+        AdministraDados.clienteLista.get(0).setEmail("jujuzinha2014@hotmail.com");
+
+        AdministraDados.cadastraVendedor();
+        AdministraDados.funcionarioLista.get(1).setNome("Ana Gabriela de Passos Lima");
+        AdministraDados.funcionarioLista.get(1).setEmail("anagabi@galpoes.com");
+        AdministraDados.funcionarioLista.get(1).setSalarioBase(2200);
+
+        AdministraDados.realizaVenda(AdministraDados.funcionarioLista.get(1), AdministraDados.clienteLista.get(0), true, 
+                                            AdministraDados.listaMB.get(0), AdministraDados.listaRAM.get(0), AdministraDados.listaCPU.get(0));
         
-        CPU cpu1 = new CPU();
-        cpu1.setMarca(6);
-        cpu1.setPreco(1300);
-        cpu1.setNome("Ryzen 5 3500x");
-        cpu1.setCoreThreads(0);
-        AdministraDados.adicionaCPU(cpu1);
-        
-        DispositivoArmazenamento da1 = new DispositivoArmazenamento();
-        da1.setMarca(7);
-        da1.setPreco(250);
-        da1.setTipo(0);
-        da1.setCapacidade(4);
-        AdministraDados.adicionaDA(da1);
-        
-        Fonte fonte1 = new Fonte();
-        fonte1.setMarca(3);
-        fonte1.setPreco(500);
-        fonte1.setEficiencia(2);
-        fonte1.setPower(6);
-        AdministraDados.adicionaFonte(fonte1);
-        
-        GPU gpu1 = new GPU();
-        gpu1.setMarca(0);
-        gpu1.setPreco(2300);
-        gpu1.setNome("RTX 2060");
-        gpu1.setMemoria(6);
-        AdministraDados.adicionaGPU(gpu1);
-        
-        MemoriaRAM ram1 = new MemoriaRAM();
-        ram1.setMarca(4);
-        ram1.setPreco(200);
-        ram1.setCapacidade(4);
-        ram1.setClock(2667);
-        AdministraDados.adicionaRAM(ram1);
-        
-        Motherboard mb1 = new Motherboard();
-        mb1.setMarca(1);
-        mb1.setPreco(770);
-        mb1.setChipset(8);
-        mb1.setTamanho(0);
-        AdministraDados.adicionaMotherboard(mb1);
+        AdministraDados.realizaVenda(AdministraDados.funcionarioLista.get(0), AdministraDados.clienteLista.get(0), true, 
+                                            AdministraDados.listaGPU.get(0), AdministraDados.listaFonte.get(0));
+
     }
-    
-    
+
     public static void main(String[] args) {
-        
+
         rotinaInicializacao();
-        
+
         System.out.println(AdministraDados.listaCPU.get(0));
         System.out.println(AdministraDados.listaDA.get(0));
         System.out.println(AdministraDados.listaFonte.get(0));
         System.out.println(AdministraDados.listaGPU.get(0));
         System.out.println(AdministraDados.listaRAM.get(0));
         System.out.println(AdministraDados.listaMB.get(0));
-        
+        System.out.println("");
+        System.out.println(AdministraDados.clienteLista.get(0));
+        System.out.println("");
+        System.out.println(AdministraDados.funcionarioLista.get(0));
+        System.out.println("Salario: R$" + AdministraDados.funcionarioLista.get(0).calculaSalario());
+        System.out.println(AdministraDados.funcionarioLista.get(1));
+        System.out.println("Salario: R$" + AdministraDados.funcionarioLista.get(1).calculaSalario());
+        System.out.println("");
+        System.out.println(AdministraDados.funcionarioLista.get(1).vendasRealizadas.get(0));
+        System.out.println(AdministraDados.clienteLista.get(0).ordens.get(1));
+        System.out.println("Valor em caixa: R$" + Caixa.getCaixa());
+        System.out.println("Valor a pagar de salarios: R$" + Caixa.calculaPagamentoSalarios());
+        System.out.println("Saldo: R$" + Caixa.getSaldo());
+
     }
-    
+
 }

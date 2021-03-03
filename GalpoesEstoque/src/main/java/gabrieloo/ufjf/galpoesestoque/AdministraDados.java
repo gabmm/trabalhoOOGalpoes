@@ -5,12 +5,18 @@
  */
 package gabrieloo.ufjf.galpoesestoque;
 
+import gabrieloo.ufjf.galpoesestoque.pessoas.Cliente;
+import gabrieloo.ufjf.galpoesestoque.pessoas.Funcionario;
+import gabrieloo.ufjf.galpoesestoque.pessoas.Gerente;
+import gabrieloo.ufjf.galpoesestoque.pessoas.Vendedor;
 import gabrieloo.ufjf.galpoesestoque.produtos.CPU;
 import gabrieloo.ufjf.galpoesestoque.produtos.DispositivoArmazenamento;
 import gabrieloo.ufjf.galpoesestoque.produtos.Fonte;
 import gabrieloo.ufjf.galpoesestoque.produtos.GPU;
 import gabrieloo.ufjf.galpoesestoque.produtos.MemoriaRAM;
 import gabrieloo.ufjf.galpoesestoque.produtos.Motherboard;
+import gabrieloo.ufjf.galpoesestoque.produtos.Produto;
+import gabrieloo.ufjf.galpoesestoque.vendas.Venda;
 import java.util.ArrayList;
 
 /**
@@ -25,7 +31,7 @@ public class AdministraDados {
     public static ArrayList<MemoriaRAM> listaRAM;
     public static ArrayList<Motherboard> listaMB;
     public static ArrayList<DispositivoArmazenamento> listaDA;
-    
+
     public static ArrayList<String> coreThreadLista;
     public static ArrayList<String> chipsetLista;
     public static ArrayList<String> plus80Lista;
@@ -35,6 +41,11 @@ public class AdministraDados {
     public static ArrayList<String> marcaLista;
     public static ArrayList<String> tipoArmazenamentoLista;
     public static ArrayList<String> capacidadeArmazenamentoLista;
+
+    public static ArrayList<Cliente> clienteLista;
+    public static ArrayList<Funcionario> funcionarioLista;
+
+    public static ArrayList<Venda> vendaLista;
 
     private static ArrayList<String> categoria;
     private static int categoriaIndex;
@@ -46,40 +57,13 @@ public class AdministraDados {
     private static int quantidadeRAMs = 0;
     private static int quantidadeMBs = 0;
     private static int quantidadeDAs = 0;
-    
-    
+
     private static int quantidadeClientes = 0;
-
-    public static void adicionaProdutos() {
-        //pergunta categoria
-        //mostra lista de objetos da categoria
-        //seleciona objeto
-        //le valor (pode ser negativo)
-        //quantidade do objeto += valor
-        //quantidade da classe do objeto += valor
-        //quantidadeProdutos += valor
-    }
-
-    public static void editaProduto() {
-        //pergunta categoria
-        //mostra lista de objetos da categoria
-        //seleciona objeto
-        //quantidade do objeto += valor
-        //quantidade da classe do objeto += valor
-        //quantidadeProdutos += valor
-    }
+    private static int quantidadeVendedores = 0;
+    private static int quantidadeGerentes = 0;
     
-    public static void removeProduto(){
-        //descadastro de produto
-        //pergunta categoria
-        //mostra lista de objetos da categoria
-        //seleciona objeto
-        //listaCLASSE.remove(indice do objeto escolhido)
-        //quantidade da classe do objeto -= quantidade do objeto
-        //quantidadeProdutos -= quantidade do objeto
-    }
-
     // <editor-fold defaultstate="collapsed" desc="Metodos de Inicializacao de Listas de produtos">
+    
     public static void inicializacaoListas() {
         listaCPU = new ArrayList<>();
         listaFonte = new ArrayList<>();
@@ -87,6 +71,11 @@ public class AdministraDados {
         listaRAM = new ArrayList<>();
         listaMB = new ArrayList<>();
         listaDA = new ArrayList<>();
+
+        clienteLista = new ArrayList<>();
+        funcionarioLista = new ArrayList<>();
+
+        vendaLista = new ArrayList<>();
 
         categoria = new ArrayList<>();
         categoria.add("CPU");
@@ -222,14 +211,6 @@ public class AdministraDados {
         capacidadeArmazenamentoLista.add("120 GB");
         capacidadeArmazenamentoLista.add("240 GB");
     }
-    // </editor-fold>
-    
-    // <editor-fold defaultstate="collapsed" desc="Metodos de Cadastro de novos de produtos">
-    
-    public static void cadastraProduto() {
-        //pergunta a categoria que sera adicionada
-        //chama a funcao de relacionada a categoria
-    }
     
     public static void adicionaCPU(CPU cpu) {
         listaCPU.add(cpu);
@@ -255,67 +236,173 @@ public class AdministraDados {
         listaDA.add(DA);
     }
     
-    public static CPU cadastraCPU() {
+    public static void adicionaFuncionario(Funcionario funcionario) {
+        funcionarioLista.add(funcionario);
+    }
+
+    public static void adicionaCliente(Cliente cliente) {
+        clienteLista.add(cliente);
+    }
+
+    public static void adicionaVenda(Venda venda) {
+        vendaLista.add(venda);
+    }
+    
+    // </editor-fold>
+
+    public static void cadastraProduto() {
+        //pergunta categoria
+        //instancia objeto na categoria
+        //seta atributos do objeto
+        //add novo objeto na lista
+    }
+
+    public static void adicionaProdutos() {
+        //pergunta categoria
+        //mostra lista de objetos da categoria
+        //seleciona objeto
+        //le valor (pode ser negativo)
+        //quantidade do objeto += valor
+        //quantidade da classe do objeto += valor
+        //quantidadeProdutos += valor
+    }
+
+    public static void editaProduto() {
+        //pergunta categoria
+        //mostra lista de objetos da categoria
+        //seleciona objeto
+        //quantidade do objeto += valor
+        //quantidade da classe do objeto += valor
+        //quantidadeProdutos += valor
+    }
+
+    public static void removeProduto() {
+        //descadastro de produto
+        //pergunta categoria
+        //mostra lista de objetos da categoria
+        //seleciona objeto
+        //seta atributos do objeto para atributos padrao (remover pode gerar execoes)
+        //quantidade da classe do objeto -= quantidade do objeto
+        //quantidadeProdutos -= quantidade do objeto
+    }
+
+    public static void cadastraUsuario() {
+        //pergunta categoria de usuario (apenas gerentes podem cadastrar funcionarios)
+        //instancia novo usuario daquela categoria
+        //pergunta e seta atributos daquele cliente
+        //adiciona cliente a lista de clientes
+    }
+
+    public static void editaUsuario() {
+        //pergunta se cliente ou funcionario
+        //mostra lista ded objetos da categoria selecionada
+        //seleciona objeto
+        //mostra atributos do objeto
+        //seta os atributos desejados com novos valores
+    }
+
+    public static void removeUsuario() {
+        //pergunta categoria de usuario (apenas gerentes podem remover funcionarios)
+        //mostra lista de objetos da categoria selecionada
+        //seleciona objeto
+        //seta atributos do objeto para atributos padrao (remover pode gerar execoes)
+    }
+
+    public static void realizaVenda(Funcionario funcionario, Cliente cliente, boolean ehCartao, Produto... produtos) {
+        Venda venda = new Venda();
+        venda.setCliente(cliente);
+        venda.setFuncionario(funcionario);
+        venda.addProduto(produtos);
+        venda.setEhCartao(ehCartao);
+        Caixa.addCaixa(venda.getValorTotal());
+        funcionario.addVenda(venda);
+        cliente.addOrdem(venda);
+        adicionaVenda(venda);
+    }
+
+    public static void cadastraCPU() {
         CPU cpu = new CPU();
 
         //mostra atributos
         //para todos os atributos:
         //setAtributo(valorLido)
-
-        return cpu;
+        adicionaCPU(cpu);
     }
 
-    public static Fonte cadastraFonte() {
+    public static void cadastraFonte() {
         Fonte fonte = new Fonte();
 
         //mostra atributos
         //para todos os atributos:
         //setAtributo(valorLido)
-
-        return fonte;
+        adicionaFonte(fonte);
     }
 
-    public static GPU cadastraGPU() {
+    public static void cadastraGPU() {
         GPU gpu = new GPU();
 
         //mostra atributos
         //para todos os atributos:
         //setAtributo(valorLido)
-
-        return gpu;
+        adicionaGPU(gpu);
     }
 
-    public static DispositivoArmazenamento cadastraDA() {
+    public static void cadastraDA() {
         DispositivoArmazenamento DA = new DispositivoArmazenamento();
 
         //mostra atributos
         //para todos os atributos:
         //setAtributo(valorLido)
-
-        return DA;
+        adicionaDA(DA);
     }
 
-    public static MemoriaRAM cadastraRAM() {
+    public static void cadastraRAM() {
         MemoriaRAM ram = new MemoriaRAM();
 
         //mostra atributos
         //para todos os atributos:
         //setAtributo(valorLido)
-
-        return ram;
+        adicionaRAM(ram);
     }
 
-    public static Motherboard cadastraMotherboard() {
+    public static void cadastraMotherboard() {
         Motherboard mb = new Motherboard();
 
         //mostra atributos
         //para todos os atributos:
         //setAtributo(valorLido)
-
-        return mb;
+        adicionaMotherboard(mb);
+    }
+    
+    public static void cadastraCliente()
+    {
+        Cliente cliente = new Cliente();
+        
+        //mostra atributos
+        //para todos os atributos:
+        //setAtributo(valorLido)
+        adicionaCliente(cliente);
+    }
+    
+    public static void cadastraVendedor()
+    {
+        Vendedor vendedor = new Vendedor();
+        
+        //mostra atributos
+        //para todos os atributos:
+        //setAtributo(valorLido)
+        adicionaFuncionario(vendedor);
+    }
+    
+    public static void cadastraGerente()
+    {
+        Gerente gerente = new Gerente();
+        
+        //mostra atributos
+        //para todos os atributos:
+        //setAtributo(valorLido)
+        adicionaFuncionario(gerente);
     }
 
-    // </editor-fold>
-    
     
 }

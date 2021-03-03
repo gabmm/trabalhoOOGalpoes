@@ -5,13 +5,15 @@
  */
 package gabrieloo.ufjf.galpoesestoque.vendas;
 
+import gabrieloo.ufjf.galpoesestoque.produtos.Produto;
+import java.util.ArrayList;
+
 /**
  *
  * @author gabriel
  */
-public class Vendas {
-
-    public Vendas() {
-    }
+public interface Pagamento {
+    
+    public double realizaPagamento(ArrayList<Produto> produtosComprados);
     
 }

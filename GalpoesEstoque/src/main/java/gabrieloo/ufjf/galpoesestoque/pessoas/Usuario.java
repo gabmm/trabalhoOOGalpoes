@@ -10,9 +10,17 @@ package gabrieloo.ufjf.galpoesestoque.pessoas;
  * @author gabriel
  */
 public abstract class Usuario {
-    
+
     private String nome;
-    private int id;
+    private String email;
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     public String getNome() {
         return nome;
@@ -22,8 +30,8 @@ public abstract class Usuario {
         this.nome = nome;
     }
 
-    public int getId() {
-        return id;
+    @Override
+    public String toString() {
+        return this.getClass().getSimpleName() + " " + this.getNome() + " - " + this.getEmail();
     }
-    
 }

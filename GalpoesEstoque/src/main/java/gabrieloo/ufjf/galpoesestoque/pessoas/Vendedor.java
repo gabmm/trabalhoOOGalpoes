@@ -11,23 +11,23 @@ import java.util.ArrayList;
  *
  * @author gabriel
  */
-public class Gerente extends Funcionario{
-    
-    private final double COMISSAO_GERENTE = 0.1;
+public class Vendedor extends Funcionario {
 
-    public double getCOMISSAO_GERENTE() {
-        return COMISSAO_GERENTE;
-    }
+    public final double COMISSAO_VENDEDOR = 0.05;
 
-    public Gerente() {
+    public Vendedor() {
         this.vendasRealizadas = new ArrayList<>();
     }
-    
+
+    public double getCOMISSAO_VENDEDOR() {
+        return COMISSAO_VENDEDOR;
+    }
+
     @Override
     public double calculaSalario() {
         double comissao = 0;
         for (int i = 0; i < this.vendasRealizadas.size(); i++) {
-            comissao += this.vendasRealizadas.get(i).getValorTotal() * COMISSAO_GERENTE;
+            comissao += this.vendasRealizadas.get(i).getValorTotal() * COMISSAO_VENDEDOR;
         }
 
         return this.getSalarioBase() + comissao;

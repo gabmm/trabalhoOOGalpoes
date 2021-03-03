@@ -5,7 +5,7 @@
  */
 package gabrieloo.ufjf.galpoesestoque.pessoas;
 
-import gabrieloo.ufjf.galpoesestoque.vendas.Vendas;
+import gabrieloo.ufjf.galpoesestoque.vendas.Venda;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -14,12 +14,45 @@ import java.util.Date;
  * @author gabriel
  */
 public class Cliente extends Usuario {
-    
+
     private String endereco;
     private String telefone;
-    private String email;
     private Date dataNascimento;
-    private ArrayList<Vendas> ordens;
-    
-    
+    public ArrayList<Venda> ordens;
+
+    public Cliente() {
+        this.ordens = new ArrayList<>();
+    }
+
+    public void addOrdem(Venda ordem) {
+        this.ordens.add(ordem);
+    }
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public Date getDataNascimento() {
+        return dataNascimento;
+    }
+
+    public ArrayList<Venda> getOrdens() {
+        return ordens;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public void setDataNascimento(Date dataNascimento) {
+        this.dataNascimento = dataNascimento;
+    }
 }

@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public abstract class Produto {
 
     protected static int quantidadeTotal = 0;
-    private float preco;
+    private double preco;
     private String marca;
 
     public Produto() {
@@ -20,11 +20,11 @@ public abstract class Produto {
         return quantidadeTotal;
     }
 
-    public float getPreco() {
+    public double getPreco() {
         return preco;
     }
 
-    public void setPreco(float preco) {
+    public void setPreco(double preco) {
         if (preco > 0) {
             this.preco = preco;
         }
