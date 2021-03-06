@@ -9,9 +9,12 @@ import gabrieloo.ufjf.galpoesestoque.vendas.Venda;
 import java.util.ArrayList;
 import java.util.Date;
 
-/**
- *
- * @author gabriel
+/*Autores:
+Caio César Lima de Azevedo;
+Fernando Dellão Menini;
+Gabriel Martins da Costa Medeiros;
+Vinícius Barbosa Varoto;
+Weyder Luiz Gomes Gante.
  */
 public class Cliente extends Usuario {
 
