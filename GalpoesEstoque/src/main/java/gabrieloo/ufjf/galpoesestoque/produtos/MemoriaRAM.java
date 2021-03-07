@@ -28,6 +28,10 @@ public class MemoriaRAM extends Produto {
         return quantidade;
     }
 
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
+    }
+
     public String getCapacidade() {
         return capacidade;
     }

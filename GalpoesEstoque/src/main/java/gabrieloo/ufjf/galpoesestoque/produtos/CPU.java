@@ -45,6 +45,10 @@ public class CPU extends Produto {
         return quantidade;
     }
 
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
+    }
+
     @Override
     public String toString() {
         return this.getClass().getSimpleName() + " " + this.getMarca() + " " + this.getNome() + " " + this.getCoreThreads() + " - R$" + this.getPreco() + " (" + this.getQuantidade() + " un.)";
