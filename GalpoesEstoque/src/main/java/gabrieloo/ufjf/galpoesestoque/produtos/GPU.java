@@ -8,9 +8,12 @@ package gabrieloo.ufjf.galpoesestoque.produtos;
 import gabrieloo.ufjf.galpoesestoque.AdministraDados;
 import java.util.ArrayList;
 
-/**
- *
- * @author gabriel
+/*Autores:
+Caio César Lima de Azevedo;
+Fernando Dellão Menini;
+Gabriel Martins da Costa Medeiros;
+Vinícius Barbosa Varoto;
+Weyder Luiz Gomes Gante.
  */
 public class GPU extends Produto {
 
@@ -27,6 +30,10 @@ public class GPU extends Produto {
 
     public String getMemoria() {
         return memoria;
+    }
+
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
     }
 
     public void setMemoria(int index) {

@@ -18,10 +18,14 @@ import gabrieloo.ufjf.galpoesestoque.produtos.Motherboard;
 import gabrieloo.ufjf.galpoesestoque.produtos.Produto;
 import gabrieloo.ufjf.galpoesestoque.vendas.Venda;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
-/**
- *
- * @author gabriel
+/*Autores:
+Caio César Lima de Azevedo;
+Fernando Dellão Menini;
+Gabriel Martins da Costa Medeiros;
+Vinícius Barbosa Varoto;
+Weyder Luiz Gomes Gante.
  */
 public class AdministraDados {
 
@@ -44,6 +48,7 @@ public class AdministraDados {
 
     public static ArrayList<Cliente> clienteLista;
     public static ArrayList<Funcionario> funcionarioLista;
+    public static ArrayList<Produto> produtoLista;
 
     public static ArrayList<Venda> vendaLista;
 
@@ -251,10 +256,65 @@ public class AdministraDados {
     // </editor-fold>
 
     public static void cadastraProduto() {
-        //pergunta categoria
-        //instancia objeto na categoria
-        //seta atributos do objeto
-        //add novo objeto na lista
+        String aux;
+    //pergunta categoria;instancia objeto na categoria;seta atributos do objeto;add novo objeto na lista.
+        aux = JOptionPane.showInputDialog("Qual produto deseja cadastrar? ");
+        if (aux.equals("CPU")) {
+            CPU cadastro = new CPU();
+            cadastro.setMarca(Integer.parseInt(JOptionPane.showInputDialog("Qual o número da marca:")));
+            cadastro.setPreco(Double.valueOf(JOptionPane.showInputDialog("Qual o preço:")));
+            cadastro.setNome(JOptionPane.showInputDialog("Qual o nome: "));
+            cadastro.setCoreThreads(Integer.parseInt(JOptionPane.showInputDialog("Quantidade Core Threads: ")));
+            cadastro.setQuantidade(Integer.parseInt(JOptionPane.showInputDialog("Qual a quantidade:")));
+            produtoLista.add(cadastro);
+        }
+        else if (aux.equals("Fonte")) {
+            Fonte cadastro = new Fonte();
+            cadastro.setMarca(Integer.parseInt(JOptionPane.showInputDialog("Qual o número da marca:")));
+            cadastro.setPreco(Double.valueOf(JOptionPane.showInputDialog("Qual o preço:")));
+            cadastro.setPower(Integer.parseInt(JOptionPane.showInputDialog("Qual a potência: ")));
+            cadastro.setEficiencia(Integer.parseInt(JOptionPane.showInputDialog("Qual a eficiencia: ")));
+            cadastro.setQuantidade(Integer.parseInt(JOptionPane.showInputDialog("Qual a quantidade:")));
+            produtoLista.add(cadastro);
+        }
+        else if (aux.equals("GPU")) {
+            GPU cadastro = new GPU();
+            cadastro.setMarca(Integer.parseInt(JOptionPane.showInputDialog("Qual o número da marca:")));
+            cadastro.setPreco(Double.valueOf(JOptionPane.showInputDialog("Qual o preço:")));
+            cadastro.setNome(JOptionPane.showInputDialog("Qual o nome: "));
+            cadastro.setMemoria(Integer.parseInt(JOptionPane.showInputDialog("Quantidade Memória: ")));
+            cadastro.setQuantidade(Integer.parseInt(JOptionPane.showInputDialog("Qual a quantidade:")));
+            produtoLista.add(cadastro);
+        }
+        else if (aux.equals("Dispostivo de Armazenamento")) {
+            DispositivoArmazenamento cadastro = new DispositivoArmazenamento();
+            cadastro.setMarca(Integer.parseInt(JOptionPane.showInputDialog("Qual o número da marca:")));
+            cadastro.setPreco(Double.valueOf(JOptionPane.showInputDialog("Qual o preço:")));
+            cadastro.setTipo(Integer.parseInt(JOptionPane.showInputDialog("Qual o tipo: ")));
+            cadastro.setCapacidade(Integer.parseInt(JOptionPane.showInputDialog("Qual a capacidade: ")));
+            cadastro.setQuantidade(Integer.parseInt(JOptionPane.showInputDialog("Qual a quantidade:")));
+            produtoLista.add(cadastro);
+        }
+        else if (aux.equals("Memória RAM")) {
+            MemoriaRAM cadastro = new MemoriaRAM();
+            cadastro.setMarca(Integer.parseInt(JOptionPane.showInputDialog("Qual o número da marca:")));
+            cadastro.setPreco(Double.valueOf(JOptionPane.showInputDialog("Qual o preço:")));
+            cadastro.setClock((Integer.parseInt(JOptionPane.showInputDialog("Qual o clock: "))));
+            cadastro.setCapacidade(Integer.parseInt(JOptionPane.showInputDialog("Qual a capacidade: ")));
+            cadastro.setQuantidade(Integer.parseInt(JOptionPane.showInputDialog("Qual a quantidade:")));
+            produtoLista.add(cadastro);
+        }
+        else if (aux.equals("Placa-mãe")) {
+            Motherboard cadastro = new Motherboard();
+            cadastro.setMarca(Integer.parseInt(JOptionPane.showInputDialog("Qual o número da marca:")));
+            cadastro.setPreco(Double.valueOf(JOptionPane.showInputDialog("Qual o preço:")));
+            cadastro.setTamanho((Integer.parseInt(JOptionPane.showInputDialog("Qual o clock: "))));
+            cadastro.setChipset(Integer.parseInt(JOptionPane.showInputDialog("Qual a capacidade: ")));
+            cadastro.setQuantidade(Integer.parseInt(JOptionPane.showInputDialog("Qual a quantidade:")));
+            produtoLista.add(cadastro);
+        }
+        else
+            cadastraProduto();
     }
 
     public static void adicionaProdutos() {

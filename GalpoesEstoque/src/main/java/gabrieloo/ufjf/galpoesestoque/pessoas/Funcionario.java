@@ -10,9 +10,12 @@ import gabrieloo.ufjf.galpoesestoque.produtos.Produto;
 import gabrieloo.ufjf.galpoesestoque.vendas.Venda;
 import java.util.ArrayList;
 
-/**
- *
- * @author gabriel
+/*Autores:
+Caio César Lima de Azevedo;
+Fernando Dellão Menini;
+Gabriel Martins da Costa Medeiros;
+Vinícius Barbosa Varoto;
+Weyder Luiz Gomes Gante.
  */
 public abstract class Funcionario extends Usuario {
 

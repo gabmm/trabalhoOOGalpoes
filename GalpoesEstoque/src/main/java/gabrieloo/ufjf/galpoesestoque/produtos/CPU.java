@@ -8,9 +8,12 @@ package gabrieloo.ufjf.galpoesestoque.produtos;
 import gabrieloo.ufjf.galpoesestoque.AdministraDados;
 import java.util.ArrayList;
 
-/**
- *
- * @author gabriel
+/*Autores:
+Caio César Lima de Azevedo;
+Fernando Dellão Menini;
+Gabriel Martins da Costa Medeiros;
+Vinícius Barbosa Varoto;
+Weyder Luiz Gomes Gante.
  */
 public class CPU extends Produto {
 
@@ -40,6 +43,10 @@ public class CPU extends Produto {
 
     public int getQuantidade() {
         return quantidade;
+    }
+
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
     }
 
     @Override
