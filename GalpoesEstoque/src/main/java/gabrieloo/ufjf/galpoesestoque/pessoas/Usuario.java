@@ -11,9 +11,6 @@ Fernando Dellão Menini;
 Gabriel Martins da Costa Medeiros;
 Vinícius Barbosa Varoto;
 Weyder Luiz Gomes Gante.
- *//**
- *
- * @author gabriel
  */
 public abstract class Usuario {
 
