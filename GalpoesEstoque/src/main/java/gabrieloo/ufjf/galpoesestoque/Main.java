@@ -43,6 +43,13 @@ public class Main {
         AdministraDados.listaRAM.get(0).setPreco(200);
         AdministraDados.listaRAM.get(0).setCapacidade(4);
         AdministraDados.listaRAM.get(0).setClock(2667);
+        
+        AdministraDados.cadastraRAM();
+        AdministraDados.listaRAM.get(1).setMarca(3);
+        AdministraDados.listaRAM.get(1).setPreco(120);
+        AdministraDados.listaRAM.get(1).setCapacidade(2);
+        AdministraDados.listaRAM.get(1).setClock(1334);
+        
 
         AdministraDados.cadastraMotherboard();
         AdministraDados.listaMB.get(0).setMarca(1);
@@ -68,7 +75,7 @@ public class Main {
                                             AdministraDados.listaMB.get(0), AdministraDados.listaRAM.get(0), AdministraDados.listaCPU.get(0));
         
         AdministraDados.realizaVenda(AdministraDados.funcionarioLista.get(0), AdministraDados.clienteLista.get(0), true, 
-                                            AdministraDados.listaGPU.get(0), AdministraDados.listaFonte.get(0));
+                                            AdministraDados.listaGPU.get(0), AdministraDados.listaRAM.get(1));
 
     }
 
@@ -81,6 +88,7 @@ public class Main {
         System.out.println(AdministraDados.listaFonte.get(0));
         System.out.println(AdministraDados.listaGPU.get(0));
         System.out.println(AdministraDados.listaRAM.get(0));
+        System.out.println(AdministraDados.listaRAM.get(1));
         System.out.println(AdministraDados.listaMB.get(0));
         System.out.println("");
         System.out.println(AdministraDados.clienteLista.get(0));
