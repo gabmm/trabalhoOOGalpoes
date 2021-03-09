@@ -16,12 +16,12 @@ Vinícius Barbosa Varoto;
 Weyder Luiz Gomes Gante.
  */
 public class PagamentoDinheiro implements Pagamento {
-    
+
     private final double DESCONTO_DINHEIRO = 0.1;
 
     public PagamentoDinheiro() {
     }
-    
+
     @Override
     public double realizaPagamento(ArrayList<Produto> produtosComprados) {
         double total = 0;
@@ -30,7 +30,7 @@ public class PagamentoDinheiro implements Pagamento {
             total += produtosComprados.get(i).getPreco();
         }
 
-        return total * DESCONTO_DINHEIRO;
+        return total * (1 - DESCONTO_DINHEIRO);
     }
 
 }
