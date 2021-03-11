@@ -8,6 +8,9 @@
 
 package gabrieloo.ufjf.galpoesestoque;
 
+import static java.awt.Frame.MAXIMIZED_BOTH;
+import javax.swing.JFrame;
+
 public class Main {
 
     private static void rotinaInicializacao() {
@@ -102,7 +105,12 @@ public class Main {
         System.out.println("Valor em caixa: R$" + Caixa.getCaixa());
         System.out.println("Valor a pagar de salarios: R$" + Caixa.calculaPagamentoSalarios());
         System.out.println("Saldo: R$" + Caixa.getSaldo());
-
+        
+        Login telaLogin = new Login();
+        
+        telaLogin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        telaLogin.setVisible(true);
+        telaLogin.setExtendedState(MAXIMIZED_BOTH);
     }
 
 }
