@@ -1,21 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+/*Autores:
+  Caio César Lima de Azevedo;
+  Fernando Dellão Menini;
+  Gabriel Martins da Costa Medeiros;
+  Vinícius Barbosa Varoto;
+  Weyder Luiz Gomes Gante.
+  */
 package gabrieloo.ufjf.galpoesestoque.pessoas;
 
 import gabrieloo.ufjf.galpoesestoque.vendas.Venda;
 import java.util.ArrayList;
 import java.util.Date;
 
-/*Autores:
-Caio César Lima de Azevedo;
-Fernando Dellão Menini;
-Gabriel Martins da Costa Medeiros;
-Vinícius Barbosa Varoto;
-Weyder Luiz Gomes Gante.
- */
 public class Cliente extends Usuario {
 
     private String endereco;

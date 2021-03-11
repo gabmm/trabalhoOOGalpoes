@@ -1,8 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+/*Autores:
+  Caio César Lima de Azevedo;
+  Fernando Dellão Menini;
+  Gabriel Martins da Costa Medeiros;
+  Vinícius Barbosa Varoto;
+  Weyder Luiz Gomes Gante.
+  */
+
 package gabrieloo.ufjf.galpoesestoque.vendas;
 
 import gabrieloo.ufjf.galpoesestoque.pessoas.Cliente;
@@ -12,13 +15,6 @@ import gabrieloo.ufjf.galpoesestoque.pessoas.Vendedor;
 import gabrieloo.ufjf.galpoesestoque.produtos.Produto;
 import java.util.ArrayList;
 
-/*Autores:
-Caio César Lima de Azevedo;
-Fernando Dellão Menini;
-Gabriel Martins da Costa Medeiros;
-Vinícius Barbosa Varoto;
-Weyder Luiz Gomes Gante.
- */
 public class Venda {
 
     private Cliente cliente;
@@ -26,7 +22,7 @@ public class Venda {
     private ArrayList<Produto> produtos;
     private double valorTotal = 0;
     private boolean ehCartao;
-    
+
     public Venda() {
         this.produtos = new ArrayList<>();
         this.ehCartao = false;

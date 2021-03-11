@@ -1,8 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+/*Autores:
+  Caio César Lima de Azevedo;
+  Fernando Dellão Menini;
+  Gabriel Martins da Costa Medeiros;
+  Vinícius Barbosa Varoto;
+  Weyder Luiz Gomes Gante.
+  */
+
 package gabrieloo.ufjf.galpoesestoque;
 
 import gabrieloo.ufjf.galpoesestoque.pessoas.Cliente;
@@ -20,13 +23,6 @@ import gabrieloo.ufjf.galpoesestoque.vendas.Venda;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
-/*Autores:
-Caio César Lima de Azevedo;
-Fernando Dellão Menini;
-Gabriel Martins da Costa Medeiros;
-Vinícius Barbosa Varoto;
-Weyder Luiz Gomes Gante.
- */
 public class AdministraDados {
 
     public static ArrayList<CPU> listaCPU;
@@ -66,9 +62,9 @@ public class AdministraDados {
     private static int quantidadeClientes = 0;
     private static int quantidadeVendedores = 0;
     private static int quantidadeGerentes = 0;
-    
+
     // <editor-fold defaultstate="collapsed" desc="Metodos de Inicializacao de Listas de produtos">
-    
+
     public static void inicializacaoListas() {
         listaCPU = new ArrayList<>();
         listaFonte = new ArrayList<>();
@@ -216,7 +212,7 @@ public class AdministraDados {
         capacidadeArmazenamentoLista.add("120 GB");
         capacidadeArmazenamentoLista.add("240 GB");
     }
-    
+
     public static void adicionaCPU(CPU cpu) {
         listaCPU.add(cpu);
     }
@@ -240,7 +236,7 @@ public class AdministraDados {
     public static void adicionaDA(DispositivoArmazenamento DA) {
         listaDA.add(DA);
     }
-    
+
     public static void adicionaFuncionario(Funcionario funcionario) {
         funcionarioLista.add(funcionario);
     }
@@ -252,7 +248,7 @@ public class AdministraDados {
     public static void adicionaVenda(Venda venda) {
         vendaLista.add(venda);
     }
-    
+
     // </editor-fold>
 
     public static void cadastraProduto() {
@@ -341,7 +337,7 @@ quantidade da classe do objeto += valor, quantidadeProdutos += valor*/
         else
             adicionaProdutos();
     }
-    
+
     public static void adicionaProdutos(Produto produto, int quantidade){
         //quantidade do objeto += valor
         //quantidade da classe do objeto += valor
@@ -397,14 +393,14 @@ objeto, quantidadeProdutos -= quantidade do objeto*/
 /*pergunta categoria de usuario (apenas gerentes podem cadastrar funcionarios),
 instancia novo usuario daquela categoria, pergunta e seta atributos daquele
 cliente, adiciona cliente a lista de clientes*/
-        
+
     }
 
     public static void editaUsuario() {
 /*pergunta se cliente ou funcionariomostra lista ded objetos da categoria
 selecionada, seleciona objeto, mostra atributos do objeto, seta os atributos
 desejados com novos valores*/
-        
+
     }
 
     public static void removeUsuario() {
@@ -416,23 +412,23 @@ desejados com novos valores*/
 
     public static void realizaVenda(Funcionario funcionario, Cliente cliente, boolean ehCartao, Produto... produtos) {
         Venda venda = new Venda();
-        
+
         //mostrar lista clientes
         //escolher cliente da lista
         venda.setCliente(cliente);
-        
+
         //seta funcionaro que fez login
         venda.setFuncionario(funcionario);
-        
+
         //pergunta categoria do produto 1
         //mostra lista da categoria
         //seleciona o produto1
         //pergunta se quer outro produto...
         venda.addProduto(produtos);
-        
+
         //escolhe se eh cartao ou nao
         venda.setEhCartao(ehCartao);
-        
+
         Caixa.addCaixa(venda.getValorTotal());
         funcionario.addVenda(venda);
         cliente.addOrdem(venda);
@@ -492,31 +488,31 @@ desejados com novos valores*/
         //setAtributo(valorLido)
         adicionaMotherboard(mb);
     }
-    
+
     public static void cadastraCliente()
     {
         Cliente cliente = new Cliente();
-        
+
         //mostra atributos
         //para todos os atributos:
         //setAtributo(valorLido)
         adicionaCliente(cliente);
     }
-    
+
     public static void cadastraVendedor()
     {
         Vendedor vendedor = new Vendedor();
-        
+
         //mostra atributos
         //para todos os atributos:
         //setAtributo(valorLido)
         adicionaFuncionario(vendedor);
     }
-    
+
     public static void cadastraGerente()
     {
         Gerente gerente = new Gerente();
-        
+
         //mostra atributos
         //para todos os atributos:
         //setAtributo(valorLido)

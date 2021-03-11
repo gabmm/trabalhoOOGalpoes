@@ -1,17 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+/*Autores:
+  Caio César Lima de Azevedo;
+  Fernando Dellão Menini;
+  Gabriel Martins da Costa Medeiros;
+  Vinícius Barbosa Varoto;
+  Weyder Luiz Gomes Gante.
+  */
+
 package gabrieloo.ufjf.galpoesestoque;
 
-/*Autores:
-Caio César Lima de Azevedo;
-Fernando Dellão Menini;
-Gabriel Martins da Costa Medeiros;
-Vinícius Barbosa Varoto;
-Weyder Luiz Gomes Gante.
- */
 public class Main {
 
     private static void rotinaInicializacao() {
@@ -46,13 +42,13 @@ public class Main {
         AdministraDados.listaRAM.get(0).setPreco(200);
         AdministraDados.listaRAM.get(0).setCapacidade(4);
         AdministraDados.listaRAM.get(0).setClock(2667);
-        
+
         AdministraDados.cadastraRAM();
         AdministraDados.listaRAM.get(1).setMarca(3);
         AdministraDados.listaRAM.get(1).setPreco(120);
         AdministraDados.listaRAM.get(1).setCapacidade(2);
         AdministraDados.listaRAM.get(1).setClock(1334);
-        
+
 
         AdministraDados.cadastraMotherboard();
         AdministraDados.listaMB.get(0).setMarca(1);
@@ -74,10 +70,10 @@ public class Main {
         AdministraDados.funcionarioLista.get(1).setEmail("anagabi@galpoes.com");
         AdministraDados.funcionarioLista.get(1).setSalarioBase(2200);
 
-        AdministraDados.realizaVenda(AdministraDados.funcionarioLista.get(1), AdministraDados.clienteLista.get(0), true, 
+        AdministraDados.realizaVenda(AdministraDados.funcionarioLista.get(1), AdministraDados.clienteLista.get(0), true,
                                             AdministraDados.listaMB.get(0), AdministraDados.listaRAM.get(0), AdministraDados.listaCPU.get(0));
-        
-        AdministraDados.realizaVenda(AdministraDados.funcionarioLista.get(0), AdministraDados.clienteLista.get(0), true, 
+
+        AdministraDados.realizaVenda(AdministraDados.funcionarioLista.get(0), AdministraDados.clienteLista.get(0), true,
                                             AdministraDados.listaGPU.get(0), AdministraDados.listaRAM.get(1));
 
     }

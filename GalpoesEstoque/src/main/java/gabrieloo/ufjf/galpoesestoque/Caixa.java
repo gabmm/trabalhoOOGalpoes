@@ -1,17 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+/*Autores:
+  Caio César Lima de Azevedo;
+  Fernando Dellão Menini;
+  Gabriel Martins da Costa Medeiros;
+  Vinícius Barbosa Varoto;
+  Weyder Luiz Gomes Gante.
+  */
+
 package gabrieloo.ufjf.galpoesestoque;
 
-/*Autores:
-Caio César Lima de Azevedo;
-Fernando Dellão Menini;
-Gabriel Martins da Costa Medeiros;
-Vinícius Barbosa Varoto;
-Weyder Luiz Gomes Gante.
- */
 public class Caixa {
 
     private static double caixa = 0;
@@ -30,11 +26,11 @@ public class Caixa {
 
     public static double calculaPagamentoSalarios() {
         double totalSalarios = 0;
-        
+
         for (int i = 0; i < AdministraDados.funcionarioLista.size(); i++) {
             totalSalarios += AdministraDados.funcionarioLista.get(i).calculaSalario();
         }
-       
+
         return totalSalarios;
     }
 

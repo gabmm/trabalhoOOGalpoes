@@ -1,19 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+/*Autores:
+  Caio César Lima de Azevedo;
+  Fernando Dellão Menini;
+  Gabriel Martins da Costa Medeiros;
+  Vinícius Barbosa Varoto;
+  Weyder Luiz Gomes Gante.
+  */
+
 package gabrieloo.ufjf.galpoesestoque.produtos;
 
 import gabrieloo.ufjf.galpoesestoque.AdministraDados;
 
-/*Autores:
-Caio César Lima de Azevedo;
-Fernando Dellão Menini;
-Gabriel Martins da Costa Medeiros;
-Vinícius Barbosa Varoto;
-Weyder Luiz Gomes Gante.
- */
 public class DispositivoArmazenamento extends Produto {
 
     private String capacidade;
@@ -46,7 +42,7 @@ public class DispositivoArmazenamento extends Produto {
     public void setQuantidade(int quantidade) {
         this.quantidade = quantidade;
     }
-    
+
     @Override
     public String toString() {
         return this.getTipo() + " " + this.getMarca() + " " + this.getCapacidade() + " - R$" + this.getPreco() + " (" + this.getQuantidade() + " un.)";

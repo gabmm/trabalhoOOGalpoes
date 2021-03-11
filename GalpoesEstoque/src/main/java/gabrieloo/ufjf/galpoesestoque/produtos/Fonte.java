@@ -1,20 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+/*Autores:
+  Caio César Lima de Azevedo;
+  Fernando Dellão Menini;
+  Gabriel Martins da Costa Medeiros;
+  Vinícius Barbosa Varoto;
+  Weyder Luiz Gomes Gante.
+  */
+
 package gabrieloo.ufjf.galpoesestoque.produtos;
 
 import gabrieloo.ufjf.galpoesestoque.AdministraDados;
 import java.util.ArrayList;
 
-/*Autores:
-Caio César Lima de Azevedo;
-Fernando Dellão Menini;
-Gabriel Martins da Costa Medeiros;
-Vinícius Barbosa Varoto;
-Weyder Luiz Gomes Gante.
- */
 public class Fonte extends Produto {
 
     private int quantidade = 0;
@@ -31,7 +27,7 @@ public class Fonte extends Produto {
     public void setQuantidade(int quantidade) {
         this.quantidade = quantidade;
     }
-    
+
     public int getPower() {
         return power;
     }
@@ -47,7 +43,7 @@ public class Fonte extends Produto {
     public void setEficiencia(int index) {
         this.eficiencia = AdministraDados.plus80Lista.get(index);
     }
-    
+
     @Override
     public String toString() {
         return this.getClass().getSimpleName() + " " + this.getMarca() + " " + this.getPower() + "W " + this.getEficiencia()+ " - R$" + this.getPreco() + " (" + this.getQuantidade() + " un.)";
