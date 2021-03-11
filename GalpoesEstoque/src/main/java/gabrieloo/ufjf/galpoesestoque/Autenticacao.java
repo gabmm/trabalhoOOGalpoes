@@ -5,6 +5,8 @@
   Vinícius Barbosa Varoto;
   Weyder Luiz Gomes Gante.
   */
+package gabrieloo.ufjf.galpoesestoque;
+
 import java.io.*;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;

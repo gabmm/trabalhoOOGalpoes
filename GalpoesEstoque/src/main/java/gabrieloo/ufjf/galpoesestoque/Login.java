@@ -21,6 +21,9 @@ import javax.swing.JPasswordField;
 
 public class Login extends JFrame implements ActionListener
 {
+	private static JTextField campoUsuario;
+	private static JPasswordField campoSenha;
+
     public  Login()
     {
         super("Login");
@@ -42,10 +45,10 @@ public class Login extends JFrame implements ActionListener
         panelLogin.setLayout(new FlowLayout());
 
         JLabel nomeUsuario = new JLabel("NOME: ");
-        JTextField campoUsuario = new JTextField(40);
+        campoUsuario = new JTextField(40);
 
         JLabel senhaUsuario = new JLabel("SENHA: ");
-		JTextField campoSenha = new JPasswordField(40);
+		campoSenha = new JPasswordField(40);
 
         usuario.add(nomeUsuario);
         usuario.add(campoUsuario);
@@ -55,16 +58,18 @@ public class Login extends JFrame implements ActionListener
         JPanel botoes = new JPanel();
         panelLogin.setLayout(new FlowLayout());
         JButton botaoEntrar = new JButton("Entrar");
-		botaoEntrar.addActionListener(new Login());
+		botaoEntrar.addActionListener(this);
         botoes.add(botaoEntrar);
 
         add(panelLogin, BorderLayout.NORTH);
         add(usuario, BorderLayout.CENTER);
         add(botoes, BorderLayout.SOUTH);
     }
-	@override
-	public static void actionPerformed(ActionEvent e) {
-		Autenticacao.auth(campoUsuario.getText(), campoSenha.getText());
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		String u = campoUsuario.getText();
+		String s = campoSenha.getText();
+		Autenticacao.auth(u, s);
 
 	}
 }
