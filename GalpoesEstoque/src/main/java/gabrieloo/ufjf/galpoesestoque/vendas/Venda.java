@@ -66,10 +66,8 @@ public class Venda {
         }
     }
 
-    public void addProduto(Produto produtos[]) {
-        for (int i = 0; i < produtos.length; i++) {
-            this.produtos.add(produtos[i]);
-        }
+    public void addProduto(ArrayList<Produto> produtos) {
+        this.produtos = produtos;
     }
 
     @Override

@@ -67,17 +67,15 @@ public class Main {
         AdministraDados.cadastraCliente();
         AdministraDados.clienteLista.get(0).setNome("Julia Trista");
         AdministraDados.clienteLista.get(0).setEmail("jujuzinha2014@hotmail.com");
+        
+        AdministraDados.cadastraCliente();
+        AdministraDados.clienteLista.get(1).setNome("Enzo Valentino");
+        AdministraDados.clienteLista.get(1).setEmail("valenteenzo69@gmail.com");
 
         AdministraDados.cadastraVendedor();
         AdministraDados.funcionarioLista.get(1).setNome("Ana Gabriela de Passos Lima");
         AdministraDados.funcionarioLista.get(1).setEmail("anagabi@galpoes.com");
         AdministraDados.funcionarioLista.get(1).setSalarioBase(2200);
-
-        AdministraDados.realizaVenda(AdministraDados.funcionarioLista.get(1), AdministraDados.clienteLista.get(0), true,
-                                            AdministraDados.listaMB.get(0), AdministraDados.listaRAM.get(0), AdministraDados.listaCPU.get(0));
-
-        AdministraDados.realizaVenda(AdministraDados.funcionarioLista.get(0), AdministraDados.clienteLista.get(0), true,
-                                            AdministraDados.listaGPU.get(0), AdministraDados.listaRAM.get(1));
 
     }
 
@@ -106,17 +104,17 @@ public class Main {
 //        System.out.println("Valor a pagar de salarios: R$" + Caixa.calculaPagamentoSalarios());
 //        System.out.println("Saldo: R$" + Caixa.getSaldo());
 //
-        Login telaLogin = new Login();
-
-        telaLogin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        telaLogin.setVisible(true);
-        telaLogin.setExtendedState(MAXIMIZED_BOTH);
+//        Login telaLogin = new Login();
+//
+//        telaLogin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//        telaLogin.setVisible(true);
+//        telaLogin.setExtendedState(MAXIMIZED_BOTH);
 
 //        TelaProduto tela = new TelaProduto();
 //        tela.incializaTelaProduto();
 
-        //TelaPrincipal telaPrincipal = new TelaPrincipal(AdministraDados.funcionarioLista.get(1));
-        //telaPrincipal.abreTela();
+        TelaPrincipal telaPrincipal = new TelaPrincipal(AdministraDados.funcionarioLista.get(1));
+        telaPrincipal.abreTela();
     }
 
 }

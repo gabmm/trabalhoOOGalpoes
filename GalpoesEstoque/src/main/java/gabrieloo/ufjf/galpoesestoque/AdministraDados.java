@@ -410,7 +410,7 @@ desejados com novos valores*/
         //seta atributos do objeto para atributos padrao (remover pode gerar execoes)
     }
 
-    public static void realizaVenda(Funcionario funcionario, Cliente cliente, boolean ehCartao, Produto... produtos) {
+    public static void realizaVenda(Funcionario funcionario, Cliente cliente, boolean ehCartao, ArrayList<Produto> produtos) {
         Venda venda = new Venda();
 
         //mostrar lista clientes

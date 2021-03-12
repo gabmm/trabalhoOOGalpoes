@@ -9,6 +9,7 @@ import gabrieloo.ufjf.galpoesestoque.pessoas.Funcionario;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.Action;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -44,6 +45,10 @@ public class TelaPrincipal extends JFrame {
         this.tipoUsuario = this.usuarioAtual.getClass().getSimpleName();
     }
 
+    public Funcionario getUsuarioAtual() {
+        return usuarioAtual;
+    }
+
     public void abreTela() {
         this.main = new JPanel();
 
@@ -75,13 +80,21 @@ public class TelaPrincipal extends JFrame {
             }
         });
 
-        this.btnTelaVenda = new JButton("Vendas");
-        btnTelaProduto.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-//                TelaProduto tela = new TelaVenda();
-//                tela.incializaTelaVenda();
+//        this.btnTelaVenda = new JButton("Vendas");
+//        btnTelaProduto.addActionListener(new ActionListener() {
+//            public void actionPerformed(ActionEvent e) {
+//                TelaVenda tela = new TelaVenda();
+//                tela.abreTela();
 //                dispose();
-            }
+//            }
+//        });
+
+        this.btnTelaVenda = new JButton("Vendas");
+        btnTelaVenda.addActionListener((ActionEvent e) -> {
+            TelaVenda tela = new TelaVenda(this.getUsuarioAtual());
+            tela.abreTela();
+            dispose();
+
         });
 
         this.btnTelaLogin = new JButton("Voltar");
@@ -97,9 +110,8 @@ public class TelaPrincipal extends JFrame {
         this.topPanel.add(new JLabel(msgSuperior), BorderLayout.WEST);
 
         this.rightPanel.setLayout(new BorderLayout());
-        this.rightPanel.add(btnTelaLogin, BorderLayout.SOUTH);
-        this.rightPanel.add(btnTelaVenda, BorderLayout.NORTH);
-       
+        this.leftPanel.setLayout(new BorderLayout());
+        this.centerPanel.setLayout(new BorderLayout());
 
         this.main.add(rightPanel, BorderLayout.EAST);
         this.main.add(leftPanel, BorderLayout.WEST);
@@ -107,8 +119,10 @@ public class TelaPrincipal extends JFrame {
         this.main.add(bottomPanel, BorderLayout.SOUTH);
         this.main.add(centerPanel, BorderLayout.CENTER);
 
-        this.centerPanel.add(btnTelaProduto);
-        this.leftPanel.add(btnTelaPessoa);
+        this.centerPanel.add(btnTelaProduto, BorderLayout.NORTH);
+        this.leftPanel.add(btnTelaPessoa, BorderLayout.NORTH);
+        this.centerPanel.add(btnTelaLogin, BorderLayout.SOUTH);
+        this.rightPanel.add(btnTelaVenda, BorderLayout.NORTH);
 
         this.add(this.main);
         this.setSize(400, 200);
