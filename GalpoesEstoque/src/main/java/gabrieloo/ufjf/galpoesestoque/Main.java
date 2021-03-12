@@ -105,18 +105,18 @@ public class Main {
 //        System.out.println("Valor em caixa: R$" + Caixa.getCaixa());
 //        System.out.println("Valor a pagar de salarios: R$" + Caixa.calculaPagamentoSalarios());
 //        System.out.println("Saldo: R$" + Caixa.getSaldo());
-//        
-//        Login telaLogin = new Login();
-//        
-//        telaLogin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//        telaLogin.setVisible(true);
-//        telaLogin.setExtendedState(MAXIMIZED_BOTH);
+//
+        Login telaLogin = new Login();
 
-        //TelaProduto tela = new TelaProduto();
-        //tela.incializaTelaProduto();
-        
-        TelaPrincipal telaPrincipal = new TelaPrincipal(AdministraDados.funcionarioLista.get(1));
-        telaPrincipal.abreTela();
+        telaLogin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        telaLogin.setVisible(true);
+        telaLogin.setExtendedState(MAXIMIZED_BOTH);
+
+//        TelaProduto tela = new TelaProduto();
+//        tela.incializaTelaProduto();
+
+        //TelaPrincipal telaPrincipal = new TelaPrincipal(AdministraDados.funcionarioLista.get(1));
+        //telaPrincipal.abreTela();
     }
 
 }

@@ -10,6 +10,7 @@ package gabrieloo.ufjf.galpoesestoque;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.*;
 import javax.swing.JButton;
@@ -23,6 +24,8 @@ public class Login extends JFrame implements ActionListener
 {
 	private static JTextField campoUsuario;
 	private static JPasswordField campoSenha;
+	private static JLabel aviso;
+	private static int c = 0;
 
     public  Login()
     {
@@ -44,6 +47,9 @@ public class Login extends JFrame implements ActionListener
         JPanel usuario = new JPanel();
         panelLogin.setLayout(new FlowLayout());
 
+		aviso = new JLabel("");
+		aviso.setForeground(Color.red);
+
         JLabel nomeUsuario = new JLabel("NOME: ");
         campoUsuario = new JTextField(40);
 
@@ -53,7 +59,8 @@ public class Login extends JFrame implements ActionListener
         usuario.add(nomeUsuario);
         usuario.add(campoUsuario);
         usuario.add(senhaUsuario);
-        usuario.add(campoSenha);
+		usuario.add(campoSenha);
+		usuario.add(aviso);
 
         JPanel botoes = new JPanel();
         panelLogin.setLayout(new FlowLayout());
@@ -66,10 +73,31 @@ public class Login extends JFrame implements ActionListener
         add(botoes, BorderLayout.SOUTH);
     }
 	@Override
-	public void actionPerformed(ActionEvent e) {
+	public void actionPerformed(ActionEvent e)
+	{
 		String u = campoUsuario.getText();
 		String s = campoSenha.getText();
-		Autenticacao.auth(u, s);
+
+		if(c < 3)
+		{
+
+			if(Autenticacao.busca(u, s))
+			{
+				TelaPrincipal telaPrincipal = new TelaPrincipal(AdministraDados.funcionarioLista.get(1));
+        		telaPrincipal.abreTela();
+				dispose();
+
+			}
+			else
+			{
+				aviso.setText("Os dados informados estão incorretos.");
+				c++;
+			}
+		}
+		else
+		{
+			aviso.setText(c+" tentativas erradas. Aguarde"+(c - 2)*15 +" minutos.");
+		}
 
 	}
 }
