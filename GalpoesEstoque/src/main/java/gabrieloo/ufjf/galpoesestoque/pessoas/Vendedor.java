@@ -21,6 +21,8 @@ public class Vendedor extends Funcionario {
     public double getCOMISSAO_VENDEDOR() {
         return COMISSAO_VENDEDOR;
     }
+    
+    
 
     @Override
     public double calculaSalario() {

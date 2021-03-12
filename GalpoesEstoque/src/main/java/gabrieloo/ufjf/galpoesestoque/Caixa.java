@@ -8,6 +8,8 @@
 
 package gabrieloo.ufjf.galpoesestoque;
 
+import gabrieloo.ufjf.galpoesestoque.vendas.Venda;
+
 public class Caixa {
 
     private static double caixa = 0;
@@ -22,6 +24,17 @@ public class Caixa {
 
     public static double getSaldo() {
         return (caixa - calculaPagamentoSalarios());
+    }
+    
+    public static double getReceita()
+    {
+        double receita = 0;
+        
+        for (Venda venda : AdministraDados.vendaLista) {
+            receita += venda.getValorTotal();
+        }
+        
+        return receita;
     }
 
     public static double calculaPagamentoSalarios() {

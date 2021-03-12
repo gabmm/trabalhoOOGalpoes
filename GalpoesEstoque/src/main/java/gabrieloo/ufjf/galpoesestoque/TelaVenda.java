@@ -14,8 +14,13 @@ import gabrieloo.ufjf.galpoesestoque.produtos.GPU;
 import gabrieloo.ufjf.galpoesestoque.produtos.MemoriaRAM;
 import gabrieloo.ufjf.galpoesestoque.produtos.Motherboard;
 import gabrieloo.ufjf.galpoesestoque.produtos.Produto;
+import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
+import javax.swing.BorderFactory;
+import javax.swing.Box;
+import javax.swing.BoxLayout;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
@@ -130,7 +135,7 @@ public class TelaVenda extends JFrame {
         this.btnRemoveProduto.addActionListener((ActionEvent e) -> {
             try {
                 valorTotalVenda -= modelOrdem.get(ordem.getSelectedIndex()).getPreco();
-                valorTotal.setText("R$ " + valorTotalVenda);
+                valorTotal.setText("Valor Total: R$ " + valorTotalVenda);
                 modelOrdem.removeElementAt(ordem.getSelectedIndex());
                 ordem.setModel(modelOrdem);
             } catch (ArrayIndexOutOfBoundsException ex) {
@@ -173,20 +178,42 @@ public class TelaVenda extends JFrame {
 
     public void configuraCombos() {
         this.comboMostraCliente = new JComboBox(modelTodosClientes);
+        Dimension d = new Dimension(15, 50);
+        this.comboMostraCliente.setPreferredSize(d);
         this.comboMostraProduto = new JComboBox(modelTodosProdutos);
     }
 
     public void configuraPainel() {
         this.principalVenda = new JPanel();
-        this.principalVenda.add(this.comboMostraCliente);
-        this.principalVenda.add(this.comboMostraProduto);
-        this.principalVenda.add(new JScrollPane(this.ordem));
-        this.principalVenda.add(this.btnSelecionaProduto);
-        this.principalVenda.add(this.btnRemoveProduto);
-        this.principalVenda.add(this.valorTotal);
-        this.principalVenda.add(this.ehCartao);
-        this.principalVenda.add(this.btnRealizaVenda);
-        this.principalVenda.add(this.btnTelaPrincipal);
+        this.principalVenda.setBorder(BorderFactory.createTitledBorder("Venda"));
+        this.principalVenda.setLayout(new BorderLayout());
+        
+        this.topPanel = new JPanel();
+        this.topPanel.setLayout(new BorderLayout());
+        this.topPanel.add(btnTelaPrincipal, BorderLayout.EAST);
+        
+        this.leftPanel = new JPanel();
+        this.leftPanel.setLayout(new BoxLayout(leftPanel, BoxLayout.PAGE_AXIS));
+        this.leftPanel.add(Box.createRigidArea(new Dimension(0, 150)));
+        this.leftPanel.add(this.comboMostraCliente);
+        this.leftPanel.add(Box.createRigidArea(new Dimension(0, 150)));
+        this.leftPanel.add(this.comboMostraProduto);
+        this.leftPanel.add(Box.createRigidArea(new Dimension(0, 150)));
+        
+        this.bottomPanel = new JPanel();
+        this.bottomPanel.setLayout(new BoxLayout(this.bottomPanel, BoxLayout.X_AXIS));
+        this.bottomPanel.add(btnSelecionaProduto);
+        this.bottomPanel.add(btnRemoveProduto);
+        this.bottomPanel.add(ehCartao);
+        this.bottomPanel.add(btnRealizaVenda);
+        this.bottomPanel.add(valorTotal);
+        
+        
+                
+        this.principalVenda.add(topPanel, BorderLayout.NORTH);
+        this.principalVenda.add(leftPanel, BorderLayout.WEST);
+        this.principalVenda.add(new JScrollPane(this.ordem), BorderLayout.CENTER);
+        this.principalVenda.add(bottomPanel, BorderLayout.SOUTH);
     }
 
     public void abreTela() {

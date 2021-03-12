@@ -18,6 +18,7 @@ public abstract class Funcionario extends Usuario {
     private String login;
     private String senha;
     private double salarioBase;
+    private int quantidadeVendasRealizadas;
     public ArrayList<Venda> vendasRealizadas;
 
     public abstract double calculaSalario();
@@ -53,4 +54,17 @@ public abstract class Funcionario extends Usuario {
     public void addVenda(Venda Venda) {
         this.vendasRealizadas.add(Venda);
     }
+    
+    public int getQuantidadeVendasRealizadas(){
+        return this.vendasRealizadas.size();
+    }
+    
+    public double getValorVendasRealizadas(){
+        double valorTotal = 0;
+        for (Venda venda : vendasRealizadas) {
+            valorTotal += venda.getValorTotal();
+        }
+        return valorTotal;
+    }
+    
 }

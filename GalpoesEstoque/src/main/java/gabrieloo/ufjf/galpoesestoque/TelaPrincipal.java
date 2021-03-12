@@ -38,6 +38,7 @@ public class TelaPrincipal extends JFrame {
     private JButton btnTelaProduto;
     private JButton btnTelaPessoa;
     private JButton btnTelaVenda;
+    private JButton btnTelaCaixa;
 
     public TelaPrincipal(Funcionario funcionario) {
         this.usuarioAtual = funcionario;
@@ -80,14 +81,12 @@ public class TelaPrincipal extends JFrame {
             }
         });
 
-//        this.btnTelaVenda = new JButton("Vendas");
-//        btnTelaProduto.addActionListener(new ActionListener() {
-//            public void actionPerformed(ActionEvent e) {
-//                TelaVenda tela = new TelaVenda();
-//                tela.abreTela();
-//                dispose();
-//            }
-//        });
+        this.btnTelaCaixa = new JButton("Caixa");
+        btnTelaCaixa.addActionListener((ActionEvent e) -> {
+            TelaCaixa tela = new TelaCaixa(this.getUsuarioAtual());
+            tela.abreTela();
+            dispose();
+        });
 
         this.btnTelaVenda = new JButton("Vendas");
         btnTelaVenda.addActionListener((ActionEvent e) -> {
@@ -123,6 +122,7 @@ public class TelaPrincipal extends JFrame {
         this.leftPanel.add(btnTelaPessoa, BorderLayout.NORTH);
         this.centerPanel.add(btnTelaLogin, BorderLayout.SOUTH);
         this.rightPanel.add(btnTelaVenda, BorderLayout.NORTH);
+        this.leftPanel.add(btnTelaCaixa, BorderLayout.SOUTH);
 
         this.add(this.main);
         this.setSize(400, 200);

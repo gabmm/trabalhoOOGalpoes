@@ -4,8 +4,7 @@
   Gabriel Martins da Costa Medeiros;
   Vinícius Barbosa Varoto;
   Weyder Luiz Gomes Gante.
-  */
-
+ */
 package gabrieloo.ufjf.galpoesestoque;
 
 import gabrieloo.ufjf.galpoesestoque.pessoas.Cliente;
@@ -64,7 +63,6 @@ public class AdministraDados {
     private static int quantidadeGerentes = 0;
 
     // <editor-fold defaultstate="collapsed" desc="Metodos de Inicializacao de Listas de produtos">
-
     public static void inicializacaoListas() {
         listaCPU = new ArrayList<>();
         listaFonte = new ArrayList<>();
@@ -250,14 +248,18 @@ public class AdministraDados {
     }
 
     // </editor-fold>
+    
+    public static int getQuantidadeVendas() {
+        return vendaLista.size();
+    }
 
     public static void cadastraProduto() {
         String aux;
-        String[]aux1;
+        String[] aux1;
         aux1 = transformaString(categoria);
-    //pergunta categoria;instancia objeto na categoria;seta atributos do objeto;add novo objeto na lista.
-        aux = (String) JOptionPane.showInputDialog(null,"Escolha a categoria.",
-        "Escolha entre essas: ",JOptionPane.QUESTION_MESSAGE,null, aux1, aux1[0]);
+        //pergunta categoria;instancia objeto na categoria;seta atributos do objeto;add novo objeto na lista.
+        aux = (String) JOptionPane.showInputDialog(null, "Escolha a categoria.",
+                "Escolha entre essas: ", JOptionPane.QUESTION_MESSAGE, null, aux1, aux1[0]);
         if (aux.equals("CPU")) {
             CPU cadastro = new CPU();
             cadastro.setMarca(Integer.parseInt(JOptionPane.showInputDialog("Qual o número da marca:")));
@@ -266,8 +268,7 @@ public class AdministraDados {
             cadastro.setCoreThreads(Integer.parseInt(JOptionPane.showInputDialog("Quantidade Core Threads: ")));
             cadastro.setQuantidade(Integer.parseInt(JOptionPane.showInputDialog("Qual a quantidade:")));
             listaCPU.add(cadastro);
-        }
-        else if (aux.equals("Fonte")) {
+        } else if (aux.equals("Fonte")) {
             Fonte cadastro = new Fonte();
             cadastro.setMarca(Integer.parseInt(JOptionPane.showInputDialog("Qual o número da marca:")));
             cadastro.setPreco(Double.valueOf(JOptionPane.showInputDialog("Qual o preço:")));
@@ -275,8 +276,7 @@ public class AdministraDados {
             cadastro.setEficiencia(Integer.parseInt(JOptionPane.showInputDialog("Qual a eficiencia: ")));
             cadastro.setQuantidade(Integer.parseInt(JOptionPane.showInputDialog("Qual a quantidade:")));
             listaFonte.add(cadastro);
-        }
-        else if (aux.equals("GPU")) {
+        } else if (aux.equals("GPU")) {
             GPU cadastro = new GPU();
             cadastro.setMarca(Integer.parseInt(JOptionPane.showInputDialog("Qual o número da marca:")));
             cadastro.setPreco(Double.valueOf(JOptionPane.showInputDialog("Qual o preço:")));
@@ -284,8 +284,7 @@ public class AdministraDados {
             cadastro.setMemoria(Integer.parseInt(JOptionPane.showInputDialog("Quantidade Memória: ")));
             cadastro.setQuantidade(Integer.parseInt(JOptionPane.showInputDialog("Qual a quantidade:")));
             listaGPU.add(cadastro);
-        }
-        else if (aux.equals("Dispostivo de Armazenamento")) {
+        } else if (aux.equals("Dispostivo de Armazenamento")) {
             DispositivoArmazenamento cadastro = new DispositivoArmazenamento();
             cadastro.setMarca(Integer.parseInt(JOptionPane.showInputDialog("Qual o número da marca:")));
             cadastro.setPreco(Double.valueOf(JOptionPane.showInputDialog("Qual o preço:")));
@@ -293,8 +292,7 @@ public class AdministraDados {
             cadastro.setCapacidade(Integer.parseInt(JOptionPane.showInputDialog("Qual a capacidade: ")));
             cadastro.setQuantidade(Integer.parseInt(JOptionPane.showInputDialog("Qual a quantidade:")));
             listaDA.add(cadastro);
-        }
-        else if (aux.equals("Memória RAM")) {
+        } else if (aux.equals("Memória RAM")) {
             MemoriaRAM cadastro = new MemoriaRAM();
             cadastro.setMarca(Integer.parseInt(JOptionPane.showInputDialog("Qual o número da marca:")));
             cadastro.setPreco(Double.valueOf(JOptionPane.showInputDialog("Qual o preço:")));
@@ -302,8 +300,7 @@ public class AdministraDados {
             cadastro.setCapacidade(Integer.parseInt(JOptionPane.showInputDialog("Qual a capacidade: ")));
             cadastro.setQuantidade(Integer.parseInt(JOptionPane.showInputDialog("Qual a quantidade:")));
             listaRAM.add(cadastro);
-        }
-        else if (aux.equals("Placa-mãe")) {
+        } else if (aux.equals("Placa-mãe")) {
             Motherboard cadastro = new Motherboard();
             cadastro.setMarca(Integer.parseInt(JOptionPane.showInputDialog("Qual o número da marca:")));
             cadastro.setPreco(Double.valueOf(JOptionPane.showInputDialog("Qual o preço:")));
@@ -311,93 +308,78 @@ public class AdministraDados {
             cadastro.setChipset(Integer.parseInt(JOptionPane.showInputDialog("Qual a capacidade: ")));
             cadastro.setQuantidade(Integer.parseInt(JOptionPane.showInputDialog("Qual a quantidade:")));
             listaMB.add(cadastro);
-        }
-        else
+        } else {
             cadastraProduto();
+        }
     }
 
     public static void adicionaProdutos() {
-/*pergunta categoria, mostra lista de objetos da categoria, seleciona objeto,
+        /*pergunta categoria, mostra lista de objetos da categoria, seleciona objeto,
 le valor (não pode ser negativo), quantidade do objeto += valor,
 quantidade da classe do objeto += valor, quantidadeProdutos += valor*/
         String aux;
         aux = JOptionPane.showInputDialog("Qual produto deseja adicionar? ");
         if (aux.equals("CPU")) {
-        }
-        else if (aux.equals("Fonte")) {
-        }
-        else if (aux.equals("GPU")) {
-        }
-        else if (aux.equals("Dispostivo de Armazenamento")) {
-        }
-        else if (aux.equals("Memória RAM")) {
-        }
-        else if (aux.equals("Placa-mãe")) {
-        }
-        else
+        } else if (aux.equals("Fonte")) {
+        } else if (aux.equals("GPU")) {
+        } else if (aux.equals("Dispostivo de Armazenamento")) {
+        } else if (aux.equals("Memória RAM")) {
+        } else if (aux.equals("Placa-mãe")) {
+        } else {
             adicionaProdutos();
+        }
     }
 
-    public static void adicionaProdutos(Produto produto, int quantidade){
+    public static void adicionaProdutos(Produto produto, int quantidade) {
         //quantidade do objeto += valor
         //quantidade da classe do objeto += valor
         //quantidadeProdutos += valor
     }
 
     public static void editaProduto() {
-/*pergunta categoria, mostra lista de objetos da categoria, seleciona objeto,
+        /*pergunta categoria, mostra lista de objetos da categoria, seleciona objeto,
 quantidade do objeto += valor, quantidade da classe do objeto += valor,
 quantidadeProdutos += valor*/
         String aux;
         aux = JOptionPane.showInputDialog("Qual produto deseja editar quanidade? ");
         if (aux.equals("CPU")) {
-        }
-        else if (aux.equals("Fonte")) {
-        }
-        else if (aux.equals("GPU")) {
-        }
-        else if (aux.equals("Dispostivo de Armazenamento")) {
-        }
-        else if (aux.equals("Memória RAM")) {
-        }
-        else if (aux.equals("Placa-mãe")) {
-        }
-        else
+        } else if (aux.equals("Fonte")) {
+        } else if (aux.equals("GPU")) {
+        } else if (aux.equals("Dispostivo de Armazenamento")) {
+        } else if (aux.equals("Memória RAM")) {
+        } else if (aux.equals("Placa-mãe")) {
+        } else {
             editaProduto();
+        }
     }
 
     public static void removeProduto() {
-/*descadastro de produto, pergunta categoria, mostra lista de objetos da
+        /*descadastro de produto, pergunta categoria, mostra lista de objetos da
 categoria, seleciona objeto, seta atributos do objeto para atributos padrao
 (remover pode gerar execoes), quantidade da classe do objeto -= quantidade do
 objeto, quantidadeProdutos -= quantidade do objeto*/
         String aux;
         aux = JOptionPane.showInputDialog("Qual produto deseja remover? ");
         if (aux.equals("CPU")) {
-        }
-        else if (aux.equals("Fonte")) {
-        }
-        else if (aux.equals("GPU")) {
-        }
-        else if (aux.equals("Dispostivo de Armazenamento")) {
-        }
-        else if (aux.equals("Memória RAM")) {
-        }
-        else if (aux.equals("Placa-mãe")) {
-        }
-        else
+        } else if (aux.equals("Fonte")) {
+        } else if (aux.equals("GPU")) {
+        } else if (aux.equals("Dispostivo de Armazenamento")) {
+        } else if (aux.equals("Memória RAM")) {
+        } else if (aux.equals("Placa-mãe")) {
+        } else {
             removeProduto();
+        }
     }
 
     public static void cadastraUsuario() {
-/*pergunta categoria de usuario (apenas gerentes podem cadastrar funcionarios),
+        /*pergunta categoria de usuario (apenas gerentes podem cadastrar funcionarios),
 instancia novo usuario daquela categoria, pergunta e seta atributos daquele
 cliente, adiciona cliente a lista de clientes*/
 
     }
 
     public static void editaUsuario() {
-/*pergunta se cliente ou funcionariomostra lista ded objetos da categoria
+        /*pergunta se cliente ou funcionariomostra lista ded objetos da categoria
 selecionada, seleciona objeto, mostra atributos do objeto, seta os atributos
 desejados com novos valores*/
 
@@ -489,8 +471,7 @@ desejados com novos valores*/
         adicionaMotherboard(mb);
     }
 
-    public static void cadastraCliente()
-    {
+    public static void cadastraCliente() {
         Cliente cliente = new Cliente();
 
         //mostra atributos
@@ -499,8 +480,7 @@ desejados com novos valores*/
         adicionaCliente(cliente);
     }
 
-    public static void cadastraVendedor()
-    {
+    public static void cadastraVendedor() {
         Vendedor vendedor = new Vendedor();
 
         //mostra atributos
@@ -509,8 +489,7 @@ desejados com novos valores*/
         adicionaFuncionario(vendedor);
     }
 
-    public static void cadastraGerente()
-    {
+    public static void cadastraGerente() {
         Gerente gerente = new Gerente();
 
         //mostra atributos
@@ -519,11 +498,11 @@ desejados com novos valores*/
         adicionaFuncionario(gerente);
     }
 
-    public static String[] transformaString(ArrayList<String> oqMuda){
-       String[] mudanca = new String[oqMuda.size()];
-       for (int i = 0; i < oqMuda.size(); i++) {
-           mudanca[i] = oqMuda.get(i);
-       }
-       return mudanca;
-   }
+    public static String[] transformaString(ArrayList<String> oqMuda) {
+        String[] mudanca = new String[oqMuda.size()];
+        for (int i = 0; i < oqMuda.size(); i++) {
+            mudanca[i] = oqMuda.get(i);
+        }
+        return mudanca;
+    }
 }
