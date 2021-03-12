@@ -112,8 +112,11 @@ public class Main {
 //        telaLogin.setVisible(true);
 //        telaLogin.setExtendedState(MAXIMIZED_BOTH);
 
-        TelaProduto tela = new TelaProduto();
-        tela.incializaTelaProduto();
+        //TelaProduto tela = new TelaProduto();
+        //tela.incializaTelaProduto();
+        
+        TelaPrincipal telaPrincipal = new TelaPrincipal(AdministraDados.funcionarioLista.get(1));
+        telaPrincipal.abreTela();
     }
 
 }

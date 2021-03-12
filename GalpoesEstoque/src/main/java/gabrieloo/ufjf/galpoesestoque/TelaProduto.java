@@ -56,24 +56,6 @@ public class TelaProduto extends JFrame {
 
     private JLabel specLabel2;
     private JTextField specText2;
-
-//    private JTextField coreThreadCPU;
-//    private JTextField nomeCPU;
-//
-//    private JTextField memoriaGPU;
-//    private JTextField nomeGPU;
-//
-//    private JTextField tamanhoMB;
-//    private JTextField chipsetMB;
-//
-//    private JTextField eficienciaFonte;
-//    private JTextField powerFonte;
-//
-//    private JTextField capacidadeRam;
-//    private JTextField clockRam;
-//
-//    private JTextField tipoDA;
-//    private JTextField capacidadeDA;
     
     int ultimoIndex;
 
@@ -111,56 +93,6 @@ public class TelaProduto extends JFrame {
         return marcaProduto;
     }
 
-//    public JTextField getPowerFonte() {
-//        return powerFonte;
-//    }
-//
-//    public JTextField getCapacidadeRam() {
-//        return capacidadeRam;
-//    }
-//    public void iniciaTextFields() {
-//        precoProduto = new JTextField(10);
-//        quantidadeProduto = new JTextField(10);
-//        marcaProduto = new JTextField(10);
-//
-//        coreThreadCPU = new JTextField(10);
-//        nomeCPU = new JTextField(10);
-//
-//        memoriaGPU = new JTextField(10);
-//        nomeGPU = new JTextField(10);
-//        
-//        tamanhoMB = new JTextField(10);
-//        chipsetMB = new JTextField(10);
-//
-//        eficienciaFonte = new JTextField(10);
-//        powerFonte = new JTextField(10);
-//
-//        capacidadeRam = new JTextField(10);
-//        clockRam = new JTextField(10);
-//
-//        tipoDA = new JTextField(10);
-//        capacidadeDA = new JTextField(10);
-//    }
-//    public void retiraTextFields()
-//    {
-//        coreThreadCPU.setVisible(false);
-//        nomeCPU.setVisible(false);
-//
-//        memoriaGPU.setVisible(false);
-//        nomeGPU.setVisible(false);
-//        
-//        tamanhoMB.setVisible(false);
-//        chipsetMB.setVisible(false);
-//
-//        eficienciaFonte.setVisible(false);
-//        powerFonte.setVisible(false);
-//
-//        capacidadeRam.setVisible(false);
-//        clockRam.setVisible(false);
-//
-//        tipoDA.setVisible(false);
-//        capacidadeDA.setVisible(false);
-//    }
     public void atualizaListaProdutos() {
 
         this.modelCPU = new DefaultListModel<>();
@@ -280,18 +212,6 @@ public class TelaProduto extends JFrame {
         this.specText2 = new JTextField(10);
         this.painelDados.add(specLabel2);
         this.painelDados.add(specText2);
-
-//        JLabel potenciaLabel = new JLabel("Potencia: ");
-//        this.painelDados.add(potenciaLabel);
-//        this.painelDados.add(powerFonte);
-//        //this.powerFonte.setVisible(false);
-//        //potenciaLabel.setVisible(false);
-//
-//        JLabel capacidadeLabel = new JLabel("Capacidade: ");
-//        this.painelDados.add(capacidadeLabel);
-//        this.painelDados.add(capacidadeRam);
-//        //this.capacidadeRam.setVisible(false);
-//        //capacidadeLabel.setVisible(false);
     }
 
     public void trocaDados(int index) {
