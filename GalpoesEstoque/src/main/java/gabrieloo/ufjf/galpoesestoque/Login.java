@@ -25,7 +25,7 @@ public class Login extends JFrame implements ActionListener
 	private static JTextField campoUsuario;
 	private static JPasswordField campoSenha;
 	private static JLabel aviso;
-	private static int c = 0;
+	private static int c = 0, t = 0;
 
     public  Login()
     {
@@ -75,29 +75,32 @@ public class Login extends JFrame implements ActionListener
 	@Override
 	public void actionPerformed(ActionEvent e)
 	{
-		String u = campoUsuario.getText();
-		String s = campoSenha.getText();
+		if(Autenticacao.getTempo()){
+			String u = campoUsuario.getText();
+			String s = campoSenha.getText();
 
-		if(c < 3)
-		{
-
-			if(Autenticacao.busca(u, s))
+			if(c < 2)
 			{
-				TelaPrincipal telaPrincipal = new TelaPrincipal(AdministraDados.funcionarioLista.get(1));
-        		telaPrincipal.abreTela();
-				dispose();
+				int id = Autenticacao.busca(u, s);
+				if(id != -1)
+				{
+					TelaPrincipal telaPrincipal = new TelaPrincipal(AdministraDados.funcionarioLista.get(id));
+					telaPrincipal.abreTela();
+					dispose();
 
+				}
+				else
+				{
+					aviso.setText("Os dados informados estão incorretos.");
+					c++;
+				}
 			}
 			else
 			{
-				aviso.setText("Os dados informados estão incorretos.");
-				c++;
+				t+= c;
+				aviso.setText(t+" tentativas erradas. Aguarde 1 minuto.");
+				Autenticacao.setTempo();
 			}
 		}
-		else
-		{
-			aviso.setText(c+" tentativas erradas. Aguarde"+(c - 2)*15 +" minutos.");
-		}
-
 	}
 }

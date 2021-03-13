@@ -63,11 +63,12 @@ public class Main {
         AdministraDados.funcionarioLista.get(0).setNome("Jober Arauto");
         AdministraDados.funcionarioLista.get(0).setEmail("joarauto@galpoes.com");
         AdministraDados.funcionarioLista.get(0).setSalarioBase(4800);
+		Autenticacao.grava("joarauto", "galpao123");
 
         AdministraDados.cadastraCliente();
         AdministraDados.clienteLista.get(0).setNome("Julia Trista");
         AdministraDados.clienteLista.get(0).setEmail("jujuzinha2014@hotmail.com");
-        
+
         AdministraDados.cadastraCliente();
         AdministraDados.clienteLista.get(1).setNome("Enzo Valentino");
         AdministraDados.clienteLista.get(1).setEmail("valenteenzo69@gmail.com");
@@ -104,17 +105,17 @@ public class Main {
 //        System.out.println("Valor a pagar de salarios: R$" + Caixa.calculaPagamentoSalarios());
 //        System.out.println("Saldo: R$" + Caixa.getSaldo());
 //
-//        Login telaLogin = new Login();
-//
-//        telaLogin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//        telaLogin.setVisible(true);
-//        telaLogin.setExtendedState(MAXIMIZED_BOTH);
+        Login telaLogin = new Login();
+
+        telaLogin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        telaLogin.setVisible(true);
+        telaLogin.setExtendedState(MAXIMIZED_BOTH);
 
 //        TelaProduto tela = new TelaProduto();
 //        tela.incializaTelaProduto();
 
-        TelaPrincipal telaPrincipal = new TelaPrincipal(AdministraDados.funcionarioLista.get(1));
-        telaPrincipal.abreTela();
+//        TelaPrincipal telaPrincipal = new TelaPrincipal(AdministraDados.funcionarioLista.get(1));
+//        telaPrincipal.abreTela();
     }
 
 }

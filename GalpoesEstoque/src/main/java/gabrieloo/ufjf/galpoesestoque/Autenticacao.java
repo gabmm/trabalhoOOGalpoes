@@ -16,6 +16,11 @@ import java.io.IOException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import javax.xml.bind.DatatypeConverter;
+import java.lang.Integer;
+import java.lang.String;
+import java.lang.System;
+import java.lang.Long;
+
 public class Autenticacao
 {
 
@@ -35,22 +40,19 @@ public class Autenticacao
 		return senha;
 	}
 
-	public static boolean busca(String usuario, String senha)
+	public static Integer busca(String usuario, String senha)
 	{
 		try
 		{
-			BufferedReader leitura = new BufferedReader(new FileReader("login.txt"));
-			String line = null;
-			while((line = leitura.readLine()) != null)
+			BufferedReader leitura = new BufferedReader(new FileReader("login.csv"));
+			String linha = null;
+			while((linha = leitura.readLine()) != null)
 			{
-				String u = line.split(",")[0];
-			String p = line.split(",")[1];
-				senha = md5(senha);
-				if(u.equals(usuario))
+				if(usuario.equals(linha.split(",")[1]))
 				{
-					if(p.equals(senha))
+					if(md5(senha).equals(linha.split(",")[2]))
 					{
-						return true;
+						return Integer.parseInt(linha.split(",")[0]);
 					}
 				}
 			}
@@ -59,25 +61,74 @@ public class Autenticacao
 		{
 			e.printStackTrace();
 		}
-		return false;
+		return -1;
 	}
 
 	public static void grava(String usuario, String senha) {
+		out:
 		try
 		{
-			/*if(busca(usuario, senha))
+			BufferedReader leitura = new BufferedReader(new FileReader("login.csv"));
+			Integer id = new Integer(0);
+			String linha = null;
+			while((linha = leitura.readLine()) != null)
 			{
-				System.out.println("Usuario já cadastrado!");
+				if(usuario.equals(linha.split(",")[1]))
+				{
+					System.out.println("Usuario já cadastrado!");
+					break out;
+				}
+				else
+				{
+					id++;
+				}
 			}
-			else
-			{*/
-				BufferedWriter escrita = new BufferedWriter(new FileWriter(new File("login.txt")));
-				escrita.write(usuario +","+ senha);
-				escrita.close();
-			//}
-
+			BufferedWriter escrita = new BufferedWriter(new FileWriter("login.csv"));
+			escrita.write(Integer.valueOf(id)+","+usuario +","+ senha);
+			escrita.close();
 		}
 		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+
+	public static Boolean getTempo() {
+		try
+		{
+			File arquivo = new File("tempo.txt");
+			if(arquivo.isFile())
+			{
+				BufferedReader leitura = new BufferedReader(new FileReader(arquivo));
+				Long inicio = Long.parseLong(leitura.readLine());
+				if(System.currentTimeMillis() - inicio > 60000)
+				{
+					arquivo.delete();
+					return true;
+				}
+				return false;
+			}
+			return true;
+		}
+		catch(IOException e)
+		{
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	public static void setTempo() {
+		try
+		{
+			File arquivo = new File("tempo.txt");
+			arquivo.createNewFile();
+			BufferedWriter escrita = new BufferedWriter(new FileWriter(arquivo), 13);
+			escrita.write(String.valueOf(System.currentTimeMillis()));
+			escrita.close();
+
+		}
+
+		catch(IOException e)
 		{
 			e.printStackTrace();
 		}
