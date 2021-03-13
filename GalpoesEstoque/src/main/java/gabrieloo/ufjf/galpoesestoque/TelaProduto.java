@@ -5,6 +5,7 @@
  */
 package gabrieloo.ufjf.galpoesestoque;
 
+import gabrieloo.ufjf.galpoesestoque.pessoas.Funcionario;
 import gabrieloo.ufjf.galpoesestoque.produtos.CPU;
 import gabrieloo.ufjf.galpoesestoque.produtos.DispositivoArmazenamento;
 import gabrieloo.ufjf.galpoesestoque.produtos.Fonte;
@@ -13,10 +14,14 @@ import gabrieloo.ufjf.galpoesestoque.produtos.MemoriaRAM;
 import gabrieloo.ufjf.galpoesestoque.produtos.Motherboard;
 import gabrieloo.ufjf.galpoesestoque.produtos.Produto;
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.BorderFactory;
+import javax.swing.Box;
+import javax.swing.BoxLayout;
 import javax.swing.DefaultListModel;
+import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -36,7 +41,14 @@ public class TelaProduto extends JFrame {
 
     private JPanel principalTelaProduto;
     private JPanel painelDados;
+    private JPanel painelDadosTop;
+    private JPanel painelDadosBottom;
     private JPanel painelSelecao;
+    
+    private JButton btnTelaPrincipal;
+    private JButton btnEdita;
+    private JButton btnCadastra;
+    private JButton btnRemove;
 
     private DefaultListModel<Produto> modelCPU;
     private DefaultListModel<Produto> modelGPU;
@@ -44,6 +56,8 @@ public class TelaProduto extends JFrame {
     private DefaultListModel<Produto> modelRAM;
     private DefaultListModel<Produto> modelFonte;
     private DefaultListModel<Produto> modelDA;
+    
+    private Funcionario funcionario;
 
     private JList<Produto> listaProdutos;
 
@@ -59,7 +73,7 @@ public class TelaProduto extends JFrame {
     
     int ultimoIndex;
 
-    public TelaProduto() {
+    public TelaProduto(Funcionario funcionario) {
         this.ultimoIndex = 0;
 
     }
@@ -105,7 +119,7 @@ public class TelaProduto extends JFrame {
         this.listaProdutos = new JList<>();
         this.listaProdutos.setVisible(true);
         this.listaProdutos.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        this.listaProdutos.setSize(600, 600);
+        this.listaProdutos.setPreferredSize(new Dimension(400, 200));
 
         for (CPU cpu : AdministraDados.listaCPU) {
             this.modelCPU.addElement(cpu);
@@ -184,34 +198,81 @@ public class TelaProduto extends JFrame {
         this.painelSelecao.add(new JScrollPane(listaProdutos), BorderLayout.CENTER);
         this.painelSelecao.add(this.comboMostraCategoria, BorderLayout.NORTH);
     }
+    
+    public void configuraBotoes()
+    {
+        this.btnTelaPrincipal = new JButton("Voltar");
+        this.btnTelaPrincipal.addActionListener((ActionEvent e) -> {
+            TelaPrincipal tela = new TelaPrincipal(this.funcionario);
+            tela.abreTela();
+            dispose();
+        });
+        
+        this.btnTelaPrincipal = new JButton("Voltar");
+        this.btnTelaPrincipal.addActionListener((ActionEvent e) -> {
+            TelaPrincipal tela = new TelaPrincipal(this.funcionario);
+            tela.abreTela();
+            dispose();
+        });
+        
+        this.btnTelaPrincipal = new JButton("Voltar");
+        this.btnTelaPrincipal.addActionListener((ActionEvent e) -> {
+            TelaPrincipal tela = new TelaPrincipal(this.funcionario);
+            tela.abreTela();
+            dispose();
+        });
+        
+        this.btnTelaPrincipal = new JButton("Voltar");
+        this.btnTelaPrincipal.addActionListener((ActionEvent e) -> {
+            TelaPrincipal tela = new TelaPrincipal(this.funcionario);
+            tela.abreTela();
+            dispose();
+        });
+        
+    }
 
     public void configuraPainelDados() {
         this.painelDados = new JPanel();
         this.painelDados.setSize(400, 600);
         this.painelDados.setBorder(BorderFactory.createTitledBorder("Informacoes"));
+        this.painelDados.setLayout(new BorderLayout());
+        
+        this.painelDadosTop = new JPanel();
+        this.painelDadosTop.setLayout(new BoxLayout(this.painelDadosTop, BoxLayout.Y_AXIS));
+        
 
         this.precoProduto = new JTextField(10);
         this.quantidadeProduto = new JTextField(10);
         this.marcaProduto = new JTextField(10);
 
-        this.painelDados.add(new JLabel("Preco R$"));
-        this.painelDados.add(precoProduto);
-
-        this.painelDados.add(new JLabel("Marca: "));
-        this.painelDados.add(marcaProduto);
-
-        this.painelDados.add(new JLabel("Qtd. Estoque: "));
-        this.painelDados.add(quantidadeProduto);
+        this.painelDadosTop.add(new JLabel("Marca: "));
+        this.painelDadosTop.add(marcaProduto);
+        this.painelDadosTop.add(Box.createRigidArea(new Dimension(0, 15)));
 
         this.specLabel1 = new JLabel("");
         this.specText1 = new JTextField(10);
-        this.painelDados.add(specLabel1);
-        this.painelDados.add(specText1);
+        this.painelDadosTop.add(specLabel1);
+        this.painelDadosTop.add(specText1);
+        this.painelDadosTop.add(Box.createRigidArea(new Dimension(0, 15)));
 
         this.specLabel2 = new JLabel("");
         this.specText2 = new JTextField(10);
-        this.painelDados.add(specLabel2);
-        this.painelDados.add(specText2);
+        this.painelDadosTop.add(specLabel2);
+        this.painelDadosTop.add(specText2);
+        this.painelDadosTop.add(Box.createRigidArea(new Dimension(0, 15)));
+        
+        this.painelDadosTop.add(new JLabel("Preco R$"));
+        this.painelDadosTop.add(precoProduto);
+        this.painelDadosTop.add(Box.createRigidArea(new Dimension(0, 15)));
+        
+        this.painelDadosTop.add(new JLabel("Qtd. Estoque: "));
+        this.painelDadosTop.add(quantidadeProduto);
+        this.painelDadosTop.add(Box.createRigidArea(new Dimension(0, 300)));
+        
+        this.painelDadosBottom = new JPanel();
+        
+        this.painelDados.add(painelDadosBottom, BorderLayout.SOUTH);
+        this.painelDados.add(painelDadosTop, BorderLayout.CENTER);
     }
 
     public void trocaDados(int index) {
@@ -227,7 +288,7 @@ public class TelaProduto extends JFrame {
         this.principalTelaProduto.add(painelSelecao, BorderLayout.WEST);
     }
 
-    public void incializaTelaProduto() {
+    public void abreTela() {
 
         this.configuraPainelSelecao();
         this.configuraPainelDados();
@@ -236,6 +297,7 @@ public class TelaProduto extends JFrame {
         this.setSize(800, 600);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.add(this.principalTelaProduto);
+        this.setLocationRelativeTo(null);
         this.setVisible(true);
     }
 

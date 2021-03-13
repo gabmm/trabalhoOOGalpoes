@@ -64,12 +64,10 @@ public class TelaPrincipal extends JFrame {
         String msgSuperior = "Bem vindo, " + this.tipoUsuario + " " + this.nomeUsuario;
 
         this.btnTelaProduto = new JButton("Produtos");
-        btnTelaProduto.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                TelaProduto tela = new TelaProduto();
-                tela.incializaTelaProduto();
-                dispose();
-            }
+        btnTelaProduto.addActionListener((ActionEvent e) -> {
+            TelaProduto tela = new TelaProduto(this.getUsuarioAtual());
+            tela.abreTela();
+            dispose();
         });
 
         this.btnTelaPessoa = new JButton("Pessoas");
@@ -96,13 +94,12 @@ public class TelaPrincipal extends JFrame {
 
         });
 
-        this.btnTelaLogin = new JButton("Voltar");
-        btnTelaProduto.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-//                TelaLogin tela = new TelaLogin();
-//                tela.incializaTelaLogin();
-//                dispose();
-            }
+        this.btnTelaLogin = new JButton("Logout");
+        btnTelaLogin.addActionListener((ActionEvent e) -> {
+            TelaLogin tela = new TelaLogin();
+            tela.abreTela();
+            dispose();
+
         });
 
         this.topPanel.setLayout(new BorderLayout());
@@ -127,6 +124,7 @@ public class TelaPrincipal extends JFrame {
         this.add(this.main);
         this.setSize(400, 200);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setLocationRelativeTo(null);
         this.setVisible(true);
 
     }

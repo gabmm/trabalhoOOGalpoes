@@ -4,8 +4,7 @@
   Gabriel Martins da Costa Medeiros;
   Vinícius Barbosa Varoto;
   Weyder Luiz Gomes Gante.
-  */
-
+ */
 package gabrieloo.ufjf.galpoesestoque;
 
 import static java.awt.Frame.MAXIMIZED_BOTH;
@@ -52,7 +51,6 @@ public class Main {
         AdministraDados.listaRAM.get(1).setCapacidade(2);
         AdministraDados.listaRAM.get(1).setClock(1334);
 
-
         AdministraDados.cadastraMotherboard();
         AdministraDados.listaMB.get(0).setMarca(1);
         AdministraDados.listaMB.get(0).setPreco(770);
@@ -63,7 +61,7 @@ public class Main {
         AdministraDados.funcionarioLista.get(0).setNome("Jober Arauto");
         AdministraDados.funcionarioLista.get(0).setEmail("joarauto@galpoes.com");
         AdministraDados.funcionarioLista.get(0).setSalarioBase(4800);
-		Autenticacao.grava("joarauto", "galpao123");
+        Autenticacao.grava("joarauto", "galpao123");
 
         AdministraDados.cadastraCliente();
         AdministraDados.clienteLista.get(0).setNome("Julia Trista");
@@ -105,15 +103,11 @@ public class Main {
 //        System.out.println("Valor a pagar de salarios: R$" + Caixa.calculaPagamentoSalarios());
 //        System.out.println("Saldo: R$" + Caixa.getSaldo());
 //
-        Login telaLogin = new Login();
-
-        telaLogin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        telaLogin.setVisible(true);
-        telaLogin.setExtendedState(MAXIMIZED_BOTH);
+        TelaLogin tela = new TelaLogin();
+        tela.abreTela();
 
 //        TelaProduto tela = new TelaProduto();
 //        tela.incializaTelaProduto();
-
 //        TelaPrincipal telaPrincipal = new TelaPrincipal(AdministraDados.funcionarioLista.get(1));
 //        telaPrincipal.abreTela();
     }
