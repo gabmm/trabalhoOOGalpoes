@@ -20,6 +20,7 @@ import java.awt.event.ActionListener;
 import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -28,6 +29,7 @@ import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JSpinner;
 import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
 
@@ -38,13 +40,19 @@ import javax.swing.ListSelectionModel;
 public class TelaProduto extends JFrame {
 
     private JComboBox comboMostraCategoria;
+    //private JComboBox comboMostraMarcas;
 
+    //private DefaultComboBoxModel<String> comboMarcasModel;
     private JPanel principalTelaProduto;
     private JPanel painelDados;
     private JPanel painelDadosTop;
     private JPanel painelDadosBottom;
     private JPanel painelSelecao;
-    
+
+    private JPanel painelInfoTop;
+    private JPanel painelInfoBottom;
+    private JPanel painelInfoTopMain;
+
     private JButton btnTelaPrincipal;
     private JButton btnEdita;
     private JButton btnCadastra;
@@ -56,34 +64,48 @@ public class TelaProduto extends JFrame {
     private DefaultListModel<Produto> modelRAM;
     private DefaultListModel<Produto> modelFonte;
     private DefaultListModel<Produto> modelDA;
-    
+
     private Funcionario funcionario;
 
     private JList<Produto> listaProdutos;
 
-    private JTextField precoProduto;
-    private JTextField quantidadeProduto;
-    private JTextField marcaProduto;
-
+    //private JTextField precoProduto;
+    //private JTextField quantidadeProduto;
+    //private JTextField marcaProduto;
+    private JLabel marcaLabel;
+    private JLabel precoLabel;
     private JLabel specLabel1;
-    private JTextField specText1;
-
+    //private JTextField specText1;
     private JLabel specLabel2;
-    private JTextField specText2;
-    
+    //private JTextField specText2;
+
+    private JSpinner qtdProdutos;
+
     int ultimoIndex;
 
     public TelaProduto(Funcionario funcionario) {
+        this.funcionario = funcionario;
         this.ultimoIndex = 0;
 
     }
 
-    public JTextField getSpecText1() {
-        return specText1;
+//    public JTextField getSpecText1() {
+//        return specText1;
+//    }
+//
+//    public JTextField getSpecText2() {
+//        return specText2;
+//    }
+    public JLabel getSpecLabel1() {
+        return specLabel1;
     }
 
-    public JTextField getSpecText2() {
-        return specText2;
+    public JLabel getSpecLabel2() {
+        return specLabel2;
+    }
+
+    public JLabel getMarcaLabel() {
+        return marcaLabel;
     }
 
     public void setUltimoIndex(int ultimoIndex) {
@@ -95,18 +117,24 @@ public class TelaProduto extends JFrame {
 
     }
 
-    public JTextField getPrecoProduto() {
-        return precoProduto;
+    public JLabel getPrecoProduto() {
+        return precoLabel;
     }
 
-    public JTextField getQuantidadeProduto() {
-        return quantidadeProduto;
+//    public JTextField getQuantidadeProduto() {
+//        return quantidadeProduto;
+//    }
+    public JSpinner getQtdSpinner() {
+        return qtdProdutos;
     }
 
-    public JTextField getMarcaProduto() {
-        return marcaProduto;
-    }
-
+//    public JTextField getMarcaProduto() {
+//        return marcaProduto;
+//    }
+//    public JComboBox getComboMarca()
+//    {
+//        return comboMostraMarcas;
+//    }
     public void atualizaListaProdutos() {
 
         this.modelCPU = new DefaultListModel<>();
@@ -119,7 +147,7 @@ public class TelaProduto extends JFrame {
         this.listaProdutos = new JList<>();
         this.listaProdutos.setVisible(true);
         this.listaProdutos.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        this.listaProdutos.setPreferredSize(new Dimension(400, 200));
+        this.listaProdutos.setPreferredSize(new Dimension(300, 200));
 
         for (CPU cpu : AdministraDados.listaCPU) {
             this.modelCPU.addElement(cpu);
@@ -151,7 +179,7 @@ public class TelaProduto extends JFrame {
         String[] categoriaProduto = {"CPU", "GPU", "Memoria Ram", "Placa Mae", "Dispositivo de Armazenamento", "Fonte"};
 
         this.painelSelecao = new JPanel();
-        this.painelSelecao.setSize(400, 600);
+        this.painelSelecao.setSize(300, 300);
         this.painelSelecao.setBorder(BorderFactory.createTitledBorder("Selecao"));
         this.painelSelecao.setLayout(new BorderLayout());
 
@@ -163,33 +191,33 @@ public class TelaProduto extends JFrame {
             int opcao = comboMostraCategoria.getSelectedIndex();
             if (opcao == 0) {
                 this.listaProdutos.setModel(modelCPU);
-                this.specLabel1.setText("Core/Threads:");
-                this.specLabel2.setText("Nome:");
+//                this.specLabel1.setText("Core/Threads:");
+//                this.specLabel2.setText("Nome:");
 
             } else if (opcao == 1) {
                 listaProdutos.setModel(modelGPU);
-                this.specLabel1.setText("Memória:");
-                this.specLabel2.setText("Nome:");
-                
+//                this.specLabel1.setText("Memória:");
+//                this.specLabel2.setText("Nome:");
+
             } else if (opcao == 2) {
                 listaProdutos.setModel(modelRAM);
-                this.specLabel1.setText("Capacidade:");
-                this.specLabel2.setText("Clock:");
-                
+//                this.specLabel1.setText("Capacidade:");
+//                this.specLabel2.setText("Clock:");
+
             } else if (opcao == 3) {
                 listaProdutos.setModel(modelMB);
-                this.specLabel1.setText("Tamanho:");
-                this.specLabel2.setText("Chipset:");
-                
+//                this.specLabel1.setText("Tamanho:");
+//                this.specLabel2.setText("Chipset:");
+
             } else if (opcao == 4) {
                 listaProdutos.setModel(modelDA);
-                this.specLabel1.setText("Tipo:");
-                this.specLabel2.setText("Capacidade:");
-                
+//                this.specLabel1.setText("Tipo:");
+//                this.specLabel2.setText("Capacidade:");
+
             } else if (opcao == 5) {
                 listaProdutos.setModel(modelFonte);
-                this.specLabel1.setText("Potencia:");
-                this.specLabel2.setText("Eficiencia:");
+//                this.specLabel1.setText("Potencia:");
+//                this.specLabel2.setText("Eficiencia:");
             }
         });
 
@@ -198,85 +226,109 @@ public class TelaProduto extends JFrame {
         this.painelSelecao.add(new JScrollPane(listaProdutos), BorderLayout.CENTER);
         this.painelSelecao.add(this.comboMostraCategoria, BorderLayout.NORTH);
     }
-    
-    public void configuraBotoes()
-    {
+
+    public void configuraBotoes() {
+
         this.btnTelaPrincipal = new JButton("Voltar");
         this.btnTelaPrincipal.addActionListener((ActionEvent e) -> {
             TelaPrincipal tela = new TelaPrincipal(this.funcionario);
             tela.abreTela();
             dispose();
         });
-        
-        this.btnTelaPrincipal = new JButton("Voltar");
-        this.btnTelaPrincipal.addActionListener((ActionEvent e) -> {
-            TelaPrincipal tela = new TelaPrincipal(this.funcionario);
-            tela.abreTela();
-            dispose();
+
+        this.btnCadastra = new JButton("Cadastra Novo");
+        this.btnCadastra.addActionListener((ActionEvent e) -> {
+
         });
-        
-        this.btnTelaPrincipal = new JButton("Voltar");
-        this.btnTelaPrincipal.addActionListener((ActionEvent e) -> {
-            TelaPrincipal tela = new TelaPrincipal(this.funcionario);
-            tela.abreTela();
-            dispose();
+
+        this.btnEdita = new JButton("Edita Qtd.");
+        this.btnEdita.addActionListener((ActionEvent e) -> {
+
         });
-        
-        this.btnTelaPrincipal = new JButton("Voltar");
-        this.btnTelaPrincipal.addActionListener((ActionEvent e) -> {
-            TelaPrincipal tela = new TelaPrincipal(this.funcionario);
-            tela.abreTela();
-            dispose();
+
+        this.btnRemove = new JButton("Remove");
+        this.btnRemove.addActionListener((ActionEvent e) -> {
+
         });
+
+    }
+
+//    public void iniciaComboMarcas()
+//    {
+//        this.comboMarcasModel = new DefaultComboBoxModel<>();
+//        
+//        for (String string : AdministraDados.marcaLista) {
+//            this.comboMarcasModel.addElement(string);
+//        }
+//        
+//        this.comboMostraMarcas = new JComboBox(comboMarcasModel);
+//    }
+    public void configuraPainelInfo() {
+        this.painelInfoTop = new JPanel();
+        this.painelInfoTop.setLayout(new BoxLayout(this.painelInfoTop, BoxLayout.Y_AXIS));
+
+        this.marcaLabel = new JLabel("");
+        this.painelInfoTop.add(marcaLabel);
+        this.painelInfoTop.add(Box.createRigidArea(new Dimension(0, 15)));
+
+        this.specLabel2 = new JLabel("");
+
+        this.painelInfoTop.add(specLabel2);
+        this.painelInfoTop.add(Box.createRigidArea(new Dimension(0, 15)));
+
+        this.specLabel1 = new JLabel("");
+        this.painelInfoTop.add(specLabel1);
+        this.painelInfoTop.add(Box.createRigidArea(new Dimension(0, 15)));
+
+        this.precoLabel = new JLabel("");
+        this.painelInfoTop.add(precoLabel);
+        this.painelInfoTop.add(Box.createRigidArea(new Dimension(0, 15)));
+
+        this.painelInfoBottom = new JPanel();
+        this.painelInfoBottom.setLayout(new BoxLayout(this.painelInfoBottom, BoxLayout.X_AXIS));
         
+        this.painelInfoTopMain = new JPanel();
+        this.painelInfoTopMain.setLayout(new BorderLayout());
+        this.painelInfoTopMain.add(this.painelInfoTop, BorderLayout.WEST);
+
+        this.painelInfoBottom.add(new JLabel("Qtd. Estoque: "));
+        this.qtdProdutos = new JSpinner();
+        this.painelInfoBottom.add(qtdProdutos);
+        //this.painelInfoBottom.add(Box.createRigidArea(new Dimension(0, 300)));
     }
 
     public void configuraPainelDados() {
+
         this.painelDados = new JPanel();
         this.painelDados.setSize(400, 600);
         this.painelDados.setBorder(BorderFactory.createTitledBorder("Informacoes"));
         this.painelDados.setLayout(new BorderLayout());
-        
+
         this.painelDadosTop = new JPanel();
         this.painelDadosTop.setLayout(new BoxLayout(this.painelDadosTop, BoxLayout.Y_AXIS));
         
-
-        this.precoProduto = new JTextField(10);
-        this.quantidadeProduto = new JTextField(10);
-        this.marcaProduto = new JTextField(10);
-
-        this.painelDadosTop.add(new JLabel("Marca: "));
-        this.painelDadosTop.add(marcaProduto);
-        this.painelDadosTop.add(Box.createRigidArea(new Dimension(0, 15)));
-
-        this.specLabel1 = new JLabel("");
-        this.specText1 = new JTextField(10);
-        this.painelDadosTop.add(specLabel1);
-        this.painelDadosTop.add(specText1);
-        this.painelDadosTop.add(Box.createRigidArea(new Dimension(0, 15)));
-
-        this.specLabel2 = new JLabel("");
-        this.specText2 = new JTextField(10);
-        this.painelDadosTop.add(specLabel2);
-        this.painelDadosTop.add(specText2);
-        this.painelDadosTop.add(Box.createRigidArea(new Dimension(0, 15)));
-        
-        this.painelDadosTop.add(new JLabel("Preco R$"));
-        this.painelDadosTop.add(precoProduto);
-        this.painelDadosTop.add(Box.createRigidArea(new Dimension(0, 15)));
-        
-        this.painelDadosTop.add(new JLabel("Qtd. Estoque: "));
-        this.painelDadosTop.add(quantidadeProduto);
+        this.configuraPainelInfo();
+        this.painelDadosTop.add(painelInfoTopMain);
+        this.painelDadosTop.add(painelInfoBottom);
         this.painelDadosTop.add(Box.createRigidArea(new Dimension(0, 300)));
-        
+
         this.painelDadosBottom = new JPanel();
-        
+        this.painelDadosBottom.setLayout(new BoxLayout(this.painelDadosBottom, BoxLayout.X_AXIS));
+
+        this.configuraBotoes();
+
+        this.painelDadosBottom.add(Box.createRigidArea(new Dimension(20, 0)));
+        this.painelDadosBottom.add(btnCadastra);
+        this.painelDadosBottom.add(Box.createRigidArea(new Dimension(20, 0)));
+        this.painelDadosBottom.add(btnEdita);
+        this.painelDadosBottom.add(Box.createRigidArea(new Dimension(20, 0)));
+        this.painelDadosBottom.add(btnRemove);
+        this.painelDadosBottom.add(Box.createRigidArea(new Dimension(20, 0)));
+        this.painelDadosBottom.add(btnTelaPrincipal);
+        this.painelDadosBottom.add(Box.createRigidArea(new Dimension(20, 0)));
+
         this.painelDados.add(painelDadosBottom, BorderLayout.SOUTH);
         this.painelDados.add(painelDadosTop, BorderLayout.CENTER);
-    }
-
-    public void trocaDados(int index) {
-
     }
 
     public void configuraPainelPrincipal() {
@@ -289,12 +341,11 @@ public class TelaProduto extends JFrame {
     }
 
     public void abreTela() {
-
         this.configuraPainelSelecao();
         this.configuraPainelDados();
         this.configuraPainelPrincipal();
 
-        this.setSize(800, 600);
+        this.setSize(800, 400);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.add(this.principalTelaProduto);
         this.setLocationRelativeTo(null);

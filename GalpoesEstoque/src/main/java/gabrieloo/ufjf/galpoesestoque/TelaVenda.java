@@ -128,7 +128,7 @@ public class TelaVenda extends JFrame {
             modelOrdem.addElement(modelTodosProdutos.getElementAt(comboMostraProduto.getSelectedIndex()));
             ordem.setModel(modelOrdem);
             valorTotalVenda += modelTodosProdutos.getElementAt(comboMostraProduto.getSelectedIndex()).getPreco();
-            valorTotal.setText("R$ " + valorTotalVenda);
+            valorTotal.setText("Valor Total: R$ "  + valorTotalVenda);
         });
 
         this.btnRemoveProduto = new JButton("Remover");
@@ -194,21 +194,26 @@ public class TelaVenda extends JFrame {
         
         this.leftPanel = new JPanel();
         this.leftPanel.setLayout(new BoxLayout(leftPanel, BoxLayout.PAGE_AXIS));
-        this.leftPanel.add(Box.createRigidArea(new Dimension(0, 150)));
+        //this.leftPanel.add(Box.createRigidArea(new Dimension(0, 150)));
         this.leftPanel.add(this.comboMostraCliente);
-        this.leftPanel.add(Box.createRigidArea(new Dimension(0, 150)));
+        this.leftPanel.add(Box.createRigidArea(new Dimension(0, 50)));
         this.leftPanel.add(this.comboMostraProduto);
-        this.leftPanel.add(Box.createRigidArea(new Dimension(0, 150)));
+        this.leftPanel.add(Box.createRigidArea(new Dimension(0, 600)));
         
         this.bottomPanel = new JPanel();
         this.bottomPanel.setLayout(new BoxLayout(this.bottomPanel, BoxLayout.X_AXIS));
+        this.bottomPanel.add(Box.createRigidArea(new Dimension(20, 0)));
         this.bottomPanel.add(btnSelecionaProduto);
+        this.bottomPanel.add(Box.createRigidArea(new Dimension(20, 0)));
         this.bottomPanel.add(btnRemoveProduto);
+        this.bottomPanel.add(Box.createRigidArea(new Dimension(20, 0)));
         this.bottomPanel.add(ehCartao);
+        this.bottomPanel.add(Box.createRigidArea(new Dimension(80, 0)));
         this.bottomPanel.add(btnRealizaVenda);
+        this.bottomPanel.add(Box.createRigidArea(new Dimension(40, 0)));
+        this.valorTotal.setText("Valor Total: R$ 0,00");
         this.bottomPanel.add(valorTotal);
-        
-        
+        this.bottomPanel.add(Box.createRigidArea(new Dimension(20, 0)));
                 
         this.principalVenda.add(topPanel, BorderLayout.NORTH);
         this.principalVenda.add(leftPanel, BorderLayout.WEST);

@@ -103,13 +103,13 @@ public class Main {
 //        System.out.println("Valor a pagar de salarios: R$" + Caixa.calculaPagamentoSalarios());
 //        System.out.println("Saldo: R$" + Caixa.getSaldo());
 //
-        TelaLogin tela = new TelaLogin();
-        tela.abreTela();
+//        TelaLogin tela = new TelaLogin();
+//        tela.abreTela();
 
 //        TelaProduto tela = new TelaProduto();
 //        tela.incializaTelaProduto();
-//        TelaPrincipal telaPrincipal = new TelaPrincipal(AdministraDados.funcionarioLista.get(1));
-//        telaPrincipal.abreTela();
+        TelaPrincipal telaPrincipal = new TelaPrincipal(AdministraDados.funcionarioLista.get(1));
+        telaPrincipal.abreTela();
     }
 
 }

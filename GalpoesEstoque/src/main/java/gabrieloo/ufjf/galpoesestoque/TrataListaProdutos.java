@@ -41,51 +41,51 @@ public class TrataListaProdutos implements ListSelectionListener {
             
             if (comboBox.getSelectedIndex() == 0) {
                 CPU elementAt0 = (CPU) tela.getListaProduto().getModel().getElementAt(primeiroIndex);
-                tela.getMarcaProduto().setText(elementAt0.getMarca());
-                tela.getPrecoProduto().setText("" + elementAt0.getPreco());
-                tela.getQuantidadeProduto().setText("" + elementAt0.getQuantidade());
-                tela.getSpecText1().setText(elementAt0.getCoreThreads());
-                tela.getSpecText2().setText(elementAt0.getNome());
+                tela.getMarcaLabel().setText("Marca: " + elementAt0.getMarca());
+                tela.getPrecoProduto().setText("Preço: " + elementAt0.getPreco());
+                tela.getQtdSpinner().setValue(elementAt0.getQuantidade());
+                tela.getSpecLabel1().setText("Core/Threads: " + elementAt0.getCoreThreads());
+                tela.getSpecLabel2().setText(elementAt0.getNome());
                 
             } else if (comboBox.getSelectedIndex() == 1) {
                 GPU elementAt1 = (GPU) tela.getListaProduto().getModel().getElementAt(primeiroIndex);
-                tela.getMarcaProduto().setText(elementAt1.getMarca());
-                tela.getPrecoProduto().setText("" + elementAt1.getPreco());
-                tela.getQuantidadeProduto().setText("" + elementAt1.getQuantidade());
-                tela.getSpecText1().setText(elementAt1.getMemoria());
-                tela.getSpecText2().setText(elementAt1.getNome());
+                tela.getMarcaLabel().setText("Marca: " + elementAt1.getMarca());
+                tela.getPrecoProduto().setText("Preço: " + elementAt1.getPreco());
+                tela.getQtdSpinner().setValue(elementAt1.getQuantidade());
+                tela.getSpecLabel1().setText("Memória: " + elementAt1.getMemoria());
+                tela.getSpecLabel2().setText(elementAt1.getNome());
 
             } else if (comboBox.getSelectedIndex() == 2) {
                 MemoriaRAM elementAt2 = (MemoriaRAM) tela.getListaProduto().getModel().getElementAt(primeiroIndex);
-                tela.getMarcaProduto().setText(elementAt2.getMarca());
-                tela.getPrecoProduto().setText("" + elementAt2.getPreco());
-                tela.getQuantidadeProduto().setText("" + elementAt2.getQuantidade());
-                tela.getSpecText1().setText(elementAt2.getCapacidade());
-                tela.getSpecText2().setText("" + elementAt2.getClock());
+                tela.getMarcaLabel().setText("Marca: " + elementAt2.getMarca());
+                tela.getPrecoProduto().setText("Preço: " + elementAt2.getPreco());
+                tela.getQtdSpinner().setValue(elementAt2.getQuantidade());
+                tela.getSpecLabel1().setText("Capacidade: " + elementAt2.getCapacidade());
+                tela.getSpecLabel2().setText("Clock: " + elementAt2.getClock());
 
             } else if (comboBox.getSelectedIndex() == 3) {
                 Motherboard elementAt3 = (Motherboard) tela.getListaProduto().getModel().getElementAt(primeiroIndex);
-                tela.getMarcaProduto().setText(elementAt3.getMarca());
-                tela.getPrecoProduto().setText("" + elementAt3.getPreco());
-                tela.getQuantidadeProduto().setText("" + elementAt3.getQuantidade());
-                tela.getSpecText1().setText(elementAt3.getTamanho());
-                tela.getSpecText2().setText(elementAt3.getChipset());
+                tela.getMarcaLabel().setText("Marca: " + elementAt3.getMarca());
+                tela.getPrecoProduto().setText("Preço: " + elementAt3.getPreco());
+                tela.getQtdSpinner().setValue(elementAt3.getQuantidade());
+                tela.getSpecLabel1().setText("Tamanho: " + elementAt3.getTamanho());
+                tela.getSpecLabel2().setText("Chipset: " + elementAt3.getChipset());
 
             } else if (comboBox.getSelectedIndex() == 4) {
                 DispositivoArmazenamento elementAt4 = (DispositivoArmazenamento) tela.getListaProduto().getModel().getElementAt(primeiroIndex);
-                tela.getMarcaProduto().setText(elementAt4.getMarca());
-                tela.getPrecoProduto().setText("" + elementAt4.getPreco());
-                tela.getQuantidadeProduto().setText("" + elementAt4.getQuantidade());
-                tela.getSpecText1().setText(elementAt4.getTipo());
-                tela.getSpecText2().setText(elementAt4.getCapacidade());
+                tela.getMarcaLabel().setText("Marca: " + elementAt4.getMarca());
+                tela.getPrecoProduto().setText("Preço: " + elementAt4.getPreco());
+                tela.getQtdSpinner().setValue(elementAt4.getQuantidade());
+                tela.getSpecLabel2().setText(elementAt4.getTipo());
+                tela.getSpecLabel1().setText("Capacidade: " + elementAt4.getCapacidade());
 
             } else if (comboBox.getSelectedIndex() == 5) {
                 Fonte elementAt5 = (Fonte) tela.getListaProduto().getModel().getElementAt(primeiroIndex);
-                tela.getMarcaProduto().setText(elementAt5.getMarca());
-                tela.getPrecoProduto().setText("" + elementAt5.getPreco());
-                tela.getQuantidadeProduto().setText("" + elementAt5.getQuantidade());
-                tela.getSpecText1().setText("" + elementAt5.getPower());
-                tela.getSpecText2().setText(elementAt5.getEficiencia());
+                tela.getMarcaLabel().setText("Marca: " + elementAt5.getMarca());
+                tela.getPrecoProduto().setText("Preço: " + elementAt5.getPreco());
+                tela.getQtdSpinner().setValue(elementAt5.getQuantidade());
+                tela.getSpecLabel2().setText("Power: " + elementAt5.getPower());
+                tela.getSpecLabel1().setText("Eficiência: " + elementAt5.getEficiencia());
 
             }
             

@@ -7,9 +7,12 @@ package gabrieloo.ufjf.galpoesestoque;
 
 import gabrieloo.ufjf.galpoesestoque.pessoas.Funcionario;
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.Action;
+import javax.swing.Box;
+import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -50,27 +53,16 @@ public class TelaPrincipal extends JFrame {
         return usuarioAtual;
     }
 
-    public void abreTela() {
-        this.main = new JPanel();
-
-        this.rightPanel = new JPanel();
-        this.leftPanel = new JPanel();
-        this.topPanel = new JPanel();
-        this.bottomPanel = new JPanel();
-        this.centerPanel = new JPanel();
-
-        this.main.setLayout(new BorderLayout());
-
-        String msgSuperior = "Bem vindo, " + this.tipoUsuario + " " + this.nomeUsuario;
-
-        this.btnTelaProduto = new JButton("Produtos");
+    public void configuraBotoes() {
+        this.btnTelaProduto = new JButton("        Produtos        ");
+        this.btnTelaProduto.setPreferredSize(new Dimension(100, 60));
         btnTelaProduto.addActionListener((ActionEvent e) -> {
             TelaProduto tela = new TelaProduto(this.getUsuarioAtual());
             tela.abreTela();
             dispose();
         });
 
-        this.btnTelaPessoa = new JButton("Pessoas");
+        this.btnTelaPessoa = new JButton("        Pessoas         ");
         btnTelaProduto.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
 //                TelaPessoa tela = new TelaPessoa();
@@ -79,14 +71,14 @@ public class TelaPrincipal extends JFrame {
             }
         });
 
-        this.btnTelaCaixa = new JButton("Caixa");
+        this.btnTelaCaixa = new JButton("          Caixa            ");
         btnTelaCaixa.addActionListener((ActionEvent e) -> {
             TelaCaixa tela = new TelaCaixa(this.getUsuarioAtual());
             tela.abreTela();
             dispose();
         });
 
-        this.btnTelaVenda = new JButton("Vendas");
+        this.btnTelaVenda = new JButton("          Vendas          ");
         btnTelaVenda.addActionListener((ActionEvent e) -> {
             TelaVenda tela = new TelaVenda(this.getUsuarioAtual());
             tela.abreTela();
@@ -101,30 +93,67 @@ public class TelaPrincipal extends JFrame {
             dispose();
 
         });
+    }
+    
+    public void configuraPainelSuperior(){
+        this.topPanel = new JPanel();
+        this.topPanel.setLayout(new BoxLayout(this.topPanel, BoxLayout.X_AXIS));
+        
+        String msgSuperior = "Bem vindo, " + this.tipoUsuario + " " + this.nomeUsuario;
+        this.topPanel.add(new JLabel(msgSuperior));
+        this.topPanel.add(Box.createRigidArea(new Dimension(60, 0)));
+        this.topPanel.add(btnTelaLogin);
+        this.topPanel.add(Box.createRigidArea(new Dimension(30, 0)));
+        
+    }
+    
+    public void configuraPainelCentral(){
+        this.centerPanel = new JPanel();
+        this.centerPanel.setLayout(new BoxLayout(this.centerPanel, BoxLayout.X_AXIS));
+        
+        this.centerPanel.add(Box.createRigidArea(new Dimension(30, 0)));
+        this.centerPanel.add(btnTelaPessoa);
+        this.centerPanel.add(Box.createRigidArea(new Dimension(30, 0)));
+        this.centerPanel.add(btnTelaProduto);
+        this.centerPanel.add(Box.createRigidArea(new Dimension(30, 0)));
+    }
+    
+    public void configuraPainelInferior(){
+        this.bottomPanel = new JPanel();
+        this.bottomPanel.setLayout(new BoxLayout(this.bottomPanel, BoxLayout.X_AXIS));
+        
+        this.bottomPanel.add(Box.createRigidArea(new Dimension(30, 0)));
+        this.bottomPanel.add(btnTelaCaixa);
+        this.bottomPanel.add(Box.createRigidArea(new Dimension(30, 0)));
+        this.bottomPanel.add(btnTelaVenda);
+        this.bottomPanel.add(Box.createRigidArea(new Dimension(30, 0)));
+    }
+    
+    public void configuraPainelPrincipal()
+    {
+        this.main = new JPanel();
+        this.main.setLayout(new BoxLayout(this.main, BoxLayout.Y_AXIS));
+        
+        this.main.add(topPanel);
+        this.main.add(Box.createRigidArea(new Dimension(0, 30)));
+        this.main.add(centerPanel);
+        this.main.add(Box.createRigidArea(new Dimension(0, 30)));
+        this.main.add(bottomPanel);
+        this.main.add(Box.createRigidArea(new Dimension(0, 30)));
+    }
 
-        this.topPanel.setLayout(new BorderLayout());
-        this.topPanel.add(new JLabel(msgSuperior), BorderLayout.WEST);
-
-        this.rightPanel.setLayout(new BorderLayout());
-        this.leftPanel.setLayout(new BorderLayout());
-        this.centerPanel.setLayout(new BorderLayout());
-
-        this.main.add(rightPanel, BorderLayout.EAST);
-        this.main.add(leftPanel, BorderLayout.WEST);
-        this.main.add(topPanel, BorderLayout.NORTH);
-        this.main.add(bottomPanel, BorderLayout.SOUTH);
-        this.main.add(centerPanel, BorderLayout.CENTER);
-
-        this.centerPanel.add(btnTelaProduto, BorderLayout.NORTH);
-        this.leftPanel.add(btnTelaPessoa, BorderLayout.NORTH);
-        this.centerPanel.add(btnTelaLogin, BorderLayout.SOUTH);
-        this.rightPanel.add(btnTelaVenda, BorderLayout.NORTH);
-        this.leftPanel.add(btnTelaCaixa, BorderLayout.SOUTH);
-
+    public void abreTela() {
+        configuraBotoes();
+        configuraPainelSuperior();
+        configuraPainelCentral();
+        configuraPainelInferior();
+        configuraPainelPrincipal();
+        
         this.add(this.main);
-        this.setSize(400, 200);
+        this.setSize(550, 200);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
+        //this.pack();
         this.setVisible(true);
 
     }
