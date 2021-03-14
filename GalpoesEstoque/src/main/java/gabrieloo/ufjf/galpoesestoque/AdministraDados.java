@@ -248,7 +248,7 @@ public class AdministraDados {
     }
 
     // </editor-fold>
-    
+
     public static int getQuantidadeVendas() {
         return vendaLista.size();
     }

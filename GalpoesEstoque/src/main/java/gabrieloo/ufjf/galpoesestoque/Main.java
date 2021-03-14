@@ -58,7 +58,6 @@ public class Main {
         AdministraDados.funcionarioLista.get(0).setNome("Jober Arauto");
         AdministraDados.funcionarioLista.get(0).setEmail("joarauto@galpoes.com");
         AdministraDados.funcionarioLista.get(0).setSalarioBase(4800);
-        Autenticacao.grava("joarauto", "galpao123");
 
         AdministraDados.cadastraCliente();
         AdministraDados.clienteLista.get(0).setNome("Julia Trista");
@@ -72,7 +71,8 @@ public class Main {
         AdministraDados.funcionarioLista.get(1).setNome("Ana Gabriela de Passos Lima");
         AdministraDados.funcionarioLista.get(1).setEmail("anagabi@galpoes.com");
         AdministraDados.funcionarioLista.get(1).setSalarioBase(2200);
-
+		AdministraDados.funcionarioLista.get(1).setLogin("anagabi");
+		AdministraDados.funcionarioLista.get(1).setSenha(Autenticacao.md5("senha"));
     }
 
     public static void main(String[] args) {

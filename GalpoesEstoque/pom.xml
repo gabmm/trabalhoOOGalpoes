@@ -9,6 +9,11 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+        <compilerargs>
+            <compilerargs>
+                <arg>java --add-modules</arg>
+                <arg>java.xml.bind</arg>
+            </compilerargs>
     </properties>
     <build>
         <plugins>
@@ -24,20 +29,9 @@
                         <descriptorRef>jar-with-dependencies</descriptorRef>
                     </descriptorRefs>
                     <compilerargs>
-                        <arg>--add-modules</arg>
-                        <arg>java.xml.bind</arg>
-                    </compilerargs>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>make-assembly</id> <!-- this is used for inheritance merges -->
-                        <phase>package</phase> <!-- bind to the packaging phase -->
-                        <goals>
-                            <goal>single</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin> 
-        </plugins> 
+                        <compilerargs>
+                            
+
+        </plugins>
     </build>
 </project>

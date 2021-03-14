@@ -36,59 +36,6 @@ public class Autenticacao
 		return senha;
 	}
 
-	public static Integer busca(String usuario, String senha)
-	{
-		try
-		{
-			BufferedReader leitura = new BufferedReader(new FileReader("login.csv"));
-			String linha = null;
-			while((linha = leitura.readLine()) != null)
-			{
-				if(usuario.equals(linha.split(",")[1]))
-				{
-					if(md5(senha).equals(linha.split(",")[2]))
-					{
-						return Integer.parseInt(linha.split(",")[0]);
-					}
-				}
-			}
-		}
-		catch(IOException e)
-		{
-			e.printStackTrace();
-		}
-		return -1;
-	}
-
-	public static void grava(String usuario, String senha) {
-		out:
-		try
-		{
-			BufferedReader leitura = new BufferedReader(new FileReader("login.csv"));
-			Integer id = new Integer(0);
-			String linha = null;
-			while((linha = leitura.readLine()) != null)
-			{
-				if(usuario.equals(linha.split(",")[1]))
-				{
-					System.out.println("Usuario já cadastrado!");
-					break out;
-				}
-				else
-				{
-					id++;
-				}
-			}
-			BufferedWriter escrita = new BufferedWriter(new FileWriter("login.csv"));
-			escrita.write(Integer.valueOf(id)+","+usuario +","+ senha);
-			escrita.close();
-		}
-		catch (Exception e)
-		{
-			e.printStackTrace();
-		}
-	}
-
 	public static Boolean getTempo() {
 		try
 		{

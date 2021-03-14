@@ -73,23 +73,28 @@ public class TelaLogin extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (Autenticacao.getTempo()) {
-            String u = campoUsuario.getText();
-            String s = campoSenha.getText();
 
             if (c < 2) {
-                int id = Autenticacao.busca(u, s);
-                if (id != -1) {
-                    TelaPrincipal telaPrincipal = new TelaPrincipal(AdministraDados.funcionarioLista.get(id));
-                    telaPrincipal.abreTela();
-                    dispose();
-
-                } else {
-                    aviso.setText("Os dados informados estão incorretos.");
-                    c++;
-                }
+			int id = 0;
+			while(id < AdministraDados.funcionarioLista.size())
+			{
+				if(campoUsuario.getText().equals(AdministraDados.funcionarioLista.get(id).getLogin()));
+				{
+					if(Autenticacao.md5(campoSenha.getText()).equals(AdministraDados.funcionarioLista.get(id).getSenha()))
+					{
+						TelaPrincipal telaPrincipal = new TelaPrincipal(AdministraDados.funcionarioLista.get(id));
+						telaPrincipal.abreTela();
+						dispose();
+					}
+				}
+				id++;
+			}
+			aviso.setText("Os dados informados estão incorretos.");
+			c++;
             } else {
                 t += c;
-                aviso.setText(t + " tentativas erradas. Aguarde 1 minuto.");
+				c = 0;
+                aviso.setText((t+1) + " tentativas erradas. Aguarde 1 minuto.");
                 Autenticacao.setTempo();
             }
         }
