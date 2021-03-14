@@ -82,9 +82,9 @@ public class TelaCaixa extends JFrame {
     public void configuraPainelSuperior() {
         topPanel = new JPanel();
         topPanel.setLayout(new BorderLayout());
-        
+
         configuraBotoes();
-        
+
         topPanel.add(nomeFuncionario, BorderLayout.WEST);
         topPanel.add(btnTelaPrincipal, BorderLayout.EAST);
     }
@@ -125,9 +125,9 @@ public class TelaCaixa extends JFrame {
     public void abreTela() {
         atualizaValoresGerais();
         atualizaValoresFuncionario();
-        
+
         configuraPainelPrincipal();
-        
+
         this.setSize(400, 200);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.add(principalCaixa);

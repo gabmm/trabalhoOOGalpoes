@@ -54,11 +54,11 @@ public abstract class Funcionario extends Usuario {
     public void addVenda(Venda Venda) {
         this.vendasRealizadas.add(Venda);
     }
-    
+
     public int getQuantidadeVendasRealizadas(){
         return this.vendasRealizadas.size();
     }
-    
+
     public double getValorVendasRealizadas(){
         double valorTotal = 0;
         for (Venda venda : vendasRealizadas) {
@@ -66,5 +66,5 @@ public abstract class Funcionario extends Usuario {
         }
         return valorTotal;
     }
-    
+
 }
