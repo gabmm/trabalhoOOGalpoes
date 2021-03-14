@@ -1,7 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/*Autores:
+  Caio César Lima de Azevedo;
+  Fernando Dellão Menini;
+  Gabriel Martins da Costa Medeiros;
+  Vinícius Barbosa Varoto;
+  Weyder Luiz Gomes Gante.
  */
 package gabrieloo.ufjf.galpoesestoque;
 
@@ -18,10 +20,6 @@ import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 
-/**
- *
- * @author gabriel
- */
 public class TelaMudaSenha extends JFrame {
 
 	private JPasswordField campoSenha;
