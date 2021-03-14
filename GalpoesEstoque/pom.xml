@@ -9,6 +9,10 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+        <compilerargs>
+            <arg>java --add-modules</arg>
+            <arg>java.xml.bind</arg>
+        </compilerargs>
     </properties>
     <build>
         <plugins>
@@ -23,6 +27,10 @@
                     <descriptorRefs>
                         <descriptorRef>jar-with-dependencies</descriptorRef>
                     </descriptorRefs>
+                    <compilerargs>
+                        <arg>--add-modules</arg>
+                        <arg>java.xml.bind</arg>
+                    </compilerargs>
                 </configuration>
                 <executions>
                     <execution>
