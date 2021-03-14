@@ -16,10 +16,6 @@ import java.io.IOException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import javax.xml.bind.DatatypeConverter;
-import java.lang.Integer;
-import java.lang.String;
-import java.lang.System;
-import java.lang.Long;
 
 public class Autenticacao
 {

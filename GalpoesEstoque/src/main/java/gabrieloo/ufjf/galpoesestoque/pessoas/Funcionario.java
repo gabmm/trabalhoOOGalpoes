@@ -8,8 +8,6 @@
 
 package gabrieloo.ufjf.galpoesestoque.pessoas;
 
-import gabrieloo.ufjf.galpoesestoque.Caixa;
-import gabrieloo.ufjf.galpoesestoque.produtos.Produto;
 import gabrieloo.ufjf.galpoesestoque.vendas.Venda;
 import java.util.ArrayList;
 

@@ -16,11 +16,9 @@ import gabrieloo.ufjf.galpoesestoque.produtos.Produto;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
-import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -30,7 +28,6 @@ import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JSpinner;
-import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
 
 /**
@@ -65,7 +62,7 @@ public class TelaProduto extends JFrame {
     private DefaultListModel<Produto> modelFonte;
     private DefaultListModel<Produto> modelDA;
 
-    private Funcionario funcionario;
+    private final Funcionario funcionario;
 
     private JList<Produto> listaProdutos;
 

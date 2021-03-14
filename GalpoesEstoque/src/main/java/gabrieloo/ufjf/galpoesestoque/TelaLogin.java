@@ -10,7 +10,6 @@ package gabrieloo.ufjf.galpoesestoque;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.*;
 import javax.swing.JButton;

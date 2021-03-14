@@ -10,8 +10,6 @@ package gabrieloo.ufjf.galpoesestoque.vendas;
 
 import gabrieloo.ufjf.galpoesestoque.pessoas.Cliente;
 import gabrieloo.ufjf.galpoesestoque.pessoas.Funcionario;
-import gabrieloo.ufjf.galpoesestoque.pessoas.Gerente;
-import gabrieloo.ufjf.galpoesestoque.pessoas.Vendedor;
 import gabrieloo.ufjf.galpoesestoque.produtos.Produto;
 import java.util.ArrayList;
 

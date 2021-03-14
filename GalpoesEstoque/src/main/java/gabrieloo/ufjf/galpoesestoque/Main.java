@@ -7,9 +7,6 @@
  */
 package gabrieloo.ufjf.galpoesestoque;
 
-import static java.awt.Frame.MAXIMIZED_BOTH;
-import javax.swing.JFrame;
-
 public class Main {
 
     private static void rotinaInicializacao() {

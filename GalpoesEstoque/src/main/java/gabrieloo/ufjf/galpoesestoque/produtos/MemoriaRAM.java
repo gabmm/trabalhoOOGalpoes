@@ -9,7 +9,6 @@
 package gabrieloo.ufjf.galpoesestoque.produtos;
 
 import gabrieloo.ufjf.galpoesestoque.AdministraDados;
-import java.util.ArrayList;
 
 public class MemoriaRAM extends Produto {
 
