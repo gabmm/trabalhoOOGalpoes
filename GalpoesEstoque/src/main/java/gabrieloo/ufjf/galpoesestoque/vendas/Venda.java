@@ -70,7 +70,6 @@ public class Venda {
 
     @Override
     public String toString() {
-        return this.getClass().getSimpleName() + " para: " + this.getCliente().getNome() + ". Funcionario: "
-                + this.getFuncionario().getNome() + ". Valor Total: R$" + this.getValorTotal();
+        return this.getCliente().getNome() + ". Valor Total: R$" + this.getValorTotal();
     }
 }

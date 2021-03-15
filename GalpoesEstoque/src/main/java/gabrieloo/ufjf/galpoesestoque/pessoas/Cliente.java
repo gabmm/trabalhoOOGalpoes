@@ -15,7 +15,7 @@ public class Cliente extends Usuario {
 
     private String endereco;
     private String telefone;
-    private Date dataNascimento;
+    private String dataNascimento;
     public ArrayList<Venda> ordens;
 
     public Cliente() {
@@ -34,7 +34,7 @@ public class Cliente extends Usuario {
         return telefone;
     }
 
-    public Date getDataNascimento() {
+    public String getDataNascimento() {
         return dataNascimento;
     }
 
@@ -50,7 +50,7 @@ public class Cliente extends Usuario {
         this.telefone = telefone;
     }
 
-    public void setDataNascimento(Date dataNascimento) {
+    public void setDataNascimento(String dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 }

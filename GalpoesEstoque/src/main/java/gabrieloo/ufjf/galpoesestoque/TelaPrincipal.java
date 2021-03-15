@@ -63,12 +63,10 @@ public class TelaPrincipal extends JFrame {
         });
 
         this.btnTelaPessoa = new JButton("        Pessoas         ");
-        btnTelaProduto.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-//                TelaPessoa tela = new TelaPessoa();
-//                tela.incializaTelaPessoa();
-//                dispose();
-            }
+        btnTelaPessoa.addActionListener((ActionEvent e) -> {
+            TelaPessoas tela = new TelaPessoas(this.getUsuarioAtual());
+            tela.abreTela();
+            dispose();
         });
 
         this.btnTelaCaixa = new JButton("          Caixa            ");
