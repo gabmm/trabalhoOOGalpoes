@@ -7,16 +7,23 @@
  */
 package gabrieloo.ufjf.galpoesestoque;
 
+import gabrieloo.ufjf.galpoesestoque.pessoas.Funcionario;
+import gabrieloo.ufjf.galpoesestoque.pessoas.Gerente;
+import gabrieloo.ufjf.galpoesestoque.pessoas.Vendedor;
 import gabrieloo.ufjf.galpoesestoque.produtos.Produto;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Date;
 
 public class Main {
 
-    private static void rotinaInicializacao() {
+    private static void rotinaInicializacao() throws FileNotFoundException {
         AdministraDados.inicializacaoListas();
 
-        // CPU =======================
+        String dadosClientes = Arquivo.lerArquivo("dadosCliente");
+        AdministraDados.clienteLista = JSON.toCliente(dadosClientes);
+
+//        // CPU =======================
         AdministraDados.cadastraCPU();
         AdministraDados.listaCPU.get(0).setMarca(6);
         AdministraDados.listaCPU.get(0).setPreco(1300);
@@ -223,7 +230,7 @@ public class Main {
         AdministraDados.listaRAM.get(4).setCapacidade(2);
         AdministraDados.listaRAM.get(4).setClock(887);
         AdministraDados.listaRAM.get(4).setQuantidade(39);
-        
+
         // MB =======================
         AdministraDados.cadastraMotherboard();
         AdministraDados.listaMB.get(0).setMarca(2);
@@ -260,7 +267,7 @@ public class Main {
         AdministraDados.listaMB.get(4).setTamanho(3);
         AdministraDados.listaMB.get(4).setQuantidade(12);
 
-        // PESSOAS =======================
+//        PESSOAS =======================
         AdministraDados.cadastraGerente();
         AdministraDados.funcionarioLista.get(0).setNome("Jober Arauto");
         AdministraDados.funcionarioLista.get(0).setEmail("joarauto@galpoes.com");
@@ -275,62 +282,69 @@ public class Main {
         AdministraDados.funcionarioLista.get(1).setLogin("justus");
         AdministraDados.funcionarioLista.get(1).setSenha(Autenticacao.md5("juju123"));
 
-        AdministraDados.cadastraCliente();
-        AdministraDados.clienteLista.get(0).setNome("Julia Trista");
-        AdministraDados.clienteLista.get(0).setEmail("jujuzinha2014@hotmail.com");
-        AdministraDados.clienteLista.get(0).setTelefone("(21) 9 9188-9988");
-        AdministraDados.clienteLista.get(0).setEndereco("R. das Pedras, 301 - Rio de Janeiro");
-        AdministraDados.clienteLista.get(0).setDataNascimento("11/01/1998");
+        AdministraDados.cadastraGerente();
+        AdministraDados.funcionarioLista.get(2).setNome("Gabriel Medeiros");
+        AdministraDados.funcionarioLista.get(2).setEmail("gabriel.medeiros@estudante.ufjf.com");
+        AdministraDados.funcionarioLista.get(2).setSalarioBase(8700);
+        AdministraDados.funcionarioLista.get(2).setLogin("gab");
+        AdministraDados.funcionarioLista.get(2).setSenha(Autenticacao.md5("gab1"));
 
-        AdministraDados.cadastraCliente();
-        AdministraDados.clienteLista.get(1).setNome("Enzo Valentino");
-        AdministraDados.clienteLista.get(1).setEmail("valenteenzo69@gmail.com");
-        AdministraDados.clienteLista.get(1).setTelefone("(32) 9 9188-9988");
-        AdministraDados.clienteLista.get(1).setEndereco("Av. Rio Branco, 1010 - Juiz de Fora");
-        AdministraDados.clienteLista.get(1).setDataNascimento("27/01/1998");
-
-        AdministraDados.cadastraCliente();
-        AdministraDados.clienteLista.get(2).setNome("Caetano Veloso");
-        AdministraDados.clienteLista.get(2).setEmail("velosocaetano@gmail.com");
-        AdministraDados.clienteLista.get(2).setTelefone("(61) 9 9188-9988");
-        AdministraDados.clienteLista.get(2).setEndereco("R. Almeira Vilela, 699 - Brasília");
-        AdministraDados.clienteLista.get(2).setDataNascimento("01/03/1961");
-
-        AdministraDados.cadastraCliente();
-        AdministraDados.clienteLista.get(3).setNome("Rainha Elizabeth II");
-        AdministraDados.clienteLista.get(3).setEmail("elizabethtk@gmail.com");
-        AdministraDados.clienteLista.get(3).setTelefone("+13 (555) 1927-6541");
-        AdministraDados.clienteLista.get(3).setEndereco("John Rutherford St., 301 - Londres");
-        AdministraDados.clienteLista.get(3).setDataNascimento("13/07/1929");
-
-        AdministraDados.cadastraCliente();
-        AdministraDados.clienteLista.get(4).setNome("Luiz Inácio");
-        AdministraDados.clienteLista.get(4).setEmail("lula@partido.pt.com");
-        AdministraDados.clienteLista.get(4).setTelefone("(11) 9 9992-4416");
-        AdministraDados.clienteLista.get(4).setEndereco("R. dos Bandeirantes, 22 - São Bernardo");
-        AdministraDados.clienteLista.get(4).setDataNascimento("01/05/1951");
+//        AdministraDados.cadastraCliente();
+//        AdministraDados.clienteLista.get(0).setNome("Julia Trista");
+//        AdministraDados.clienteLista.get(0).setEmail("jujuzinha2014@hotmail.com");
+//        AdministraDados.clienteLista.get(0).setTelefone("(21) 9 9188-9988");
+//        AdministraDados.clienteLista.get(0).setEndereco("R. das Pedras, 301 - Rio de Janeiro");
+//        AdministraDados.clienteLista.get(0).setDataNascimento("11/01/1998");
+//
+//        AdministraDados.cadastraCliente();
+//        AdministraDados.clienteLista.get(1).setNome("Enzo Valentino");
+//        AdministraDados.clienteLista.get(1).setEmail("valenteenzo69@gmail.com");
+//        AdministraDados.clienteLista.get(1).setTelefone("(32) 9 9188-9988");
+//        AdministraDados.clienteLista.get(1).setEndereco("Av. Rio Branco, 1010 - Juiz de Fora");
+//        AdministraDados.clienteLista.get(1).setDataNascimento("27/01/1998");
+//
+//        AdministraDados.cadastraCliente();
+//        AdministraDados.clienteLista.get(2).setNome("Caetano Veloso");
+//        AdministraDados.clienteLista.get(2).setEmail("velosocaetano@gmail.com");
+//        AdministraDados.clienteLista.get(2).setTelefone("(61) 9 9188-9988");
+//        AdministraDados.clienteLista.get(2).setEndereco("R. Almeira Vilela, 699 - Brasília");
+//        AdministraDados.clienteLista.get(2).setDataNascimento("01/03/1961");
+//
+//        AdministraDados.cadastraCliente();
+//        AdministraDados.clienteLista.get(3).setNome("Rainha Elizabeth II");
+//        AdministraDados.clienteLista.get(3).setEmail("elizabethtk@gmail.com");
+//        AdministraDados.clienteLista.get(3).setTelefone("+13 (555) 1927-6541");
+//        AdministraDados.clienteLista.get(3).setEndereco("John Rutherford St., 301 - Londres");
+//        AdministraDados.clienteLista.get(3).setDataNascimento("13/07/1929");
+//
+//        AdministraDados.cadastraCliente();
+//        AdministraDados.clienteLista.get(4).setNome("Luiz Inácio");
+//        AdministraDados.clienteLista.get(4).setEmail("lula@partido.pt.com");
+//        AdministraDados.clienteLista.get(4).setTelefone("(11) 9 9992-4416");
+//        AdministraDados.clienteLista.get(4).setEndereco("R. dos Bandeirantes, 22 - São Bernardo");
+//        AdministraDados.clienteLista.get(4).setDataNascimento("01/05/1951");
 
         AdministraDados.cadastraVendedor();
-        AdministraDados.funcionarioLista.get(2).setNome("Ana Gabriela de Passos Lima");
-        AdministraDados.funcionarioLista.get(2).setEmail("anagabi@galpoes.com");
-        AdministraDados.funcionarioLista.get(2).setSalarioBase(2200);
-        AdministraDados.funcionarioLista.get(2).setLogin("anagabi");
-        AdministraDados.funcionarioLista.get(2).setSenha(Autenticacao.md5("senha"));
-
-        AdministraDados.cadastraVendedor();
-        AdministraDados.funcionarioLista.get(3).setNome("Silvio Santos");
-        AdministraDados.funcionarioLista.get(3).setEmail("silviosantos@galpoes.com");
+        AdministraDados.funcionarioLista.get(3).setNome("Ana Gabriela de Passos Lima");
+        AdministraDados.funcionarioLista.get(3).setEmail("anagabi@galpoes.com");
         AdministraDados.funcionarioLista.get(3).setSalarioBase(2200);
-        AdministraDados.funcionarioLista.get(3).setLogin("ssantos");
-        AdministraDados.funcionarioLista.get(3).setSenha(Autenticacao.md5("sbtss"));
+        AdministraDados.funcionarioLista.get(3).setLogin("anagabi");
+        AdministraDados.funcionarioLista.get(3).setSenha(Autenticacao.md5("senha"));
 
         AdministraDados.cadastraVendedor();
-        AdministraDados.funcionarioLista.get(4).setNome("Bettina Rudolph");
-        AdministraDados.funcionarioLista.get(4).setEmail("rudolphbettina@galpoes.com");
+        AdministraDados.funcionarioLista.get(4).setNome("Silvio Santos");
+        AdministraDados.funcionarioLista.get(4).setEmail("silviosantos@galpoes.com");
         AdministraDados.funcionarioLista.get(4).setSalarioBase(2200);
-        AdministraDados.funcionarioLista.get(4).setLogin("bettina");
-        AdministraDados.funcionarioLista.get(4).setSenha(Autenticacao.md5("empiricus"));
-        
+        AdministraDados.funcionarioLista.get(4).setLogin("ssantos");
+        AdministraDados.funcionarioLista.get(4).setSenha(Autenticacao.md5("sbtss"));
+
+        AdministraDados.cadastraVendedor();
+        AdministraDados.funcionarioLista.get(5).setNome("Bettina Rudolph");
+        AdministraDados.funcionarioLista.get(5).setEmail("rudolphbettina@galpoes.com");
+        AdministraDados.funcionarioLista.get(5).setSalarioBase(2200);
+        AdministraDados.funcionarioLista.get(5).setLogin("bettina");
+        AdministraDados.funcionarioLista.get(5).setSenha(Autenticacao.md5("empiricus"));
+
         //Vendas
         ArrayList<Produto> vendas0 = new ArrayList<>();
         vendas0.add(AdministraDados.listaCPU.get(0));
@@ -338,7 +352,6 @@ public class Main {
         vendas0.add(AdministraDados.listaRAM.get(1));
         vendas0.add(AdministraDados.listaMB.get(2));
         AdministraDados.realizaVenda(AdministraDados.funcionarioLista.get(0), AdministraDados.clienteLista.get(0), true, vendas0);
-        
 
         ArrayList<Produto> vendas1 = new ArrayList<>();
         vendas1.add(AdministraDados.listaFonte.get(2));
@@ -346,7 +359,6 @@ public class Main {
         vendas1.add(AdministraDados.listaDA.get(0));
         vendas1.add(AdministraDados.listaMB.get(1));
         AdministraDados.realizaVenda(AdministraDados.funcionarioLista.get(1), AdministraDados.clienteLista.get(0), true, vendas1);
-        
 
         ArrayList<Produto> vendas2 = new ArrayList<>();
         vendas2.add(AdministraDados.listaCPU.get(4));
@@ -355,13 +367,11 @@ public class Main {
         vendas2.add(AdministraDados.listaRAM.get(1));
         vendas2.add(AdministraDados.listaMB.get(4));
         AdministraDados.realizaVenda(AdministraDados.funcionarioLista.get(3), AdministraDados.clienteLista.get(3), false, vendas2);
-        
 
         ArrayList<Produto> vendas3 = new ArrayList<>();
         vendas3.add(AdministraDados.listaGPU.get(3));
         AdministraDados.realizaVenda(AdministraDados.funcionarioLista.get(1), AdministraDados.clienteLista.get(4), true, vendas3);
-        
-  
+
         ArrayList<Produto> vendas4 = new ArrayList<>();
         vendas4.add(AdministraDados.listaCPU.get(1));
         vendas4.add(AdministraDados.listaRAM.get(0));
@@ -370,7 +380,6 @@ public class Main {
         vendas4.add(AdministraDados.listaRAM.get(0));
         vendas4.add(AdministraDados.listaFonte.get(1));
         AdministraDados.realizaVenda(AdministraDados.funcionarioLista.get(2), AdministraDados.clienteLista.get(1), false, vendas4);
-        
 
         ArrayList<Produto> vendas5 = new ArrayList<>();
         vendas5.add(AdministraDados.listaCPU.get(4));
@@ -378,12 +387,10 @@ public class Main {
         vendas5.add(AdministraDados.listaDA.get(1));
         vendas5.add(AdministraDados.listaDA.get(4));
         AdministraDados.realizaVenda(AdministraDados.funcionarioLista.get(4), AdministraDados.clienteLista.get(2), false, vendas5);
-        
 
         ArrayList<Produto> vendas6 = new ArrayList<>();
         vendas6.add(AdministraDados.listaGPU.get(2));
         AdministraDados.realizaVenda(AdministraDados.funcionarioLista.get(3), AdministraDados.clienteLista.get(1), true, vendas6);
-        
 
         ArrayList<Produto> vendas7 = new ArrayList<>();
         vendas7.add(AdministraDados.listaCPU.get(2));
@@ -391,7 +398,6 @@ public class Main {
         vendas7.add(AdministraDados.listaFonte.get(3));
         vendas7.add(AdministraDados.listaMB.get(0));
         AdministraDados.realizaVenda(AdministraDados.funcionarioLista.get(2), AdministraDados.clienteLista.get(4), true, vendas7);
-        
 
         ArrayList<Produto> vendas8 = new ArrayList<>();
         vendas8.add(AdministraDados.listaCPU.get(3));
@@ -399,51 +405,34 @@ public class Main {
         vendas8.add(AdministraDados.listaFonte.get(4));
         vendas8.add(AdministraDados.listaFonte.get(3));
         AdministraDados.realizaVenda(AdministraDados.funcionarioLista.get(1), AdministraDados.clienteLista.get(3), true, vendas8);
-        
 
         ArrayList<Produto> vendas9 = new ArrayList<>();
         vendas9.add(AdministraDados.listaCPU.get(1));
         vendas9.add(AdministraDados.listaRAM.get(0));
         vendas9.add(AdministraDados.listaRAM.get(3));
         vendas9.add(AdministraDados.listaMB.get(3));
-        AdministraDados.realizaVenda(AdministraDados.funcionarioLista.get(4), AdministraDados.clienteLista.get(0), false, vendas9);
-        
+        AdministraDados.realizaVenda(AdministraDados.funcionarioLista.get(5), AdministraDados.clienteLista.get(0), false, vendas9);
 
-        
-        
+//        String dadosGerentes = Arquivo.lerArquivo("dadosGerente");
+//        ArrayList<Gerente> gerencia = new ArrayList<>();
+//        gerencia = JSON.toGerente(dadosGerentes);
+//        
+//        String dadosVendedores = Arquivo.lerArquivo("dadosVendedor");
+//        ArrayList<Vendedor> vendendoria = new ArrayList<>();
+//        vendendoria = JSON.toVendedor(dadosVendedores);
+//        
+//        AdministraDados.funcionarioLista.addAll(gerencia);
+//        AdministraDados.funcionarioLista.addAll(vendendoria);
+//         
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
 
         rotinaInicializacao();
 
-//        System.out.println(AdministraDados.listaCPU.get(0));
-//        System.out.println(AdministraDados.listaDA.get(0));
-//        System.out.println(AdministraDados.listaFonte.get(0));
-//        System.out.println(AdministraDados.listaGPU.get(0));
-//        System.out.println(AdministraDados.listaRAM.get(0));
-//        System.out.println(AdministraDados.listaRAM.get(1));
-//        System.out.println(AdministraDados.listaMB.get(0));
-//        System.out.println("");
-//        System.out.println(AdministraDados.clienteLista.get(0));
-//        System.out.println("");
-//        System.out.println(AdministraDados.funcionarioLista.get(0));
-//        System.out.println("Salario: R$" + AdministraDados.funcionarioLista.get(0).calculaSalario());
-//        System.out.println(AdministraDados.funcionarioLista.get(1));
-//        System.out.println("Salario: R$" + AdministraDados.funcionarioLista.get(1).calculaSalario());
-//        System.out.println("");
-//        System.out.println(AdministraDados.funcionarioLista.get(1).vendasRealizadas.get(0));
-//        System.out.println(AdministraDados.clienteLista.get(0).ordens.get(1));
-//        System.out.println("Valor em caixa: R$" + Caixa.getCaixa());
-//        System.out.println("Valor a pagar de salarios: R$" + Caixa.calculaPagamentoSalarios());
-//        System.out.println("Saldo: R$" + Caixa.getSaldo());
-//
-//        TelaLogin tela = new TelaLogin();
-//        tela.abreTela();
-//        TelaProduto tela = new TelaProduto();
-//        tela.incializaTelaProduto();
-        TelaPrincipal telaPrincipal = new TelaPrincipal(AdministraDados.funcionarioLista.get(1));
-        telaPrincipal.abreTela();
+        TelaLogin tela = new TelaLogin();
+        tela.abreTela();
+
     }
 
 }

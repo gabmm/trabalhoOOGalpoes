@@ -8,12 +8,12 @@ package gabrieloo.ufjf.galpoesestoque;
 import gabrieloo.ufjf.galpoesestoque.pessoas.Funcionario;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /* @author gabriel
@@ -40,6 +40,7 @@ public class TelaPrincipal extends JFrame {
     private JButton btnTelaPessoa;
     private JButton btnTelaVenda;
     private JButton btnTelaCaixa;
+    private JButton btnSalvar;
 
     public TelaPrincipal(Funcionario funcionario) {
         super("Tela principal");
@@ -59,6 +60,38 @@ public class TelaPrincipal extends JFrame {
             TelaProduto tela = new TelaProduto(this.getUsuarioAtual());
             tela.abreTela();
             dispose();
+        });
+
+        this.btnSalvar = new JButton("        Salvar        ");
+        this.btnSalvar.setPreferredSize(new Dimension(100, 60));
+        btnSalvar.addActionListener((ActionEvent e) -> {
+            
+            int escolha = JOptionPane.showConfirmDialog(null, "Deseja mesmo salvar?");
+            
+            if(escolha != JOptionPane.YES_OPTION){
+                return;
+            }
+            
+            JOptionPane.showMessageDialog(null, "Informações salvas!", "Confirmação", JOptionPane.INFORMATION_MESSAGE, null);
+
+            String toJSONCliente = JSON.toJSONCliente(AdministraDados.clienteLista);
+//            String toJSONVendedor = JSON.toJSONVendedor(AdministraDados.funcionarioLista);
+//            String toJSONGerente = JSON.toJSONGerente(AdministraDados.funcionarioLista);
+//            
+//          String toJSONVenda = JSON.toJSONVenda(AdministraDados.vendaLista);
+//            
+//            String toJSONCPU = JSON.toJSONCPU(AdministraDados.listaCPU);
+//            String toJSONGPU = JSON.toJSONGPU(AdministraDados.listaGPU);
+//            String toJSONMemoriaRam = JSON.toJSONMemoriaRAM(AdministraDados.listaRAM);
+//            String toJSONMotherboard = JSON.toJSONMotherboard(AdministraDados.listaMB);
+//            String toJSONFonte = JSON.toJSONFonte(AdministraDados.listaFonte);
+//            String toJSONDispositivoArmazenamento = JSON.toJSONDispositivoArmazenamento(AdministraDados.listaDA);
+
+            Arquivo.escreverArquivo("dadosCliente", toJSONCliente);
+//            Arquivo.escreverArquivo("dadosGerente", toJSONGerente);
+//            Arquivo.escreverArquivo("dadosVendedor", toJSONVendedor);
+ //           Arquivo.escreverArquivo("dadosVenda", toJSONVenda);
+
         });
 
         this.btnTelaPessoa = new JButton("        Pessoas         ");
@@ -82,7 +115,7 @@ public class TelaPrincipal extends JFrame {
             dispose();
 
         });
-        this.btnTelaMudaSenha = new JButton("Mudar Senha");
+        this.btnTelaMudaSenha = new JButton("  Mudar Senha  ");
         btnTelaMudaSenha.addActionListener((ActionEvent e) -> {
             TelaMudaSenha tela = new TelaMudaSenha(this.getUsuarioAtual());
             tela.abreTela();
@@ -102,11 +135,10 @@ public class TelaPrincipal extends JFrame {
         this.topPanel = new JPanel();
         this.topPanel.setLayout(new BoxLayout(this.topPanel, BoxLayout.X_AXIS));
 
+        this.topPanel.add(Box.createRigidArea(new Dimension(30, 0)));
         String msgSuperior = "Bem vindo, " + this.tipoUsuario + " " + this.nomeUsuario;
         this.topPanel.add(new JLabel(msgSuperior));
-        this.topPanel.add(Box.createRigidArea(new Dimension(30, 0)));
-		this.topPanel.add(btnTelaMudaSenha);
-        this.topPanel.add(Box.createRigidArea(new Dimension(30, 0)));
+        this.topPanel.add(Box.createRigidArea(new Dimension(250, 0)));
         this.topPanel.add(btnTelaLogin);
         this.topPanel.add(Box.createRigidArea(new Dimension(30, 0)));
 
@@ -121,6 +153,8 @@ public class TelaPrincipal extends JFrame {
         this.centerPanel.add(Box.createRigidArea(new Dimension(30, 0)));
         this.centerPanel.add(btnTelaProduto);
         this.centerPanel.add(Box.createRigidArea(new Dimension(30, 0)));
+        this.centerPanel.add(btnSalvar);
+        this.centerPanel.add(Box.createRigidArea(new Dimension(30, 0)));
     }
 
     public void configuraPainelInferior() {
@@ -131,6 +165,8 @@ public class TelaPrincipal extends JFrame {
         this.bottomPanel.add(btnTelaCaixa);
         this.bottomPanel.add(Box.createRigidArea(new Dimension(30, 0)));
         this.bottomPanel.add(btnTelaVenda);
+        this.bottomPanel.add(Box.createRigidArea(new Dimension(30, 0)));
+        this.bottomPanel.add(btnTelaMudaSenha);
         this.bottomPanel.add(Box.createRigidArea(new Dimension(30, 0)));
     }
 

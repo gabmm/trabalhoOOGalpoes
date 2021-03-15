@@ -514,7 +514,7 @@ desejados com novos valores*/
 
         Caixa.addCaixa(venda.getValorTotal());
         funcionario.addVenda(venda);
-        cliente.addOrdem(venda);
+        //cliente.addOrdem(venda);
         adicionaVenda(venda);
     }
 
