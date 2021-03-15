@@ -25,6 +25,7 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JSpinner;
@@ -245,11 +246,15 @@ public class TelaProduto extends JFrame {
 
         this.btnRemove = new JButton("Remove");
         this.btnRemove.addActionListener((ActionEvent e) -> {
-//mexer aqui
             try {
-                
+                /*
+                usar o indice do comboBox para saber qual  categoria de produto
+                indice da lista selecionada pegar objeto, pegar o objeto do modelo,
+                chamar a funcao removeObjeto da classe Administra dado.
+                implementar ela
+                */
             } catch (ArrayIndexOutOfBoundsException ex) {
-                System.out.println("usuario tentou remover sem selecionar");
+                JOptionPane.showConfirmDialog(null, "Usuario tentou remover sem selecionar");
             }
         });
 
