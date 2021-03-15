@@ -50,6 +50,7 @@ public class TelaCaixa extends JFrame {
     private Funcionario funcionario;
 
     public TelaCaixa(Funcionario funcionario) {
+        super("Caixa");
         this.funcionario = funcionario;
     }
 

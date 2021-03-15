@@ -43,6 +43,7 @@ public class TelaPrincipal extends JFrame {
     private JButton btnTelaCaixa;
 
     public TelaPrincipal(Funcionario funcionario) {
+        super("Tela principal");
         this.usuarioAtual = funcionario;
         this.nomeUsuario = this.usuarioAtual.getNome();
         this.tipoUsuario = this.usuarioAtual.getClass().getSimpleName();
