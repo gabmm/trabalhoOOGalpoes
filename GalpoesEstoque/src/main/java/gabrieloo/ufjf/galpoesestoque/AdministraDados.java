@@ -252,66 +252,6 @@ public class AdministraDados {
         return vendaLista.size();
     }
 
-    public static void cadastraProduto() {
-        String aux;
-        String[] aux1;
-        aux1 = transformaString(categoria);
-        //pergunta categoria;instancia objeto na categoria;seta atributos do objeto;add novo objeto na lista.
-        aux = (String) JOptionPane.showInputDialog(null, "Escolha a categoria.",
-                "Escolha entre essas: ", JOptionPane.QUESTION_MESSAGE, null, aux1, aux1[0]);
-        if (aux.equals("CPU")) {
-            CPU cadastro = new CPU();
-            cadastro.setMarca(Integer.parseInt(JOptionPane.showInputDialog("Qual o número da marca:")));
-            cadastro.setPreco(Double.valueOf(JOptionPane.showInputDialog("Qual o preço:")));
-            cadastro.setNome(JOptionPane.showInputDialog("Qual o nome: "));
-            cadastro.setCoreThreads(Integer.parseInt(JOptionPane.showInputDialog("Quantidade Core Threads: ")));
-            cadastro.setQuantidade(Integer.parseInt(JOptionPane.showInputDialog("Qual a quantidade:")));
-            listaCPU.add(cadastro);
-        } else if (aux.equals("Fonte")) {
-            Fonte cadastro = new Fonte();
-            cadastro.setMarca(Integer.parseInt(JOptionPane.showInputDialog("Qual o número da marca:")));
-            cadastro.setPreco(Double.valueOf(JOptionPane.showInputDialog("Qual o preço:")));
-            cadastro.setPower(Integer.parseInt(JOptionPane.showInputDialog("Qual a potência: ")));
-            cadastro.setEficiencia(Integer.parseInt(JOptionPane.showInputDialog("Qual a eficiencia: ")));
-            cadastro.setQuantidade(Integer.parseInt(JOptionPane.showInputDialog("Qual a quantidade:")));
-            listaFonte.add(cadastro);
-        } else if (aux.equals("GPU")) {
-            GPU cadastro = new GPU();
-            cadastro.setMarca(Integer.parseInt(JOptionPane.showInputDialog("Qual o número da marca:")));
-            cadastro.setPreco(Double.valueOf(JOptionPane.showInputDialog("Qual o preço:")));
-            cadastro.setNome(JOptionPane.showInputDialog("Qual o nome: "));
-            cadastro.setMemoria(Integer.parseInt(JOptionPane.showInputDialog("Quantidade Memória: ")));
-            cadastro.setQuantidade(Integer.parseInt(JOptionPane.showInputDialog("Qual a quantidade:")));
-            listaGPU.add(cadastro);
-        } else if (aux.equals("Dispostivo de Armazenamento")) {
-            DispositivoArmazenamento cadastro = new DispositivoArmazenamento();
-            cadastro.setMarca(Integer.parseInt(JOptionPane.showInputDialog("Qual o número da marca:")));
-            cadastro.setPreco(Double.valueOf(JOptionPane.showInputDialog("Qual o preço:")));
-            cadastro.setTipo(Integer.parseInt(JOptionPane.showInputDialog("Qual o tipo: ")));
-            cadastro.setCapacidade(Integer.parseInt(JOptionPane.showInputDialog("Qual a capacidade: ")));
-            cadastro.setQuantidade(Integer.parseInt(JOptionPane.showInputDialog("Qual a quantidade:")));
-            listaDA.add(cadastro);
-        } else if (aux.equals("Memória RAM")) {
-            MemoriaRAM cadastro = new MemoriaRAM();
-            cadastro.setMarca(Integer.parseInt(JOptionPane.showInputDialog("Qual o número da marca:")));
-            cadastro.setPreco(Double.valueOf(JOptionPane.showInputDialog("Qual o preço:")));
-            cadastro.setClock((Integer.parseInt(JOptionPane.showInputDialog("Qual o clock: "))));
-            cadastro.setCapacidade(Integer.parseInt(JOptionPane.showInputDialog("Qual a capacidade: ")));
-            cadastro.setQuantidade(Integer.parseInt(JOptionPane.showInputDialog("Qual a quantidade:")));
-            listaRAM.add(cadastro);
-        } else if (aux.equals("Placa-mãe")) {
-            Motherboard cadastro = new Motherboard();
-            cadastro.setMarca(Integer.parseInt(JOptionPane.showInputDialog("Qual o número da marca:")));
-            cadastro.setPreco(Double.valueOf(JOptionPane.showInputDialog("Qual o preço:")));
-            cadastro.setTamanho((Integer.parseInt(JOptionPane.showInputDialog("Qual o clock: "))));
-            cadastro.setChipset(Integer.parseInt(JOptionPane.showInputDialog("Qual a capacidade: ")));
-            cadastro.setQuantidade(Integer.parseInt(JOptionPane.showInputDialog("Qual a quantidade:")));
-            listaMB.add(cadastro);
-        } else {
-            cadastraProduto();
-        }
-    }
-
     public static void adicionaProdutos() {
         /*pergunta categoria, mostra lista de objetos da categoria, seleciona objeto,
 le valor (não pode ser negativo), quantidade do objeto += valor,
