@@ -143,13 +143,17 @@ public class Main {
         AdministraDados.listaRAM.get(0).setPreco(200);
         AdministraDados.listaRAM.get(0).setCapacidade(4);
         AdministraDados.listaRAM.get(0).setClock(2667);
-
         AdministraDados.cadastraRAM();
         AdministraDados.listaRAM.get(1).setMarca(3);
         AdministraDados.listaRAM.get(1).setPreco(120);
         AdministraDados.listaRAM.get(1).setCapacidade(2);
         AdministraDados.listaRAM.get(1).setClock(1334);
-
+        AdministraDados.cadastraRAM();
+        AdministraDados.listaRAM.get(2).setMarca(4);
+        AdministraDados.listaRAM.get(2).setPreco(295);
+        AdministraDados.listaRAM.get(2).setCapacidade(6);
+        AdministraDados.listaRAM.get(2).setClock(2666);
+        
         AdministraDados.cadastraMotherboard();
         AdministraDados.listaMB.get(0).setMarca(1);
         AdministraDados.listaMB.get(0).setPreco(770);
