@@ -85,25 +85,25 @@ public class Main {
         AdministraDados.clienteLista.get(3).setEmail("elizabethtk@gmail.com");
 
         AdministraDados.cadastraVendedor();
-        AdministraDados.funcionarioLista.get(1).setNome("Ana Gabriela de Passos Lima");
-        AdministraDados.funcionarioLista.get(1).setEmail("anagabi@galpoes.com");
-        AdministraDados.funcionarioLista.get(1).setSalarioBase(2200);
-        AdministraDados.funcionarioLista.get(1).setLogin("anagabi");
-        AdministraDados.funcionarioLista.get(1).setSenha(Autenticacao.md5("senha"));
-
-        AdministraDados.cadastraVendedor();
-        AdministraDados.funcionarioLista.get(2).setNome("Silvio Santos");
-        AdministraDados.funcionarioLista.get(2).setEmail("silviosantos@galpoes.com");
+        AdministraDados.funcionarioLista.get(2).setNome("Ana Gabriela de Passos Lima");
+        AdministraDados.funcionarioLista.get(2).setEmail("anagabi@galpoes.com");
         AdministraDados.funcionarioLista.get(2).setSalarioBase(2200);
-        AdministraDados.funcionarioLista.get(2).setLogin("ssantos");
-        AdministraDados.funcionarioLista.get(2).setSenha(Autenticacao.md5("sbtss"));
+        AdministraDados.funcionarioLista.get(2).setLogin("anagabi");
+        AdministraDados.funcionarioLista.get(2).setSenha(Autenticacao.md5("senha"));
 
         AdministraDados.cadastraVendedor();
-        AdministraDados.funcionarioLista.get(3).setNome("Bettina Rudolph");
-        AdministraDados.funcionarioLista.get(3).setEmail("rudolphbettina@galpoes.com");
+        AdministraDados.funcionarioLista.get(3).setNome("Silvio Santos");
+        AdministraDados.funcionarioLista.get(3).setEmail("silviosantos@galpoes.com");
         AdministraDados.funcionarioLista.get(3).setSalarioBase(2200);
-        AdministraDados.funcionarioLista.get(3).setLogin("bettina");
-        AdministraDados.funcionarioLista.get(3).setSenha(Autenticacao.md5("empiricus"));
+        AdministraDados.funcionarioLista.get(3).setLogin("ssantos");
+        AdministraDados.funcionarioLista.get(3).setSenha(Autenticacao.md5("sbtss"));
+
+        AdministraDados.cadastraVendedor();
+        AdministraDados.funcionarioLista.get(4).setNome("Bettina Rudolph");
+        AdministraDados.funcionarioLista.get(4).setEmail("rudolphbettina@galpoes.com");
+        AdministraDados.funcionarioLista.get(4).setSalarioBase(2200);
+        AdministraDados.funcionarioLista.get(4).setLogin("bettina");
+        AdministraDados.funcionarioLista.get(4).setSenha(Autenticacao.md5("empiricus"));
     }
 
     public static void main(String[] args) {

@@ -237,7 +237,10 @@ public class TelaProduto extends JFrame {
 
         this.btnCadastra = new JButton("Cadastra Novo");
         this.btnCadastra.addActionListener((ActionEvent e) -> {
-
+            int select = comboMostraCategoria.getSelectedIndex();
+            TelaCadastraProduto tela = new TelaCadastraProduto(funcionario, select);
+            tela.abreTela();
+            dispose();
         });
 
         this.btnEdita = new JButton("Edita Qtd.");

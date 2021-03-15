@@ -35,7 +35,7 @@ public class TelaPrincipal extends JFrame {
     private String nomeUsuario;
     private String tipoUsuario;
 
-	private JButton btnTelaMudaSenha;
+    private JButton btnTelaMudaSenha;
     private JButton btnTelaLogin;
     private JButton btnTelaProduto;
     private JButton btnTelaPessoa;
@@ -85,7 +85,7 @@ public class TelaPrincipal extends JFrame {
             dispose();
 
         });
-		this.btnTelaMudaSenha = new JButton("Mudar Senha");
+        this.btnTelaMudaSenha = new JButton("Mudar Senha");
         btnTelaMudaSenha.addActionListener((ActionEvent e) -> {
             TelaMudaSenha tela = new TelaMudaSenha(this.getUsuarioAtual());
             tela.abreTela();
@@ -101,21 +101,21 @@ public class TelaPrincipal extends JFrame {
         });
     }
 
-    public void configuraPainelSuperior(){
+    public void configuraPainelSuperior() {
         this.topPanel = new JPanel();
         this.topPanel.setLayout(new BoxLayout(this.topPanel, BoxLayout.X_AXIS));
 
-        String msgSuperior = "Bem vindo, " + this.tipoUsuario + " " + this.nomeUsuario + this.usuarioAtual.getLogin();
+        String msgSuperior = "Bem vindo, " + this.tipoUsuario + " " + this.nomeUsuario;
         this.topPanel.add(new JLabel(msgSuperior));
         this.topPanel.add(Box.createRigidArea(new Dimension(10, 0)));
-		this.topPanel.add(btnTelaMudaSenha);
+        this.topPanel.add(btnTelaMudaSenha);
         this.topPanel.add(Box.createRigidArea(new Dimension(10, 0)));
         this.topPanel.add(btnTelaLogin);
         this.topPanel.add(Box.createRigidArea(new Dimension(10, 0)));
 
     }
 
-    public void configuraPainelCentral(){
+    public void configuraPainelCentral() {
         this.centerPanel = new JPanel();
         this.centerPanel.setLayout(new BoxLayout(this.centerPanel, BoxLayout.X_AXIS));
 
@@ -126,7 +126,7 @@ public class TelaPrincipal extends JFrame {
         this.centerPanel.add(Box.createRigidArea(new Dimension(30, 0)));
     }
 
-    public void configuraPainelInferior(){
+    public void configuraPainelInferior() {
         this.bottomPanel = new JPanel();
         this.bottomPanel.setLayout(new BoxLayout(this.bottomPanel, BoxLayout.X_AXIS));
 
@@ -137,8 +137,7 @@ public class TelaPrincipal extends JFrame {
         this.bottomPanel.add(Box.createRigidArea(new Dimension(30, 0)));
     }
 
-    public void configuraPainelPrincipal()
-    {
+    public void configuraPainelPrincipal() {
         this.main = new JPanel();
         this.main.setLayout(new BoxLayout(this.main, BoxLayout.Y_AXIS));
 
@@ -158,7 +157,7 @@ public class TelaPrincipal extends JFrame {
         configuraPainelPrincipal();
 
         this.add(this.main);
-        this.setSize(550, 200);
+        this.setSize(700, 200);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
         //this.pack();
