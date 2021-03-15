@@ -1,20 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package gabrieloo.ufjf.galpoesestoque;
 
 import gabrieloo.ufjf.galpoesestoque.pessoas.Cliente;
 import gabrieloo.ufjf.galpoesestoque.pessoas.Funcionario;
 import gabrieloo.ufjf.galpoesestoque.vendas.Venda;
-import java.awt.BorderLayout;
-import javax.swing.BoxLayout;
 import javax.swing.DefaultListModel;
 import javax.swing.JComboBox;
-import javax.swing.JLabel;
-import javax.swing.JList;
-import javax.swing.JPanel;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
@@ -69,7 +59,7 @@ public class TrataListaPessoas implements ListSelectionListener {
         for (Venda ordem : cliente.ordens) {
             modelOrdens.addElement(ordem);
         }
-        
+
         return modelOrdens;
     }
 

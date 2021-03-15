@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package gabrieloo.ufjf.galpoesestoque;
 
 import gabrieloo.ufjf.galpoesestoque.produtos.CPU;
@@ -11,7 +6,6 @@ import gabrieloo.ufjf.galpoesestoque.produtos.Fonte;
 import gabrieloo.ufjf.galpoesestoque.produtos.GPU;
 import gabrieloo.ufjf.galpoesestoque.produtos.MemoriaRAM;
 import gabrieloo.ufjf.galpoesestoque.produtos.Motherboard;
-import gabrieloo.ufjf.galpoesestoque.produtos.Produto;
 import javax.swing.JComboBox;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
@@ -30,9 +24,6 @@ public class TrataListaProdutos implements ListSelectionListener {
         this.comboBox = comboBox;
     }
     
-    
-
-
     @Override
     public void valueChanged(ListSelectionEvent e) {
         int primeiroIndex = tela.getListaProduto().getSelectedIndex();

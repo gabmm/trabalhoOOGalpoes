@@ -1,11 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package gabrieloo.ufjf.galpoesestoque;
 
-import static gabrieloo.ufjf.galpoesestoque.AdministraDados.listaCPU;
 import gabrieloo.ufjf.galpoesestoque.pessoas.Funcionario;
 import java.awt.BorderLayout;
 import java.awt.Dimension;

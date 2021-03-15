@@ -1,15 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package gabrieloo.ufjf.galpoesestoque;
 
 import gabrieloo.ufjf.galpoesestoque.pessoas.Cliente;
 import gabrieloo.ufjf.galpoesestoque.pessoas.Funcionario;
-import gabrieloo.ufjf.galpoesestoque.pessoas.Gerente;
 import gabrieloo.ufjf.galpoesestoque.pessoas.Usuario;
-import gabrieloo.ufjf.galpoesestoque.pessoas.Vendedor;
 import gabrieloo.ufjf.galpoesestoque.vendas.Venda;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -17,22 +10,19 @@ import java.awt.event.ActionEvent;
 import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
-import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.ListSelectionModel;
-import javax.swing.colorchooser.DefaultColorSelectionModel;
 
-/**
- *
+/*
  * @author gabriel
+ * @author Weyder
  */
 public class TelaPessoas extends JFrame {
 

@@ -219,7 +219,7 @@ public class Main {
         AdministraDados.listaRAM.get(4).setCapacidade(2);
         AdministraDados.listaRAM.get(4).setClock(887);
         AdministraDados.listaRAM.get(4).setQuantidade(39);
-        
+
         // MB =======================
         AdministraDados.cadastraMotherboard();
         AdministraDados.listaMB.get(0).setMarca(2);

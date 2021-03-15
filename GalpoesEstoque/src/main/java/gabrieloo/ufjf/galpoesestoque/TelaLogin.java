@@ -100,10 +100,7 @@ public class TelaLogin extends JFrame implements ActionListener {
 
     public void abreTela() {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        //this.setPreferredSize(new Dimension(600, 400));
         this.setLocationRelativeTo(null);
-        //this.setSize(600, 400);
         this.setVisible(true);
-        //this.setExtendedState(MAXIMIZED_BOTH);
     }
 }
