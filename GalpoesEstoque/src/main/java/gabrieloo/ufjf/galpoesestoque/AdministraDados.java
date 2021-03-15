@@ -195,6 +195,8 @@ public class AdministraDados {
         marcaLista.add("Adata");
         marcaLista.add("Intel");
         marcaLista.add("PowerColor");
+        marcaLista.add("Kingston");
+        marcaLista.add("Seagate");
     }
 
     private static void adicionaTipoArmazenamento(ArrayList<String> tipoArmazenamentoLista) {
@@ -209,6 +211,7 @@ public class AdministraDados {
         capacidadeArmazenamentoLista.add("2 TB");
         capacidadeArmazenamentoLista.add("120 GB");
         capacidadeArmazenamentoLista.add("240 GB");
+        capacidadeArmazenamentoLista.add("480 GB");
     }
 
     public static void adicionaCPU(CPU cpu) {
