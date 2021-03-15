@@ -37,7 +37,7 @@ public class DispositivoArmazenamento extends Produto {
 
     @Override
     public String toString() {
-        return this.getTipo() + " " + this.getMarca() + " " + this.getCapacidade() + " - R$" + this.getPreco() + " (" + this.getQuantidade() + " un.)";
+        return this.getTipo() + " " + this.getMarca() + " " + this.getCapacidade() + " - R$" + String.format("%.2f", this.getPreco()) + " (" + this.getQuantidade() + " un.)";
     }
 
 }

@@ -63,11 +63,14 @@ public class TelaProduto extends JFrame {
     private JLabel specLabel1;
     private JLabel specLabel2;
     int ultimoIndex;
+    
+    private int opcao;
 
     public TelaProduto(Funcionario funcionario) {
         super("Produtos");
         this.funcionario = funcionario;
         this.ultimoIndex = 0;
+        this.opcao = 0;
 
     }
 
@@ -157,7 +160,7 @@ public class TelaProduto extends JFrame {
         this.atualizaListaProdutos();
 
         this.comboMostraCategoria.addActionListener((ActionEvent e) -> {
-            int opcao = comboMostraCategoria.getSelectedIndex();
+            opcao = comboMostraCategoria.getSelectedIndex();
             if (opcao == 0) {
                 this.listaProdutos.setModel(modelCPU);
             } else if (opcao == 1) {

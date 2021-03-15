@@ -41,9 +41,9 @@ public class TrataListaPessoas implements ListSelectionListener {
                 Funcionario elementAt1 = (Funcionario) tela.getListaPessoas().getModel().getElementAt(primeiroIndex);
                 tela.getPessoaNome().setText(elementAt1.getClass().getSimpleName() + ": " + elementAt1.getNome());
                 tela.getPessoaEmail().setText("Email: " + elementAt1.getEmail());
-                tela.getPessoaEndeSala().setText("Salário Base: R$" + elementAt1.getSalarioBase());
-                tela.getPessoaTelValor().setText("Valor Vendido: R$" + elementAt1.getValorVendasRealizadas());
-                tela.getPessoaDataSalaTotal().setText("Salário Total: R$" + elementAt1.calculaSalario());
+                tela.getPessoaEndeSala().setText("Salário Base: R$" + String.format("%.2f", elementAt1.getSalarioBase()));
+                tela.getPessoaTelValor().setText("Valor Vendido: R$" + String.format("%.2f", elementAt1.getValorVendasRealizadas()));
+                tela.getPessoaDataSalaTotal().setText("Salário Total: R$" + String.format("%.2f", elementAt1.calculaSalario()));
                 tela.listaVenda.setModel(getVendas(elementAt1));
                 tela.repaint();
             }

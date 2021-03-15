@@ -37,6 +37,6 @@ public class MemoriaRAM extends Produto {
 
     @Override
     public String toString() {
-        return this.getClass().getSimpleName() + " " + this.getMarca() + " " + this.getCapacidade() + " " + this.getClock() + "MHz - R$" + this.getPreco() + " (" + this.getQuantidade() + " un.)";
+        return this.getClass().getSimpleName() + " " + this.getMarca() + " " + this.getCapacidade() + " " + this.getClock() + "MHz - R$" + String.format("%.2f", this.getPreco()) + " (" + this.getQuantidade() + " un.)";
     }
 }

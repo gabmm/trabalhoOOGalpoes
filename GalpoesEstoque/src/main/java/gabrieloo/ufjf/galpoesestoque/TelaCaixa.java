@@ -50,19 +50,19 @@ public class TelaCaixa extends JFrame {
     }
 
     public void atualizaValoresGerais() {
-        receita = new JLabel("Receita: R$" + Caixa.getReceita());
-        custos = new JLabel("Custos: R$-" + Caixa.calculaPagamentoSalarios());
+        receita = new JLabel("Receita: R$" + String.format("%.2f", Caixa.getReceita()));
+        custos = new JLabel("Custos: R$-" + String.format("%.2f", Caixa.calculaPagamentoSalarios()));
         custos.setForeground(Color.red);
-        qtdCaixa = new JLabel("Caixa: R$" + Caixa.getSaldo());
+        qtdCaixa = new JLabel("Caixa: R$" + String.format("%.2f", Caixa.getSaldo()));
         qtdVendasRealizadas = new JLabel("Numero total de vendas: " + AdministraDados.getQuantidadeVendas());
     }
 
     public void atualizaValoresFuncionario() {
         nomeFuncionario = new JLabel(funcionario.getClass().getSimpleName() + " " + funcionario.getNome());
         numVendasFuncionario = new JLabel("Vendas Realizadas: " + funcionario.getQuantidadeVendasRealizadas());
-        valorTotalVendido = new JLabel("Valor Total: R$ " + funcionario.getValorVendasRealizadas());
-        salarioBase = new JLabel("Salário Base: R$ " + funcionario.getSalarioBase());
-        salarioTotal = new JLabel("Salário Total: R$ " + funcionario.calculaSalario());
+        valorTotalVendido = new JLabel("Valor Total: R$ " + String.format("%.2f", funcionario.getValorVendasRealizadas()));
+        salarioBase = new JLabel("Salário Base: R$ " + String.format("%.2f", funcionario.getSalarioBase()));
+        salarioTotal = new JLabel("Salário Total: R$ " + String.format("%.2f", funcionario.calculaSalario()));
     }
 
     public void configuraPainelEsquerda() {

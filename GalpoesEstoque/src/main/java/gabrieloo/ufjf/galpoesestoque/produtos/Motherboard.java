@@ -37,6 +37,6 @@ public class Motherboard extends Produto {
 
     @Override
     public String toString() {
-        return this.getClass().getSimpleName() + " " + this.getMarca() + " " + this.getChipset() + " " + this.getTamanho() + " - R$" + this.getPreco() + " (" + this.getQuantidade() + " un.)";
+        return this.getClass().getSimpleName() + " " + this.getMarca() + " " + this.getChipset() + " " + this.getTamanho() + " - R$" + String.format("%.2f", this.getPreco()) + " (" + this.getQuantidade() + " un.)";
     }
 }
