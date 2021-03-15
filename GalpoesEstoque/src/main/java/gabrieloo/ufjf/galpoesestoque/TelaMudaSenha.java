@@ -41,6 +41,7 @@ public class TelaMudaSenha extends JFrame {
     private Funcionario funcionario;
 
     public TelaMudaSenha(Funcionario funcionario) {
+        super("Mudar senha");
         this.funcionario = funcionario;
     }
 
@@ -119,7 +120,7 @@ public class TelaMudaSenha extends JFrame {
     public void abreTela() {
         configuraPainelPrincipal();
 
-        this.setSize(400, 200);
+        this.setSize(500, 200);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.add(principalMudaSenha);
         this.setLocationRelativeTo(null);

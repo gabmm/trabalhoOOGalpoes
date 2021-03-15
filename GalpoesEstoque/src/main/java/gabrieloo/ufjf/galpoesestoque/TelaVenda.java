@@ -74,6 +74,7 @@ public class TelaVenda extends JFrame {
     private JCheckBox ehCartao;
 
     public TelaVenda(Funcionario funcionario) {
+        super("Vendas");
         this.funcionario = funcionario;
     }
 

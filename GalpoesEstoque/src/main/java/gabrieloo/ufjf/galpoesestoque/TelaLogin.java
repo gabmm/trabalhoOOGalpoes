@@ -28,13 +28,12 @@ public class TelaLogin extends JFrame implements ActionListener {
 
     public TelaLogin() {
         super("Login");
-
         criarLogin();
     }
 
     private void criarLogin() {
         setLayout(new BorderLayout());
-
+        this.setSize(540, 200);
         JPanel panelLogin = new JPanel();
         panelLogin.setLayout(new FlowLayout());
         JLabel titulo = new JLabel("Login de funcionário:");
@@ -105,6 +104,6 @@ public class TelaLogin extends JFrame implements ActionListener {
         this.setLocationRelativeTo(null);
         //this.setSize(600, 400);
         this.setVisible(true);
-        this.setExtendedState(MAXIMIZED_BOTH);
+        //this.setExtendedState(MAXIMIZED_BOTH);
     }
 }
