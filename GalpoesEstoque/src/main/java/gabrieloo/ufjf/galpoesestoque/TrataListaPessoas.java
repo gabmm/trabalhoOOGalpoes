@@ -10,7 +10,7 @@ import javax.swing.event.ListSelectionListener;
 
 /**
  *
- * @author gabriel
+ * @author gabriel - matricula 201935032
  */
 public class TrataListaPessoas implements ListSelectionListener {
 

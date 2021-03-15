@@ -1,7 +1,7 @@
 /*Autores:
   Caio César Lima de Azevedo;
   Fernando Dellão Menini;
-  Gabriel Martins da Costa Medeiros;
+  Gabriel Martins da Costa Medeiros - matricula 201935032
   Vinícius Barbosa Varoto;
   Weyder Luiz Gomes Gante.
  */

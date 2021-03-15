@@ -24,7 +24,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.ListSelectionModel;
 
-/* @author gabriel
+/* @author gabriel - matricula 201935032
  * @author Weyder
  */
 public class TelaProduto extends JFrame {

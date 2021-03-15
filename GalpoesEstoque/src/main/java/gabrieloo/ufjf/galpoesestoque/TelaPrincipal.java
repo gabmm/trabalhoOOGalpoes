@@ -11,7 +11,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-/* @author gabriel
+/* @author gabriel - matricula 201935032
  * @author Weyder
  */
 public class TelaPrincipal extends JFrame {

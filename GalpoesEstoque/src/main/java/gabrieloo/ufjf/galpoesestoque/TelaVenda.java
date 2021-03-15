@@ -30,7 +30,7 @@ import javax.swing.JScrollPane;
 
 /**
  *
- * @author gabriel
+ * @author gabriel - matricula 201935032
  */
 public class TelaVenda extends JFrame {
 

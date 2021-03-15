@@ -1,7 +1,7 @@
 /*Autores:
   Caio César Lima de Azevedo;
   Fernando Dellão Menini;
-  Gabriel Martins da Costa Medeiros;
+  Gabriel Martins da Costa Medeiros  - matricula 201935032
   Vinícius Barbosa Varoto;
   Weyder Luiz Gomes Gante.
  */
@@ -11,6 +11,7 @@ import gabrieloo.ufjf.galpoesestoque.pessoas.Funcionario;
 import gabrieloo.ufjf.galpoesestoque.pessoas.Gerente;
 import gabrieloo.ufjf.galpoesestoque.pessoas.Vendedor;
 import gabrieloo.ufjf.galpoesestoque.produtos.Produto;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
@@ -19,8 +20,17 @@ public class Main {
     private static void rotinaInicializacao() throws FileNotFoundException {
         AdministraDados.inicializacaoListas();
 
+        File arq = new File(".");
+        
+        System.out.println(arq.getAbsolutePath());
+        
+        try {
         String dadosClientes = Arquivo.lerArquivo("dadosCliente");
         AdministraDados.clienteLista = JSON.toCliente(dadosClientes);
+        } catch (FileNotFoundException e)
+        {
+            AdministraDados.clienteLista = new ArrayList<>();
+        }
 
 //        // CPU =======================
         AdministraDados.cadastraCPU();
@@ -345,72 +355,72 @@ public class Main {
         AdministraDados.funcionarioLista.get(5).setSenha(Autenticacao.md5("empiricus"));
 
         //Vendas
-        ArrayList<Produto> vendas0 = new ArrayList<>();
-        vendas0.add(AdministraDados.listaCPU.get(0));
-        vendas0.add(AdministraDados.listaRAM.get(1));
-        vendas0.add(AdministraDados.listaRAM.get(1));
-        vendas0.add(AdministraDados.listaMB.get(2));
-        AdministraDados.realizaVenda(AdministraDados.funcionarioLista.get(0), AdministraDados.clienteLista.get(0), true, vendas0);
-
-        ArrayList<Produto> vendas1 = new ArrayList<>();
-        vendas1.add(AdministraDados.listaFonte.get(2));
-        vendas1.add(AdministraDados.listaGPU.get(1));
-        vendas1.add(AdministraDados.listaDA.get(0));
-        vendas1.add(AdministraDados.listaMB.get(1));
-        AdministraDados.realizaVenda(AdministraDados.funcionarioLista.get(1), AdministraDados.clienteLista.get(0), true, vendas1);
-
-        ArrayList<Produto> vendas2 = new ArrayList<>();
-        vendas2.add(AdministraDados.listaCPU.get(4));
-        vendas2.add(AdministraDados.listaGPU.get(0));
-        vendas2.add(AdministraDados.listaDA.get(3));
-        vendas2.add(AdministraDados.listaRAM.get(1));
-        vendas2.add(AdministraDados.listaMB.get(4));
-        AdministraDados.realizaVenda(AdministraDados.funcionarioLista.get(3), AdministraDados.clienteLista.get(3), false, vendas2);
-
-        ArrayList<Produto> vendas3 = new ArrayList<>();
-        vendas3.add(AdministraDados.listaGPU.get(3));
-        AdministraDados.realizaVenda(AdministraDados.funcionarioLista.get(1), AdministraDados.clienteLista.get(4), true, vendas3);
-
-        ArrayList<Produto> vendas4 = new ArrayList<>();
-        vendas4.add(AdministraDados.listaCPU.get(1));
-        vendas4.add(AdministraDados.listaRAM.get(0));
-        vendas4.add(AdministraDados.listaRAM.get(0));
-        vendas4.add(AdministraDados.listaRAM.get(0));
-        vendas4.add(AdministraDados.listaRAM.get(0));
-        vendas4.add(AdministraDados.listaFonte.get(1));
-        AdministraDados.realizaVenda(AdministraDados.funcionarioLista.get(2), AdministraDados.clienteLista.get(1), false, vendas4);
-
-        ArrayList<Produto> vendas5 = new ArrayList<>();
-        vendas5.add(AdministraDados.listaCPU.get(4));
-        vendas5.add(AdministraDados.listaFonte.get(3));
-        vendas5.add(AdministraDados.listaDA.get(1));
-        vendas5.add(AdministraDados.listaDA.get(4));
-        AdministraDados.realizaVenda(AdministraDados.funcionarioLista.get(4), AdministraDados.clienteLista.get(2), false, vendas5);
-
-        ArrayList<Produto> vendas6 = new ArrayList<>();
-        vendas6.add(AdministraDados.listaGPU.get(2));
-        AdministraDados.realizaVenda(AdministraDados.funcionarioLista.get(3), AdministraDados.clienteLista.get(1), true, vendas6);
-
-        ArrayList<Produto> vendas7 = new ArrayList<>();
-        vendas7.add(AdministraDados.listaCPU.get(2));
-        vendas7.add(AdministraDados.listaDA.get(0));
-        vendas7.add(AdministraDados.listaFonte.get(3));
-        vendas7.add(AdministraDados.listaMB.get(0));
-        AdministraDados.realizaVenda(AdministraDados.funcionarioLista.get(2), AdministraDados.clienteLista.get(4), true, vendas7);
-
-        ArrayList<Produto> vendas8 = new ArrayList<>();
-        vendas8.add(AdministraDados.listaCPU.get(3));
-        vendas8.add(AdministraDados.listaMB.get(2));
-        vendas8.add(AdministraDados.listaFonte.get(4));
-        vendas8.add(AdministraDados.listaFonte.get(3));
-        AdministraDados.realizaVenda(AdministraDados.funcionarioLista.get(1), AdministraDados.clienteLista.get(3), true, vendas8);
-
-        ArrayList<Produto> vendas9 = new ArrayList<>();
-        vendas9.add(AdministraDados.listaCPU.get(1));
-        vendas9.add(AdministraDados.listaRAM.get(0));
-        vendas9.add(AdministraDados.listaRAM.get(3));
-        vendas9.add(AdministraDados.listaMB.get(3));
-        AdministraDados.realizaVenda(AdministraDados.funcionarioLista.get(5), AdministraDados.clienteLista.get(0), false, vendas9);
+//        ArrayList<Produto> vendas0 = new ArrayList<>();
+//        vendas0.add(AdministraDados.listaCPU.get(0));
+//        vendas0.add(AdministraDados.listaRAM.get(1));
+//        vendas0.add(AdministraDados.listaRAM.get(1));
+//        vendas0.add(AdministraDados.listaMB.get(2));
+//        AdministraDados.realizaVenda(AdministraDados.funcionarioLista.get(0), AdministraDados.clienteLista.get(0), true, vendas0);
+//
+//        ArrayList<Produto> vendas1 = new ArrayList<>();
+//        vendas1.add(AdministraDados.listaFonte.get(2));
+//        vendas1.add(AdministraDados.listaGPU.get(1));
+//        vendas1.add(AdministraDados.listaDA.get(0));
+//        vendas1.add(AdministraDados.listaMB.get(1));
+//        AdministraDados.realizaVenda(AdministraDados.funcionarioLista.get(1), AdministraDados.clienteLista.get(0), true, vendas1);
+//
+//        ArrayList<Produto> vendas2 = new ArrayList<>();
+//        vendas2.add(AdministraDados.listaCPU.get(4));
+//        vendas2.add(AdministraDados.listaGPU.get(0));
+//        vendas2.add(AdministraDados.listaDA.get(3));
+//        vendas2.add(AdministraDados.listaRAM.get(1));
+//        vendas2.add(AdministraDados.listaMB.get(4));
+//        AdministraDados.realizaVenda(AdministraDados.funcionarioLista.get(3), AdministraDados.clienteLista.get(3), false, vendas2);
+//
+//        ArrayList<Produto> vendas3 = new ArrayList<>();
+//        vendas3.add(AdministraDados.listaGPU.get(3));
+//        AdministraDados.realizaVenda(AdministraDados.funcionarioLista.get(1), AdministraDados.clienteLista.get(4), true, vendas3);
+//
+//        ArrayList<Produto> vendas4 = new ArrayList<>();
+//        vendas4.add(AdministraDados.listaCPU.get(1));
+//        vendas4.add(AdministraDados.listaRAM.get(0));
+//        vendas4.add(AdministraDados.listaRAM.get(0));
+//        vendas4.add(AdministraDados.listaRAM.get(0));
+//        vendas4.add(AdministraDados.listaRAM.get(0));
+//        vendas4.add(AdministraDados.listaFonte.get(1));
+//        AdministraDados.realizaVenda(AdministraDados.funcionarioLista.get(2), AdministraDados.clienteLista.get(1), false, vendas4);
+//
+//        ArrayList<Produto> vendas5 = new ArrayList<>();
+//        vendas5.add(AdministraDados.listaCPU.get(4));
+//        vendas5.add(AdministraDados.listaFonte.get(3));
+//        vendas5.add(AdministraDados.listaDA.get(1));
+//        vendas5.add(AdministraDados.listaDA.get(4));
+//        AdministraDados.realizaVenda(AdministraDados.funcionarioLista.get(4), AdministraDados.clienteLista.get(2), false, vendas5);
+//
+//        ArrayList<Produto> vendas6 = new ArrayList<>();
+//        vendas6.add(AdministraDados.listaGPU.get(2));
+//        AdministraDados.realizaVenda(AdministraDados.funcionarioLista.get(3), AdministraDados.clienteLista.get(1), true, vendas6);
+//
+//        ArrayList<Produto> vendas7 = new ArrayList<>();
+//        vendas7.add(AdministraDados.listaCPU.get(2));
+//        vendas7.add(AdministraDados.listaDA.get(0));
+//        vendas7.add(AdministraDados.listaFonte.get(3));
+//        vendas7.add(AdministraDados.listaMB.get(0));
+//        AdministraDados.realizaVenda(AdministraDados.funcionarioLista.get(2), AdministraDados.clienteLista.get(4), true, vendas7);
+//
+//        ArrayList<Produto> vendas8 = new ArrayList<>();
+//        vendas8.add(AdministraDados.listaCPU.get(3));
+//        vendas8.add(AdministraDados.listaMB.get(2));
+//        vendas8.add(AdministraDados.listaFonte.get(4));
+//        vendas8.add(AdministraDados.listaFonte.get(3));
+//        AdministraDados.realizaVenda(AdministraDados.funcionarioLista.get(1), AdministraDados.clienteLista.get(3), true, vendas8);
+//
+//        ArrayList<Produto> vendas9 = new ArrayList<>();
+//        vendas9.add(AdministraDados.listaCPU.get(1));
+//        vendas9.add(AdministraDados.listaRAM.get(0));
+//        vendas9.add(AdministraDados.listaRAM.get(3));
+//        vendas9.add(AdministraDados.listaMB.get(3));
+//        AdministraDados.realizaVenda(AdministraDados.funcionarioLista.get(5), AdministraDados.clienteLista.get(0), false, vendas9);
 
 //        String dadosGerentes = Arquivo.lerArquivo("dadosGerente");
 //        ArrayList<Gerente> gerencia = new ArrayList<>();
