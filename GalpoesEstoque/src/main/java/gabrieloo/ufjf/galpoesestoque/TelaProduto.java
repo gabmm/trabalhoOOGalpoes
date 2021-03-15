@@ -242,20 +242,31 @@ public class TelaProduto extends JFrame {
 
         this.btnEdita = new JButton("Edita Qtd.");
         this.btnEdita.addActionListener((ActionEvent e) -> {
-
+            int opcao = comboMostraCategoria.getSelectedIndex();
+            int prod = listaProdutos.getSelectedIndex();
+            int valor = (Integer)qtdProdutos.getValue();
+            AdministraDados.editaProduto(opcao, prod, valor);
+            this.repaint();
+//                TelaProduto repintandoTela = new TelaProduto(funcionario);
+//                repintandoTela.abreTela();
+//                dispose();
         });
 
         this.btnRemove = new JButton("Remove");
         this.btnRemove.addActionListener((ActionEvent e) -> {
             try {
-                /*
-                usar o indice do comboBox para saber qual  categoria de produto
-                indice da lista selecionada pegar objeto, pegar o objeto do modelo,
-                chamar a funcao removeObjeto da classe Administra dado.
-                implementar ela
-                */
-            } catch (ArrayIndexOutOfBoundsException ex) {
-                JOptionPane.showConfirmDialog(null, "Usuario tentou remover sem selecionar");
+                /*usar o indice do comboBox para saber qual  categoria de produto indice da lista
+selecionada pegar objeto, pegar o objeto do modelo, chamar a funcao removeObjeto
+da classe Administra dado e implementar ela*/
+                int opcao = comboMostraCategoria.getSelectedIndex();
+                int prod = listaProdutos.getSelectedIndex();
+                if (AdministraDados.removeProduto(opcao, prod)) {
+                    TelaProduto repintandoTela = new TelaProduto(funcionario);
+                    repintandoTela.abreTela();
+                    dispose();
+                }
+            } catch (ArrayIndexOutOfBoundsException ex1) {
+                System.out.println("Usuario tentou remover sem selecionar");
             }
         });
 
@@ -294,7 +305,7 @@ public class TelaProduto extends JFrame {
 
         this.painelInfoBottom = new JPanel();
         this.painelInfoBottom.setLayout(new BoxLayout(this.painelInfoBottom, BoxLayout.X_AXIS));
-        
+
         this.painelInfoTopMain = new JPanel();
         this.painelInfoTopMain.setLayout(new BorderLayout());
         this.painelInfoTopMain.add(this.painelInfoTop, BorderLayout.WEST);
@@ -314,7 +325,7 @@ public class TelaProduto extends JFrame {
 
         this.painelDadosTop = new JPanel();
         this.painelDadosTop.setLayout(new BoxLayout(this.painelDadosTop, BoxLayout.Y_AXIS));
-        
+
         this.configuraPainelInfo();
         this.painelDadosTop.add(painelInfoTopMain);
         this.painelDadosTop.add(painelInfoBottom);
@@ -359,5 +370,4 @@ public class TelaProduto extends JFrame {
         this.setLocationRelativeTo(null);
         this.setVisible(true);
     }
-
 }

@@ -248,7 +248,6 @@ public class AdministraDados {
     }
 
     // </editor-fold>
-
     public static int getQuantidadeVendas() {
         return vendaLista.size();
     }
@@ -336,39 +335,174 @@ quantidade da classe do objeto += valor, quantidadeProdutos += valor*/
         //quantidadeProdutos += valor
     }
 
-    public static void editaProduto() {
+    public static void editaProduto(int categoria, int produto, int qtd) {
         /*pergunta categoria, mostra lista de objetos da categoria, seleciona objeto,
 quantidade do objeto += valor, quantidade da classe do objeto += valor,
 quantidadeProdutos += valor*/
         String aux;
-        aux = JOptionPane.showInputDialog("Qual produto deseja editar quanidade? ");
-        if (aux.equals("CPU")) {
-        } else if (aux.equals("Fonte")) {
-        } else if (aux.equals("GPU")) {
-        } else if (aux.equals("Dispostivo de Armazenamento")) {
-        } else if (aux.equals("Memória RAM")) {
-        } else if (aux.equals("Placa-mãe")) {
-        } else {
-            editaProduto();
+        int num = 0;
+        if (categoria == 0) {
+            aux = JOptionPane.showInputDialog("Digite a quantidade de " 
+                + listaCPU.get(produto) + " que deseja editar. \nPor favor "
+                +"coloque o sinal de menos se a quanidade deva ser subtraida. ");
+            if (verificaSeEhNumero(aux)) {
+                num = Integer.parseInt(aux);
+                num += listaCPU.get(produto).getQuantidade();
+                if (num < 0) {
+                    System.out.println("Não eh possivel registrar valor negativo!");
+                    editaProduto(categoria,produto,qtd);
+                }
+                listaCPU.get(produto).setQuantidade(num);
+            } else {
+                System.out.println("Voce não digitou apenas numeros");
+                editaProduto(categoria, produto, qtd);
+            }
+        } else if (categoria == 1) {
+            aux = JOptionPane.showInputDialog("Digite a quantidade de " 
+                + listaGPU.get(produto) + " que deseja editar. \nPor favor "
+                +"coloque o sinal de menos se a quanidade deva ser subtraida. ");
+            if (verificaSeEhNumero(aux)) {
+                num = Integer.parseInt(aux);
+                num += listaGPU.get(produto).getQuantidade();
+                if (num < 0) {
+                    System.out.println("Não eh possivel registrar valor negativo!");
+                    editaProduto(categoria,produto,qtd);
+                }
+                listaGPU.get(produto).setQuantidade(num);
+            } else {
+                System.out.println("Voce não digitou apenas numeros");
+                editaProduto(categoria, produto, qtd);
+            }
+        } else if (categoria == 2) {
+            aux = JOptionPane.showInputDialog("Digite a quantidade de " 
+                + listaRAM.get(produto) + " que deseja editar. \nPor favor "
+                +"coloque o sinal de menos se a quanidade deva ser subtraida. ");
+            if (verificaSeEhNumero(aux)) {
+                num = Integer.parseInt(aux);
+                num += listaRAM.get(produto).getQuantidade();
+                if (num < 0) {
+                    System.out.println("Não eh possivel registrar valor negativo!");
+                    editaProduto(categoria,produto,qtd);
+                }
+                listaRAM.get(produto).setQuantidade(num);
+            } else {
+                System.out.println("Voce não digitou apenas numeros");
+                editaProduto(categoria, produto, qtd);
+            }
+        } else if (categoria == 3) {
+            aux = JOptionPane.showInputDialog("Digite a quantidade de " 
+                + listaMB.get(produto) + " que deseja editar. \nPor favor "
+                +"coloque o sinal de menos se a quanidade deva ser subtraida. ");
+            if (verificaSeEhNumero(aux)) {
+                num = Integer.parseInt(aux);
+                num += listaMB.get(produto).getQuantidade();
+                if (num < 0) {
+                    System.out.println("Não eh possivel registrar valor negativo!");
+                    editaProduto(categoria,produto,qtd);
+                }
+                listaMB.get(produto).setQuantidade(num);
+            } else {
+                System.out.println("Voce não digitou apenas numeros");
+                editaProduto(categoria, produto, qtd);
+            }
+        } else if (categoria == 4) {
+            aux = JOptionPane.showInputDialog("Digite a quantidade de " 
+                + listaDA.get(produto) + " que deseja editar. \nPor favor "
+                +"coloque o sinal de menos se a quanidade deva ser subtraida. ");
+            if (verificaSeEhNumero(aux)) {
+                num = Integer.parseInt(aux);
+                num += listaDA.get(produto).getQuantidade();
+                if (num < 0) {
+                    System.out.println("Não eh possivel registrar valor negativo!");
+                    editaProduto(categoria,produto,qtd);
+                }
+                listaDA.get(produto).setQuantidade(num);
+            } else {
+                System.out.println("Voce não digitou apenas numeros");
+                editaProduto(categoria, produto, qtd);
+            }
+        } else if (categoria == 5) {
+            aux = JOptionPane.showInputDialog("Digite a quantidade de " 
+                + listaFonte.get(produto) + " que deseja editar. \nPor favor "
+                +"coloque o sinal de menos se a quanidade deva ser subtraida. ");
+            if (verificaSeEhNumero(aux)) {
+                num = Integer.parseInt(aux);
+                num += listaFonte.get(produto).getQuantidade();
+                if (num < 0) {
+                    System.out.println("Não eh possivel registrar valor negativo!");
+                    editaProduto(categoria,produto,qtd);
+                }
+                listaFonte.get(produto).setQuantidade(num);
+            } else {
+                System.out.println("Voce não digitou apenas numeros");
+                editaProduto(categoria, produto, qtd);
+            }
         }
     }
-
-    public static void removeProduto() {
+// tratar o remove
+// Cadastrar produtos na lista
+    public static boolean removeProduto(int categoria, int produto) {
         /*descadastro de produto, pergunta categoria, mostra lista de objetos da
 categoria, seleciona objeto, seta atributos do objeto para atributos padrao
 (remover pode gerar execoes), quantidade da classe do objeto -= quantidade do
 objeto, quantidadeProdutos -= quantidade do objeto*/
-        String aux;
-        aux = JOptionPane.showInputDialog("Qual produto deseja remover? ");
-        if (aux.equals("CPU")) {
-        } else if (aux.equals("Fonte")) {
-        } else if (aux.equals("GPU")) {
-        } else if (aux.equals("Dispostivo de Armazenamento")) {
-        } else if (aux.equals("Memória RAM")) {
-        } else if (aux.equals("Placa-mãe")) {
-        } else {
-            removeProduto();
+        int aux;
+        if (categoria == 0) {
+            aux = JOptionPane.showConfirmDialog(null, "Você esta querendo remover: "
+                    + listaCPU.get(produto));
+            if (aux == JOptionPane.YES_OPTION) {
+                listaCPU.remove(produto);
+                return true;
+            } else {
+                return false;
+            }
+        } else if (categoria == 1) {
+            aux = JOptionPane.showConfirmDialog(null, "Você esta querendo remover: "
+                    + listaGPU.get(produto));
+            if (aux == JOptionPane.YES_OPTION) {
+                listaGPU.remove(produto);
+                return true;
+            } else {
+                return false;
+            }
+        } else if (categoria == 2) {
+            aux = JOptionPane.showConfirmDialog(null, "Você esta querendo remover: "
+                    + listaRAM.get(produto));
+            if (aux == JOptionPane.YES_OPTION) {
+                listaRAM.remove(produto);
+                return true;
+            } else {
+                return false;
+            }
+        } else if (categoria == 3) {
+            aux = JOptionPane.showConfirmDialog(null, "Você esta querendo remover: "
+                    + listaMB.get(produto));
+            if (aux == JOptionPane.YES_OPTION) {
+                listaMB.remove(produto);
+                return true;
+            } else {
+                return false;
+            }
+        } else if (categoria == 4) {
+            aux = JOptionPane.showConfirmDialog(null, "Você esta querendo remover: "
+                    + listaDA.get(produto));
+            if (aux == JOptionPane.YES_OPTION) {
+                listaDA.remove(produto);
+                return true;
+            } else {
+                return false;
+            }
+        } else if (categoria == 5) {
+            aux = JOptionPane.showConfirmDialog(null, "Você esta querendo remover: "
+                    + listaFonte.get(produto));
+            if (aux == JOptionPane.YES_OPTION) {
+                listaFonte.remove(produto);
+                return true;
+            } else {
+                return false;
+            }
         }
+        return false;
     }
 
     public static void cadastraUsuario() {
@@ -504,5 +638,18 @@ desejados com novos valores*/
             mudanca[i] = oqMuda.get(i);
         }
         return mudanca;
+    }
+    
+    public static boolean verificaSeEhNumero(String verificar) {
+        char[] numString = verificar.toCharArray();
+        if (numString.length == 0){
+            return false;
+        }
+        for (int i = 0; i < numString.length; i++) {
+            if(Character.isLetter(numString[i])){
+                return false;
+            }
+        }
+        return true;
     }
 }
