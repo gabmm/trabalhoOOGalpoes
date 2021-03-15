@@ -48,18 +48,18 @@ public class TelaMudaSenha extends JFrame {
     public void configuraPainelSuperior() {
         topPanel = new JPanel();
         topPanel.setLayout(new BorderLayout());
-<<<<<<< HEAD
+//<<<<<<< HEAD
 
         configuraBotoes();
 
         nomeFuncionario = new JLabel(funcionario.getClass().getSimpleName() + " " + funcionario.getNome());
-=======
-		nomeFuncionario = new JLabel(funcionario.getClass().getSimpleName() + " " + funcionario.getNome());
->>>>>>> d2887d41665219fac6e7dddce84e94a308f97250
+//=======
+//		nomeFuncionario = new JLabel(funcionario.getClass().getSimpleName() + " " + funcionario.getNome());
+//>>>>>>> d2887d41665219fac6e7dddce84e94a308f97250
         topPanel.add(nomeFuncionario, BorderLayout.WEST);
     }
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
     public void configuraFormulario() {
         formulario = new JPanel();
         formulario.setLayout(new BoxLayout(formulario, BoxLayout.Y_AXIS));
@@ -99,23 +99,23 @@ public class TelaMudaSenha extends JFrame {
         formulario.add(botoes, BorderLayout.SOUTH);
 
     }
-=======
-	public void configuraFormulario() {
-		formulario = new JPanel();
-		formulario.setLayout(new BoxLayout(formulario, BoxLayout.Y_AXIS));
-		senha = new JLabel("Senha atual: ");
-		formulario.add(senha);
-
-		campoSenha = new JPasswordField(30);
-		formulario.add(campoSenha);
-
-		novaSenha = new JLabel("Nova senha: ");
-		formulario.add(novaSenha);
-
-		campoNovaSenha = new JPasswordField(30);
-		formulario.add(campoNovaSenha);
-	}
->>>>>>> d2887d41665219fac6e7dddce84e94a308f97250
+//=======
+//	public void configuraFormulario() {
+//		formulario = new JPanel();
+//		formulario.setLayout(new BoxLayout(formulario, BoxLayout.Y_AXIS));
+//		senha = new JLabel("Senha atual: ");
+//		formulario.add(senha);
+//
+//		campoSenha = new JPasswordField(30);
+//		formulario.add(campoSenha);
+//
+//		novaSenha = new JLabel("Nova senha: ");
+//		formulario.add(novaSenha);
+//
+//		campoNovaSenha = new JPasswordField(30);
+//		formulario.add(campoNovaSenha);
+//	}
+//>>>>>>> d2887d41665219fac6e7dddce84e94a308f97250
 
     public void configuraPainelPrincipal() {
 
@@ -123,23 +123,23 @@ public class TelaMudaSenha extends JFrame {
         principalMudaSenha.setBorder(BorderFactory.createTitledBorder("Mudar Senha"));
         principalMudaSenha.setLayout(new BorderLayout());
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
         configuraPainelSuperior();
         configuraFormulario();
 
         principalMudaSenha.add(topPanel, BorderLayout.NORTH);
         principalMudaSenha.add(formulario, BorderLayout.SOUTH);
     }
-=======
-		configuraPainelSuperior();
-		configuraFormulario();
-		configuraBotoes();
-
-		principalMudaSenha.add(topPanel, BorderLayout.NORTH);
-		principalMudaSenha.add(formulario, BorderLayout.CENTER);
-		principalMudaSenha.add(botoes, BorderLayout.SOUTH);
-	}
->>>>>>> d2887d41665219fac6e7dddce84e94a308f97250
+//=======
+//		configuraPainelSuperior();
+//		configuraFormulario();
+//		configuraBotoes();
+//
+//		principalMudaSenha.add(topPanel, BorderLayout.NORTH);
+//		principalMudaSenha.add(formulario, BorderLayout.CENTER);
+//		principalMudaSenha.add(botoes, BorderLayout.SOUTH);
+//	}
+//>>>>>>> d2887d41665219fac6e7dddce84e94a308f97250
 
     public void configuraBotoes() {
 		botoes = new JPanel();

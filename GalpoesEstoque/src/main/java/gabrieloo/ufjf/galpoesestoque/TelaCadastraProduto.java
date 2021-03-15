@@ -138,6 +138,7 @@ public class TelaCadastraProduto extends JFrame {
                 dispose();
                 this.deuErro = true;
             }
+            
 
             if (!this.deuErro) {
                 JOptionPane.showMessageDialog(null, "Cadastro de produto realizado com sucesso!", "Confirmação de Cadastro", JOptionPane.INFORMATION_MESSAGE, null);
