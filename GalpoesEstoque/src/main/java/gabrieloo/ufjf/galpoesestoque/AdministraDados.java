@@ -200,6 +200,7 @@ public class AdministraDados {
         marcaLista.add("ATX");
         marcaLista.add("Corsair");
         marcaLista.add("Fortrek");
+        marcaLista.add("Geforce");
     }
 
     private static void adicionaTipoArmazenamento(ArrayList<String> tipoArmazenamentoLista) {

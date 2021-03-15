@@ -112,7 +112,32 @@ public class Main {
         AdministraDados.listaGPU.get(0).setPreco(2300);
         AdministraDados.listaGPU.get(0).setNome("RTX 2060");
         AdministraDados.listaGPU.get(0).setMemoria(6);
-
+        AdministraDados.cadastraGPU();
+        AdministraDados.listaGPU.get(1).setMarca(1);
+        AdministraDados.listaGPU.get(1).setPreco(10510);
+        AdministraDados.listaGPU.get(1).setNome("RX 2070");
+        AdministraDados.listaGPU.get(1).setMemoria(4);
+        AdministraDados.cadastraGPU();
+        AdministraDados.listaGPU.get(2).setMarca(9);
+        AdministraDados.listaGPU.get(2).setPreco(2267);
+        AdministraDados.listaGPU.get(2).setNome("RX 6800");
+        AdministraDados.listaGPU.get(2).setMemoria(9);
+        AdministraDados.cadastraGPU();
+        AdministraDados.listaGPU.get(3).setMarca(1);
+        AdministraDados.listaGPU.get(3).setPreco(1700);
+        AdministraDados.listaGPU.get(3).setNome("RX 6800");
+        AdministraDados.listaGPU.get(3).setMemoria(4);
+        AdministraDados.cadastraGPU();
+        AdministraDados.listaGPU.get(4).setMarca(9);
+        AdministraDados.listaGPU.get(4).setPreco(2267);
+        AdministraDados.listaGPU.get(4).setNome("GTX 1650");
+        AdministraDados.listaGPU.get(4).setMemoria(5);
+        AdministraDados.cadastraGPU();
+        AdministraDados.listaGPU.get(5).setMarca(6);
+        AdministraDados.listaGPU.get(5).setPreco(2070);
+        AdministraDados.listaGPU.get(5).setNome("RX 5500");
+        AdministraDados.listaGPU.get(5).setMemoria(6);
+        
         AdministraDados.cadastraRAM();
         AdministraDados.listaRAM.get(0).setMarca(4);
         AdministraDados.listaRAM.get(0).setPreco(200);
