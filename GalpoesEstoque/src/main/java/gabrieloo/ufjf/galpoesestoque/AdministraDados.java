@@ -666,58 +666,7 @@ desejados com novos valores*/
 //                for (int 0 = 0; 0 < vendaLista.get(i).getProdutos(j).size(); 0++) {
 //                }
 //            }
-//            if (aux == JOptionPane.YES_OPTION) {
-//                listaCPU.remove(produto);
-//                return true;
-//            } else {
-//                return false;
-//            }
-//        } else if (categoria == 1) {
-//            aux = JOptionPane.showConfirmDialog(null, "Você esta querendo remover: "
-//                    + listaGPU.get(produto));
-//            if (aux == JOptionPane.YES_OPTION) {
-//                listaGPU.remove(produto);
-//                return true;
-//            } else {
-//                return false;
-//            }
-//        } else if (categoria == 2) {
-//            aux = JOptionPane.showConfirmDialog(null, "Você esta querendo remover: "
-//                    + listaRAM.get(produto));
-//            if (aux == JOptionPane.YES_OPTION) {
-//                listaRAM.remove(produto);
-//                return true;
-//            } else {
-//                return false;
-//            }
-//        } else if (categoria == 3) {
-//            aux = JOptionPane.showConfirmDialog(null, "Você esta querendo remover: "
-//                    + listaMB.get(produto));
-//            if (aux == JOptionPane.YES_OPTION) {
-//                listaMB.remove(produto);
-//                return true;
-//            } else {
-//                return false;
-//            }
-//        } else if (categoria == 4) {
-//            aux = JOptionPane.showConfirmDialog(null, "Você esta querendo remover: "
-//                    + listaDA.get(produto));
-//            if (aux == JOptionPane.YES_OPTION) {
-//                listaDA.remove(produto);
-//                return true;
-//            } else {
-//                return false;
-//            }
-//        } else if (categoria == 5) {
-//            aux = JOptionPane.showConfirmDialog(null, "Você esta querendo remover: "
-//                    + listaFonte.get(produto));
-//            if (aux == JOptionPane.YES_OPTION) {
-//                listaFonte.remove(produto);
-//                return true;
-//            } else {
-//                return false;
-//            }
-//        }
+//        
 //        return false;
 //    }
 }
