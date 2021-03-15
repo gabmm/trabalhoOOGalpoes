@@ -81,6 +81,7 @@ public class TelaProduto extends JFrame {
     int ultimoIndex;
 
     public TelaProduto(Funcionario funcionario) {
+        super("Produtos");
         this.funcionario = funcionario;
         this.ultimoIndex = 0;
 
