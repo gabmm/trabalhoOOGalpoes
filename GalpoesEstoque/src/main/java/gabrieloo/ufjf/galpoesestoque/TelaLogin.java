@@ -61,7 +61,7 @@ public class TelaLogin extends JFrame implements ActionListener {
 
         JPanel botoes = new JPanel();
         panelLogin.setLayout(new FlowLayout());
-        JButton botaoEntrar = new JButton("Entrar");
+		JButton botaoEntrar = new JButton("Entrar");
         botaoEntrar.addActionListener(this);
         botoes.add(botaoEntrar);
 
@@ -73,7 +73,6 @@ public class TelaLogin extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (Autenticacao.getTempo()) {
-
             if (c < 2) {
 			int id = 0;
 			while(id < AdministraDados.funcionarioLista.size())

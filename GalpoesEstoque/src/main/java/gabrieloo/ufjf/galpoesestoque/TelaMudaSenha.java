@@ -47,12 +47,8 @@ public class TelaMudaSenha extends JFrame {
     public void configuraPainelSuperior() {
         topPanel = new JPanel();
         topPanel.setLayout(new BorderLayout());
-
-		configuraBotoes();
-
 		nomeFuncionario = new JLabel(funcionario.getClass().getSimpleName() + " " + funcionario.getNome());
         topPanel.add(nomeFuncionario, BorderLayout.WEST);
-        topPanel.add(btnTelaPrincipal, BorderLayout.EAST);
     }
 
 	public void configuraFormulario() {
@@ -69,13 +65,35 @@ public class TelaMudaSenha extends JFrame {
 
 		campoNovaSenha = new JPasswordField(30);
 		formulario.add(campoNovaSenha);
+	}
 
+	public void configuraPainelPrincipal() {
+
+		principalMudaSenha = new JPanel();
+		principalMudaSenha.setBorder(BorderFactory.createTitledBorder("Mudar Senha"));
+        principalMudaSenha.setLayout(new BorderLayout());
+
+		configuraPainelSuperior();
+		configuraFormulario();
+		configuraBotoes();
+
+		principalMudaSenha.add(topPanel, BorderLayout.NORTH);
+		principalMudaSenha.add(formulario, BorderLayout.CENTER);
+		principalMudaSenha.add(botoes, BorderLayout.SOUTH);
+	}
+
+    public void configuraBotoes() {
 		botoes = new JPanel();
 		botoes.setLayout(new BoxLayout(botoes, BoxLayout.X_AXIS));
 
-		this.btnMudaSenha = new JButton("Confirmar");
-		botoes.add(btnMudaSenha);
+        this.btnTelaPrincipal = new JButton("Voltar");
+        this.btnTelaPrincipal.addActionListener((ActionEvent e) -> {
+            TelaPrincipal tela = new TelaPrincipal(this.funcionario);
+            tela.abreTela();
+            dispose();
+        });
 
+		this.btnMudaSenha = new JButton("Confirmar");
 		this.btnMudaSenha.addActionListener((ActionEvent e) -> {
 			if(Autenticacao.md5(campoSenha.getText()).equals(funcionario.getSenha()))
 			{
@@ -90,35 +108,12 @@ public class TelaMudaSenha extends JFrame {
 			}
 		});
 
-        aviso = new JLabel("");
-        aviso.setForeground(Color.red);
+		aviso = new JLabel("");
+		aviso.setForeground(Color.red);
+
+		botoes.add(btnMudaSenha, BorderLayout.WEST);
+		botoes.add(btnTelaPrincipal, BorderLayout.EAST);
 		botoes.add(aviso);
-		formulario.add(botoes, BorderLayout.SOUTH);
-
-
-	}
-
-	public void configuraPainelPrincipal() {
-
-		principalMudaSenha = new JPanel();
-		principalMudaSenha.setBorder(BorderFactory.createTitledBorder("Mudar Senha"));
-        principalMudaSenha.setLayout(new BorderLayout());
-
-		configuraPainelSuperior();
-		configuraFormulario();
-
-		principalMudaSenha.add(topPanel, BorderLayout.NORTH);
-		principalMudaSenha.add(formulario, BorderLayout.SOUTH);
-	}
-
-    public void configuraBotoes() {
-        this.btnTelaPrincipal = new JButton("Voltar");
-        this.btnTelaPrincipal.addActionListener((ActionEvent e) -> {
-            TelaPrincipal tela = new TelaPrincipal(this.funcionario);
-            tela.abreTela();
-            dispose();
-        });
-
     }
 
     public void abreTela() {
