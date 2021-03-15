@@ -66,13 +66,14 @@ public class TelaProduto extends JFrame {
     //private JTextField marcaProduto;
     private JLabel marcaLabel;
     private JLabel precoLabel;
+    private JLabel qtdLabel;
+    private JLabel qtdLabelValue;
     private JLabel specLabel1;
     //private JTextField specText1;
     private JLabel specLabel2;
     //private JTextField specText2;
 
-    private JSpinner qtdProdutos;
-
+    //private JSpinner qtdProdutos;
     int ultimoIndex;
 
     public TelaProduto(Funcionario funcionario) {
@@ -89,6 +90,16 @@ public class TelaProduto extends JFrame {
 //    public JTextField getSpecText2() {
 //        return specText2;
 //    }
+
+    public JLabel getQtdLabelValue() {
+        return qtdLabelValue;
+    }
+    
+    
+    public JLabel getQtdLabel() {
+        return qtdLabel;
+    }
+
     public JLabel getSpecLabel1() {
         return specLabel1;
     }
@@ -116,10 +127,9 @@ public class TelaProduto extends JFrame {
 //    public JTextField getQuantidadeProduto() {
 //        return quantidadeProduto;
 //    }
-    public JSpinner getQtdSpinner() {
-        return qtdProdutos;
-    }
-
+//    public JSpinner getQtdSpinner() {
+//        return qtdProdutos;
+//    }
 //    public JTextField getMarcaProduto() {
 //        return marcaProduto;
 //    }
@@ -240,7 +250,8 @@ public class TelaProduto extends JFrame {
         this.btnEdita.addActionListener((ActionEvent e) -> {
             int opcao = comboMostraCategoria.getSelectedIndex();
             int prod = listaProdutos.getSelectedIndex();
-            int valor = (Integer)qtdProdutos.getValue();
+            String[] palavras = qtdLabel.getText().trim().split(" ");
+            int valor = Integer.parseInt(palavras[2]);
             AdministraDados.editaProduto(opcao, prod, valor);
             this.repaint();
 //                TelaProduto repintandoTela = new TelaProduto(funcionario);
@@ -299,6 +310,10 @@ da classe Administra dado e implementar ela*/
         this.painelInfoTop.add(precoLabel);
         this.painelInfoTop.add(Box.createRigidArea(new Dimension(0, 15)));
 
+        this.qtdLabelValue = new JLabel();
+        this.qtdLabel = new JLabel();
+        this.painelInfoTop.add(qtdLabel);
+
         this.painelInfoBottom = new JPanel();
         this.painelInfoBottom.setLayout(new BoxLayout(this.painelInfoBottom, BoxLayout.X_AXIS));
 
@@ -306,9 +321,6 @@ da classe Administra dado e implementar ela*/
         this.painelInfoTopMain.setLayout(new BorderLayout());
         this.painelInfoTopMain.add(this.painelInfoTop, BorderLayout.WEST);
 
-        this.painelInfoBottom.add(new JLabel("Qtd. Estoque: "));
-        this.qtdProdutos = new JSpinner();
-        this.painelInfoBottom.add(qtdProdutos);
         //this.painelInfoBottom.add(Box.createRigidArea(new Dimension(0, 300)));
     }
 
@@ -360,7 +372,7 @@ da classe Administra dado e implementar ela*/
         this.configuraPainelDados();
         this.configuraPainelPrincipal();
 
-        this.setSize(800, 400);
+        this.setSize(850, 400);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.add(this.principalTelaProduto);
         this.setLocationRelativeTo(null);

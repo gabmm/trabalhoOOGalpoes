@@ -68,7 +68,6 @@ public class TrataListaPessoas implements ListSelectionListener {
 
         for (Venda ordem : cliente.ordens) {
             modelOrdens.addElement(ordem);
-            System.out.println(ordem);
         }
         
         return modelOrdens;
