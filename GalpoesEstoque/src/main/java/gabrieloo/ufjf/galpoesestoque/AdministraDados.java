@@ -259,29 +259,6 @@ public class AdministraDados {
         return vendaLista.size();
     }
 
-    public static void adicionaProdutos() {
-        /*pergunta categoria, mostra lista de objetos da categoria, seleciona objeto,
-le valor (não pode ser negativo), quantidade do objeto += valor,
-quantidade da classe do objeto += valor, quantidadeProdutos += valor*/
-        String aux;
-        aux = JOptionPane.showInputDialog("Qual produto deseja adicionar? ");
-        if (aux.equals("CPU")) {
-        } else if (aux.equals("Fonte")) {
-        } else if (aux.equals("GPU")) {
-        } else if (aux.equals("Dispostivo de Armazenamento")) {
-        } else if (aux.equals("Memória RAM")) {
-        } else if (aux.equals("Placa-mãe")) {
-        } else {
-            adicionaProdutos();
-        }
-    }
-
-    public static void adicionaProdutos(Produto produto, int quantidade) {
-        //quantidade do objeto += valor
-        //quantidade da classe do objeto += valor
-        //quantidadeProdutos += valor
-    }
-
     public static void editaProduto(int categoria, int produto, int qtd) {
         /*pergunta categoria, mostra lista de objetos da categoria, seleciona objeto,
 quantidade do objeto += valor, quantidade da classe do objeto += valor,
@@ -467,11 +444,32 @@ desejados com novos valores*/
 
     }
 
-    public static void removeUsuario() {
-        //pergunta categoria de usuario (apenas gerentes podem remover funcionarios)
+    public static boolean removeUsuario(int categoria,int usuario) {
+       //pergunta categoria de usuario (apenas gerentes podem remover funcionarios)
         //mostra lista de objetos da categoria selecionada
         //seleciona objeto
         //seta atributos do objeto para atributos padrao (remover pode gerar execoes)
+        int aux;
+        if (categoria == 0) {
+            aux = JOptionPane.showConfirmDialog(null, "Você esta querendo remover: "
+                    + clienteLista.get(usuario));
+            if (aux == JOptionPane.YES_OPTION) {
+                clienteLista.remove(usuario);
+                return true;
+            } else {
+                return false;
+            }
+        } else if (categoria == 1) {
+            aux = JOptionPane.showConfirmDialog(null, "Você esta querendo remover: "
+                    + funcionarioLista.get(usuario));
+            if (aux == JOptionPane.YES_OPTION) {
+                funcionarioLista.remove(usuario);
+                return true;
+            } else {
+                return false;
+            }
+        }
+        return false;
     }
 
     public static void realizaVenda(Funcionario funcionario, Cliente cliente, boolean ehCartao, ArrayList<Produto> produtos) {
@@ -600,14 +598,4 @@ desejados com novos valores*/
         }
         return true;
     }
-    
-//    public static boolean naoRemovaProduto(int categoria, int produto) {
-//        if (categoria == 0) {
-//            for (int i = 0; i < vendaLista.size(); i++) {
-//                for (int 0 = 0; 0 < vendaLista.get(i).getProdutos(j).size(); 0++) {
-//                }
-//            }
-//        
-//        return false;
-//    }
 }

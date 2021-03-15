@@ -118,8 +118,8 @@ public class TelaPessoas extends JFrame {
             try {
                 int opcao = comboPessoa.getSelectedIndex();
                 int prod = listaPessoas.getSelectedIndex();
-                if (AdministraDados.removeProduto(opcao, prod)) {
-                    TelaProduto repintandoTela = new TelaProduto(funcionario);
+                if (AdministraDados.removeUsuario(opcao, prod)) {
+                    TelaPessoas repintandoTela = new TelaPessoas(funcionario);
                     repintandoTela.abreTela();
                     dispose();
                 }
