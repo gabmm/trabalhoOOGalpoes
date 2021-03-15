@@ -13,7 +13,6 @@ import gabrieloo.ufjf.galpoesestoque.pessoas.Vendedor;
 import gabrieloo.ufjf.galpoesestoque.produtos.Produto;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class Main {
 
@@ -432,7 +431,6 @@ public class Main {
 
         TelaLogin tela = new TelaLogin();
         tela.abreTela();
-
     }
 
 }

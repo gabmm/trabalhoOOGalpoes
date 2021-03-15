@@ -264,9 +264,6 @@ public class AdministraDados {
     }
 
     public static void editaProduto(int categoria, int produto, int qtd) {
-        /*pergunta categoria, mostra lista de objetos da categoria, seleciona objeto,
-quantidade do objeto += valor, quantidade da classe do objeto += valor,
-quantidadeProdutos += valor*/
         String aux;
         int num = 0;
         if (categoria == 0) {
@@ -373,16 +370,8 @@ quantidadeProdutos += valor*/
             }
         }
     }
-    
-// tratar o remove, antes de remover verificar se o produto esta em listaVenda
-//percorrer itens de Venda e dentro de cada item veificar os produtos
-// Cadastrar produtos na lista
 
     public static boolean removeProduto(int categoria, int produto) {
-        /*descadastro de produto, pergunta categoria, mostra lista de objetos da
-categoria, seleciona objeto, seta atributos do objeto para atributos padrao
-(remover pode gerar execoes), quantidade da classe do objeto -= quantidade do
-objeto, quantidadeProdutos -= quantidade do objeto*/
         int aux;
         if (categoria == 0) {
             aux = JOptionPane.showConfirmDialog(null, "Você esta querendo remover: "
@@ -442,25 +431,7 @@ objeto, quantidadeProdutos -= quantidade do objeto*/
         return false;
     }
 
-    public static void cadastraUsuario() {
-        /*pergunta categoria de usuario (apenas gerentes podem cadastrar funcionarios),
-instancia novo usuario daquela categoria, pergunta e seta atributos daquele
-cliente, adiciona cliente a lista de clientes*/
-
-    }
-
-    public static void editaUsuario() {
-        /*pergunta se cliente ou funcionariomostra lista ded objetos da categoria
-selecionada, seleciona objeto, mostra atributos do objeto, seta os atributos
-desejados com novos valores*/
-
-    }
-
-    public static boolean removeUsuario(int categoria,int usuario) {
-       //pergunta categoria de usuario (apenas gerentes podem remover funcionarios)
-        //mostra lista de objetos da categoria selecionada
-        //seleciona objeto
-        //seta atributos do objeto para atributos padrao (remover pode gerar execoes)
+    public static boolean removeUsuario(int categoria, int usuario) {
         int aux;
         if (categoria == 0) {
             aux = JOptionPane.showConfirmDialog(null, "Você esta querendo remover: "
@@ -520,82 +491,46 @@ desejados com novos valores*/
 
     public static void cadastraCPU() {
         CPU cpu = new CPU();
-
-        //mostra atributos
-        //para todos os atributos:
-        //setAtributo(valorLido)
         adicionaCPU(cpu);
     }
 
     public static void cadastraFonte() {
         Fonte fonte = new Fonte();
-
-        //mostra atributos
-        //para todos os atributos:
-        //setAtributo(valorLido)
         adicionaFonte(fonte);
     }
 
     public static void cadastraGPU() {
         GPU gpu = new GPU();
-
-        //mostra atributos
-        //para todos os atributos:
-        //setAtributo(valorLido)
         adicionaGPU(gpu);
     }
 
     public static void cadastraDA() {
         DispositivoArmazenamento DA = new DispositivoArmazenamento();
-
-        //mostra atributos
-        //para todos os atributos:
-        //setAtributo(valorLido)
         adicionaDA(DA);
     }
 
     public static void cadastraRAM() {
         MemoriaRAM ram = new MemoriaRAM();
-
-        //mostra atributos
-        //para todos os atributos:
-        //setAtributo(valorLido)
         adicionaRAM(ram);
     }
 
     public static void cadastraMotherboard() {
         Motherboard mb = new Motherboard();
-
-        //mostra atributos
-        //para todos os atributos:
-        //setAtributo(valorLido)
         adicionaMotherboard(mb);
     }
 
     public static void cadastraCliente() {
         Cliente cliente = new Cliente();
-
-        //mostra atributos
-        //para todos os atributos:
-        //setAtributo(valorLido)
         adicionaCliente(cliente);
     }
 
     public static void cadastraVendedor() {
         Vendedor vendedor = new Vendedor();
-
-        //mostra atributos
-        //para todos os atributos:
-        //setAtributo(valorLido)
         adicionaFuncionario(vendedor);
     }
 
     public static void cadastraGerente() {
         Gerente gerente = new Gerente();
-
-        //mostra atributos
-        //para todos os atributos:
-        //setAtributo(valorLido)
         adicionaFuncionario(gerente);
     }
 

@@ -9,7 +9,6 @@ package gabrieloo.ufjf.galpoesestoque.pessoas;
 
 import gabrieloo.ufjf.galpoesestoque.vendas.Venda;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class Cliente extends Usuario {
 

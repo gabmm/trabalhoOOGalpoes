@@ -4,8 +4,7 @@
   Gabriel Martins da Costa Medeiros;
   Vinícius Barbosa Varoto;
   Weyder Luiz Gomes Gante.
-  */
-
+ */
 package gabrieloo.ufjf.galpoesestoque;
 
 import gabrieloo.ufjf.galpoesestoque.vendas.Venda;
@@ -25,15 +24,14 @@ public class Caixa {
     public static double getSaldo() {
         return (caixa - calculaPagamentoSalarios());
     }
-    
-    public static double getReceita()
-    {
+
+    public static double getReceita() {
         double receita = 0;
-        
+
         for (Venda venda : AdministraDados.vendaLista) {
             receita += venda.getValorTotal();
         }
-        
+
         return receita;
     }
 

@@ -20,10 +20,8 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.JSpinner;
 import javax.swing.ListSelectionModel;
 
 /* @author gabriel
@@ -32,9 +30,7 @@ import javax.swing.ListSelectionModel;
 public class TelaProduto extends JFrame {
 
     private JComboBox comboMostraCategoria;
-    //private JComboBox comboMostraMarcas;
 
-    //private DefaultComboBoxModel<String> comboMarcasModel;
     private JPanel principalTelaProduto;
     private JPanel painelDados;
     private JPanel painelDadosTop;
@@ -60,20 +56,12 @@ public class TelaProduto extends JFrame {
     private final Funcionario funcionario;
 
     private JList<Produto> listaProdutos;
-
-    //private JTextField precoProduto;
-    //private JTextField quantidadeProduto;
-    //private JTextField marcaProduto;
     private JLabel marcaLabel;
     private JLabel precoLabel;
     private JLabel qtdLabel;
     private JLabel qtdLabelValue;
     private JLabel specLabel1;
-    //private JTextField specText1;
     private JLabel specLabel2;
-    //private JTextField specText2;
-
-    //private JSpinner qtdProdutos;
     int ultimoIndex;
     
     private int opcao;
@@ -85,14 +73,6 @@ public class TelaProduto extends JFrame {
         this.opcao = 0;
 
     }
-
-//    public JTextField getSpecText1() {
-//        return specText1;
-//    }
-//
-//    public JTextField getSpecText2() {
-//        return specText2;
-//    }
 
     public JLabel getQtdLabelValue() {
         return qtdLabelValue;
@@ -126,20 +106,7 @@ public class TelaProduto extends JFrame {
     public JLabel getPrecoProduto() {
         return precoLabel;
     }
-
-//    public JTextField getQuantidadeProduto() {
-//        return quantidadeProduto;
-//    }
-//    public JSpinner getQtdSpinner() {
-//        return qtdProdutos;
-//    }
-//    public JTextField getMarcaProduto() {
-//        return marcaProduto;
-//    }
-//    public JComboBox getComboMarca()
-//    {
-//        return comboMostraMarcas;
-//    }
+    
     public void atualizaListaProdutos() {
 
         this.modelCPU = new DefaultListModel<>();
@@ -196,33 +163,16 @@ public class TelaProduto extends JFrame {
             opcao = comboMostraCategoria.getSelectedIndex();
             if (opcao == 0) {
                 this.listaProdutos.setModel(modelCPU);
-//                this.specLabel1.setText("Core/Threads:");
-//                this.specLabel2.setText("Nome:");
-
             } else if (opcao == 1) {
                 listaProdutos.setModel(modelGPU);
-//                this.specLabel1.setText("Memória:");
-//                this.specLabel2.setText("Nome:");
-
             } else if (opcao == 2) {
                 listaProdutos.setModel(modelRAM);
-//                this.specLabel1.setText("Capacidade:");
-//                this.specLabel2.setText("Clock:");
-
             } else if (opcao == 3) {
                 listaProdutos.setModel(modelMB);
-//                this.specLabel1.setText("Tamanho:");
-//                this.specLabel2.setText("Chipset:");
-
             } else if (opcao == 4) {
                 listaProdutos.setModel(modelDA);
-//                this.specLabel1.setText("Tipo:");
-//                this.specLabel2.setText("Capacidade:");
-
             } else if (opcao == 5) {
                 listaProdutos.setModel(modelFonte);
-//                this.specLabel1.setText("Potencia:");
-//                this.specLabel2.setText("Eficiencia:");
             }
         });
 
@@ -257,17 +207,11 @@ public class TelaProduto extends JFrame {
             int valor = Integer.parseInt(palavras[2]);
             AdministraDados.editaProduto(opcao, prod, valor);
             this.repaint();
-//                TelaProduto repintandoTela = new TelaProduto(funcionario);
-//                repintandoTela.abreTela();
-//                dispose();
         });
 
         this.btnRemove = new JButton("Remove");
         this.btnRemove.addActionListener((ActionEvent e) -> {
             try {
-                /*usar o indice do comboBox para saber qual  categoria de produto indice da lista
-selecionada pegar objeto, pegar o objeto do modelo, chamar a funcao removeObjeto
-da classe Administra dado e implementar ela*/
                 int opcao = comboMostraCategoria.getSelectedIndex();
                 int prod = listaProdutos.getSelectedIndex();
                 if (AdministraDados.removeProduto(opcao, prod)) {
@@ -282,16 +226,6 @@ da classe Administra dado e implementar ela*/
 
     }
 
-//    public void iniciaComboMarcas()
-//    {
-//        this.comboMarcasModel = new DefaultComboBoxModel<>();
-//        
-//        for (String string : AdministraDados.marcaLista) {
-//            this.comboMarcasModel.addElement(string);
-//        }
-//        
-//        this.comboMostraMarcas = new JComboBox(comboMarcasModel);
-//    }
     public void configuraPainelInfo() {
         this.painelInfoTop = new JPanel();
         this.painelInfoTop.setLayout(new BoxLayout(this.painelInfoTop, BoxLayout.Y_AXIS));
@@ -323,8 +257,6 @@ da classe Administra dado e implementar ela*/
         this.painelInfoTopMain = new JPanel();
         this.painelInfoTopMain.setLayout(new BorderLayout());
         this.painelInfoTopMain.add(this.painelInfoTop, BorderLayout.WEST);
-
-        //this.painelInfoBottom.add(Box.createRigidArea(new Dimension(0, 300)));
     }
 
     public void configuraPainelDados() {
