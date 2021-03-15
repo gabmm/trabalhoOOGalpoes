@@ -352,7 +352,9 @@ quantidadeProdutos += valor*/
                     System.out.println("Não eh possivel registrar valor negativo!");
                     editaProduto(categoria,produto,qtd);
                 }
-                listaCPU.get(produto).setQuantidade(num);
+                else{
+                    listaCPU.get(produto).setQuantidade(num);
+                }
             } else {
                 System.out.println("Voce não digitou apenas numeros");
                 editaProduto(categoria, produto, qtd);
@@ -367,8 +369,8 @@ quantidadeProdutos += valor*/
                 if (num < 0) {
                     System.out.println("Não eh possivel registrar valor negativo!");
                     editaProduto(categoria,produto,qtd);
-                }
-                listaGPU.get(produto).setQuantidade(num);
+                }else{
+                listaGPU.get(produto).setQuantidade(num);}
             } else {
                 System.out.println("Voce não digitou apenas numeros");
                 editaProduto(categoria, produto, qtd);
@@ -383,8 +385,8 @@ quantidadeProdutos += valor*/
                 if (num < 0) {
                     System.out.println("Não eh possivel registrar valor negativo!");
                     editaProduto(categoria,produto,qtd);
-                }
-                listaRAM.get(produto).setQuantidade(num);
+                }else{
+                listaRAM.get(produto).setQuantidade(num);}
             } else {
                 System.out.println("Voce não digitou apenas numeros");
                 editaProduto(categoria, produto, qtd);
@@ -399,8 +401,8 @@ quantidadeProdutos += valor*/
                 if (num < 0) {
                     System.out.println("Não eh possivel registrar valor negativo!");
                     editaProduto(categoria,produto,qtd);
-                }
-                listaMB.get(produto).setQuantidade(num);
+                }else{
+                listaMB.get(produto).setQuantidade(num);}
             } else {
                 System.out.println("Voce não digitou apenas numeros");
                 editaProduto(categoria, produto, qtd);
@@ -415,8 +417,8 @@ quantidadeProdutos += valor*/
                 if (num < 0) {
                     System.out.println("Não eh possivel registrar valor negativo!");
                     editaProduto(categoria,produto,qtd);
-                }
-                listaDA.get(produto).setQuantidade(num);
+                }else{
+                listaDA.get(produto).setQuantidade(num);}
             } else {
                 System.out.println("Voce não digitou apenas numeros");
                 editaProduto(categoria, produto, qtd);
@@ -431,15 +433,16 @@ quantidadeProdutos += valor*/
                 if (num < 0) {
                     System.out.println("Não eh possivel registrar valor negativo!");
                     editaProduto(categoria,produto,qtd);
-                }
-                listaFonte.get(produto).setQuantidade(num);
+                }else{
+                listaFonte.get(produto).setQuantidade(num);}
             } else {
                 System.out.println("Voce não digitou apenas numeros");
                 editaProduto(categoria, produto, qtd);
             }
         }
     }
-// tratar o remove
+// tratar o remove, antes de remover verificar se o produto esta em listaVenda
+//percorrer itens de Venda e dentro de cada item veificar os produtos
 // Cadastrar produtos na lista
     public static boolean removeProduto(int categoria, int produto) {
         /*descadastro de produto, pergunta categoria, mostra lista de objetos da
