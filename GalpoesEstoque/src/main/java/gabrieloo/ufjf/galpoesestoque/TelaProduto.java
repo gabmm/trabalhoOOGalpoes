@@ -245,7 +245,12 @@ public class TelaProduto extends JFrame {
 
         this.btnRemove = new JButton("Remove");
         this.btnRemove.addActionListener((ActionEvent e) -> {
-
+//mexer aqui
+            try {
+                
+            } catch (ArrayIndexOutOfBoundsException ex) {
+                System.out.println("usuario tentou remover sem selecionar");
+            }
         });
 
     }
