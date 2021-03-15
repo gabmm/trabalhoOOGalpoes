@@ -129,14 +129,14 @@ public class TelaVenda extends JFrame {
             modelOrdem.addElement(modelTodosProdutos.getElementAt(comboMostraProduto.getSelectedIndex()));
             ordem.setModel(modelOrdem);
             valorTotalVenda += modelTodosProdutos.getElementAt(comboMostraProduto.getSelectedIndex()).getPreco();
-            valorTotal.setText("Valor Total: R$ "  + valorTotalVenda);
+            valorTotal.setText("Valor Total: R$ "  + String.format("%.2f", valorTotalVenda));
         });
 
         this.btnRemoveProduto = new JButton("Remover");
         this.btnRemoveProduto.addActionListener((ActionEvent e) -> {
             try {
                 valorTotalVenda -= modelOrdem.get(ordem.getSelectedIndex()).getPreco();
-                valorTotal.setText("Valor Total: R$ " + valorTotalVenda);
+                valorTotal.setText("Valor Total: R$ " + String.format("%.2f", valorTotalVenda));
                 modelOrdem.removeElementAt(ordem.getSelectedIndex());
                 ordem.setModel(modelOrdem);
             } catch (ArrayIndexOutOfBoundsException ex) {

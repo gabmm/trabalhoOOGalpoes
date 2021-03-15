@@ -11,6 +11,7 @@ package gabrieloo.ufjf.galpoesestoque.vendas;
 import gabrieloo.ufjf.galpoesestoque.pessoas.Cliente;
 import gabrieloo.ufjf.galpoesestoque.pessoas.Funcionario;
 import gabrieloo.ufjf.galpoesestoque.produtos.Produto;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class Venda {
@@ -70,6 +71,6 @@ public class Venda {
 
     @Override
     public String toString() {
-        return this.getCliente().getNome() + ". Valor Total: R$" + this.getValorTotal();
+        return this.getCliente().getNome() + ". Valor Total: R$" + String.format("%.2f", this.getValorTotal());
     }
 }

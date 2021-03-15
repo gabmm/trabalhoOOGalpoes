@@ -37,6 +37,6 @@ public class Fonte extends Produto {
 
     @Override
     public String toString() {
-        return this.getClass().getSimpleName() + " " + this.getMarca() + " " + this.getPower() + "W " + this.getEficiencia()+ " - R$" + this.getPreco() + " (" + this.getQuantidade() + " un.)";
+        return this.getClass().getSimpleName() + " " + this.getMarca() + " " + this.getPower() + "W " + this.getEficiencia()+ " - R$" + String.format("%.2f", this.getPreco()) + " (" + this.getQuantidade() + " un.)";
     }
 }
