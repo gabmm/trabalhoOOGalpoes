@@ -19,7 +19,32 @@ public class Main {
         AdministraDados.listaCPU.get(0).setPreco(1300);
         AdministraDados.listaCPU.get(0).setNome("Ryzen 5 3500x");
         AdministraDados.listaCPU.get(0).setCoreThreads(0);
-
+        AdministraDados.cadastraCPU();
+        AdministraDados.listaCPU.get(1).setMarca(8);
+        AdministraDados.listaCPU.get(1).setPreco(1238);
+        AdministraDados.listaCPU.get(1).setNome("CORE I5-10400F");
+        AdministraDados.listaCPU.get(1).setCoreThreads(7);
+        AdministraDados.cadastraCPU();
+        AdministraDados.listaCPU.get(2).setMarca(8);
+        AdministraDados.listaCPU.get(2).setPreco(890);
+        AdministraDados.listaCPU.get(2).setNome("Core i3 10100F");
+        AdministraDados.listaCPU.get(2).setCoreThreads(5);
+        AdministraDados.cadastraCPU();
+        AdministraDados.listaCPU.get(3).setMarca(6);
+        AdministraDados.listaCPU.get(3).setPreco(1420);
+        AdministraDados.listaCPU.get(3).setNome("RYZEN 5 3500X");
+        AdministraDados.listaCPU.get(3).setCoreThreads(6);
+        AdministraDados.cadastraCPU();
+        AdministraDados.listaCPU.get(4).setMarca(6);
+        AdministraDados.listaCPU.get(4).setPreco(940);
+        AdministraDados.listaCPU.get(4).setNome("Ryzen 3 2200G");
+        AdministraDados.listaCPU.get(4).setCoreThreads(4);
+        AdministraDados.cadastraCPU();
+        AdministraDados.listaCPU.get(5).setMarca(8);
+        AdministraDados.listaCPU.get(5).setPreco(890);
+        AdministraDados.listaCPU.get(5).setNome("Core I7 3770");
+        AdministraDados.listaCPU.get(5).setCoreThreads(5);
+        
         AdministraDados.cadastraDA();
         AdministraDados.listaDA.get(0).setMarca(7);
         AdministraDados.listaDA.get(0).setPreco(250);
