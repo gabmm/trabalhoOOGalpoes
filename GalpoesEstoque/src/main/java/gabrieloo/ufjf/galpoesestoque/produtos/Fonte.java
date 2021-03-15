@@ -19,14 +19,6 @@ public class Fonte extends Produto {
     public Fonte() {
     }
 
-    public int getQuantidade() {
-        return quantidade;
-    }
-
-    public void setQuantidade(int quantidade) {
-        this.quantidade = quantidade;
-    }
-
     public int getPower() {
         return power;
     }

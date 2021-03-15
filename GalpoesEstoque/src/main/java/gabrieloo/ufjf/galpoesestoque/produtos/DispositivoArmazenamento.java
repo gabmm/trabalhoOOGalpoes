@@ -35,14 +35,6 @@ public class DispositivoArmazenamento extends Produto {
         this.tipo = AdministraDados.tipoArmazenamentoLista.get(index);
     }
 
-    public int getQuantidade() {
-        return quantidade;
-    }
-
-    public void setQuantidade(int quantidade) {
-        this.quantidade = quantidade;
-    }
-
     @Override
     public String toString() {
         return this.getTipo() + " " + this.getMarca() + " " + this.getCapacidade() + " - R$" + this.getPreco() + " (" + this.getQuantidade() + " un.)";

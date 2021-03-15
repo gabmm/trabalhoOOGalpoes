@@ -110,7 +110,9 @@ public class TelaPessoas extends JFrame {
 
         this.btnCadastraNovo = new JButton("Cadastra Novo");
         this.btnCadastraNovo.addActionListener((ActionEvent e) -> {
-
+            TelaCadastraPessoa tela = new TelaCadastraPessoa(funcionario, comboPessoa.getSelectedIndex());
+            tela.abreTela();
+            dispose();
         });
 
         this.btnRemoveUsuario = new JButton("Remove");

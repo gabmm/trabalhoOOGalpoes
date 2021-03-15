@@ -14,152 +14,251 @@ public class Main {
     private static void rotinaInicializacao() {
         AdministraDados.inicializacaoListas();
 
+        // CPU =======================
         AdministraDados.cadastraCPU();
         AdministraDados.listaCPU.get(0).setMarca(6);
         AdministraDados.listaCPU.get(0).setPreco(1300);
         AdministraDados.listaCPU.get(0).setNome("Ryzen 5 3500x");
         AdministraDados.listaCPU.get(0).setCoreThreads(0);
+        AdministraDados.listaCPU.get(0).setQuantidade(6);
+
         AdministraDados.cadastraCPU();
         AdministraDados.listaCPU.get(1).setMarca(8);
         AdministraDados.listaCPU.get(1).setPreco(1238);
-        AdministraDados.listaCPU.get(1).setNome("CORE I5-10400F");
+        AdministraDados.listaCPU.get(1).setNome("Core i5 10400F");
         AdministraDados.listaCPU.get(1).setCoreThreads(7);
+        AdministraDados.listaCPU.get(1).setQuantidade(10);
+
         AdministraDados.cadastraCPU();
         AdministraDados.listaCPU.get(2).setMarca(8);
         AdministraDados.listaCPU.get(2).setPreco(890);
         AdministraDados.listaCPU.get(2).setNome("Core i3 10100F");
         AdministraDados.listaCPU.get(2).setCoreThreads(5);
+        AdministraDados.listaCPU.get(2).setQuantidade(2);
+
         AdministraDados.cadastraCPU();
         AdministraDados.listaCPU.get(3).setMarca(6);
         AdministraDados.listaCPU.get(3).setPreco(1420);
-        AdministraDados.listaCPU.get(3).setNome("RYZEN 5 3500X");
+        AdministraDados.listaCPU.get(3).setNome("Ryzen 5 3500X");
         AdministraDados.listaCPU.get(3).setCoreThreads(6);
+        AdministraDados.listaCPU.get(3).setQuantidade(30);
+
         AdministraDados.cadastraCPU();
         AdministraDados.listaCPU.get(4).setMarca(6);
         AdministraDados.listaCPU.get(4).setPreco(940);
         AdministraDados.listaCPU.get(4).setNome("Ryzen 3 2200G");
         AdministraDados.listaCPU.get(4).setCoreThreads(4);
+        AdministraDados.listaCPU.get(4).setQuantidade(12);
+
         AdministraDados.cadastraCPU();
         AdministraDados.listaCPU.get(5).setMarca(8);
         AdministraDados.listaCPU.get(5).setPreco(890);
-        AdministraDados.listaCPU.get(5).setNome("Core I7 3770");
+        AdministraDados.listaCPU.get(5).setNome("Core i7 3770");
         AdministraDados.listaCPU.get(5).setCoreThreads(5);
+        AdministraDados.listaCPU.get(5).setQuantidade(10);
 
+        // DA =======================
         AdministraDados.cadastraDA();
         AdministraDados.listaDA.get(0).setMarca(7);
         AdministraDados.listaDA.get(0).setPreco(250);
         AdministraDados.listaDA.get(0).setTipo(0);
         AdministraDados.listaDA.get(0).setCapacidade(4);
+        AdministraDados.listaDA.get(0).setQuantidade(20);
+
         AdministraDados.cadastraDA();
         AdministraDados.listaDA.get(1).setMarca(10);
         AdministraDados.listaDA.get(1).setPreco(292);
         AdministraDados.listaDA.get(1).setTipo(0);
         AdministraDados.listaDA.get(1).setCapacidade(5);
+        AdministraDados.listaDA.get(1).setQuantidade(12);
+
         AdministraDados.cadastraDA();
         AdministraDados.listaDA.get(2).setMarca(10);
         AdministraDados.listaDA.get(2).setPreco(635);
         AdministraDados.listaDA.get(2).setTipo(0);
         AdministraDados.listaDA.get(2).setCapacidade(6);
+        AdministraDados.listaDA.get(2).setQuantidade(7);
+
         AdministraDados.cadastraDA();
         AdministraDados.listaDA.get(3).setMarca(7);
         AdministraDados.listaDA.get(3).setPreco(360);
         AdministraDados.listaDA.get(3).setTipo(1);
         AdministraDados.listaDA.get(3).setCapacidade(2);
+        AdministraDados.listaDA.get(3).setQuantidade(22);
+
         AdministraDados.cadastraDA();
         AdministraDados.listaDA.get(4).setMarca(11);
         AdministraDados.listaDA.get(4).setPreco(303);
         AdministraDados.listaDA.get(4).setTipo(1);
         AdministraDados.listaDA.get(4).setCapacidade(2);
+        AdministraDados.listaDA.get(4).setQuantidade(8);
+
         AdministraDados.cadastraDA();
         AdministraDados.listaDA.get(5).setMarca(11);
         AdministraDados.listaDA.get(5).setPreco(445);
         AdministraDados.listaDA.get(5).setTipo(1);
         AdministraDados.listaDA.get(5).setCapacidade(3);
+        AdministraDados.listaDA.get(5).setQuantidade(18);
 
+        // Fonte =======================
         AdministraDados.cadastraFonte();
         AdministraDados.listaFonte.get(0).setMarca(3);
         AdministraDados.listaFonte.get(0).setPreco(500);
         AdministraDados.listaFonte.get(0).setEficiencia(2);
         AdministraDados.listaFonte.get(0).setPower(6);
+        AdministraDados.listaFonte.get(0).setQuantidade(20);
+
         AdministraDados.cadastraFonte();
         AdministraDados.listaFonte.get(1).setMarca(12);
         AdministraDados.listaFonte.get(1).setPreco(150);
         AdministraDados.listaFonte.get(1).setEficiencia(0);
         AdministraDados.listaFonte.get(1).setPower(4);
+        AdministraDados.listaFonte.get(1).setQuantidade(12);
+
         AdministraDados.cadastraFonte();
         AdministraDados.listaFonte.get(2).setMarca(0);
         AdministraDados.listaFonte.get(2).setPreco(300);
         AdministraDados.listaFonte.get(2).setEficiencia(1);
         AdministraDados.listaFonte.get(2).setPower(4);
+        AdministraDados.listaFonte.get(2).setQuantidade(11);
+
         AdministraDados.cadastraFonte();
         AdministraDados.listaFonte.get(3).setMarca(13);
         AdministraDados.listaFonte.get(3).setPreco(410);
         AdministraDados.listaFonte.get(3).setEficiencia(1);
         AdministraDados.listaFonte.get(3).setPower(5);
+        AdministraDados.listaFonte.get(3).setQuantidade(6);
+
         AdministraDados.cadastraFonte();
         AdministraDados.listaFonte.get(4).setMarca(13);
         AdministraDados.listaFonte.get(4).setPreco(660);
         AdministraDados.listaFonte.get(4).setEficiencia(2);
         AdministraDados.listaFonte.get(4).setPower(9);
+        AdministraDados.listaFonte.get(4).setQuantidade(30);
+
         AdministraDados.cadastraFonte();
         AdministraDados.listaFonte.get(5).setMarca(14);
         AdministraDados.listaFonte.get(5).setPreco(50);
         AdministraDados.listaFonte.get(5).setEficiencia(0);
         AdministraDados.listaFonte.get(5).setPower(3);
+        AdministraDados.listaFonte.get(5).setQuantidade(6);
 
+        // GPU =======================
         AdministraDados.cadastraGPU();
         AdministraDados.listaGPU.get(0).setMarca(0);
         AdministraDados.listaGPU.get(0).setPreco(2300);
         AdministraDados.listaGPU.get(0).setNome("RTX 2060");
         AdministraDados.listaGPU.get(0).setMemoria(6);
+        AdministraDados.listaGPU.get(0).setQuantidade(6);
+
         AdministraDados.cadastraGPU();
         AdministraDados.listaGPU.get(1).setMarca(1);
         AdministraDados.listaGPU.get(1).setPreco(10510);
         AdministraDados.listaGPU.get(1).setNome("RX 2070");
         AdministraDados.listaGPU.get(1).setMemoria(4);
+        AdministraDados.listaGPU.get(1).setQuantidade(12);
+
         AdministraDados.cadastraGPU();
         AdministraDados.listaGPU.get(2).setMarca(9);
         AdministraDados.listaGPU.get(2).setPreco(2267);
         AdministraDados.listaGPU.get(2).setNome("RX 6800");
         AdministraDados.listaGPU.get(2).setMemoria(9);
+        AdministraDados.listaGPU.get(2).setQuantidade(9);
+
         AdministraDados.cadastraGPU();
         AdministraDados.listaGPU.get(3).setMarca(1);
         AdministraDados.listaGPU.get(3).setPreco(1700);
         AdministraDados.listaGPU.get(3).setNome("RX 6800");
         AdministraDados.listaGPU.get(3).setMemoria(4);
+        AdministraDados.listaGPU.get(3).setQuantidade(13);
+
         AdministraDados.cadastraGPU();
         AdministraDados.listaGPU.get(4).setMarca(9);
         AdministraDados.listaGPU.get(4).setPreco(2267);
         AdministraDados.listaGPU.get(4).setNome("GTX 1650");
         AdministraDados.listaGPU.get(4).setMemoria(5);
+        AdministraDados.listaGPU.get(4).setQuantidade(15);
+
         AdministraDados.cadastraGPU();
         AdministraDados.listaGPU.get(5).setMarca(6);
         AdministraDados.listaGPU.get(5).setPreco(2070);
         AdministraDados.listaGPU.get(5).setNome("RX 5500");
         AdministraDados.listaGPU.get(5).setMemoria(6);
-        
+        AdministraDados.listaGPU.get(5).setQuantidade(22);
+
+        //RAM =======================
         AdministraDados.cadastraRAM();
         AdministraDados.listaRAM.get(0).setMarca(4);
-        AdministraDados.listaRAM.get(0).setPreco(200);
+        AdministraDados.listaRAM.get(0).setPreco(250);
         AdministraDados.listaRAM.get(0).setCapacidade(4);
         AdministraDados.listaRAM.get(0).setClock(2667);
+        AdministraDados.listaRAM.get(0).setQuantidade(42);
+
         AdministraDados.cadastraRAM();
-        AdministraDados.listaRAM.get(1).setMarca(3);
-        AdministraDados.listaRAM.get(1).setPreco(120);
-        AdministraDados.listaRAM.get(1).setCapacidade(2);
-        AdministraDados.listaRAM.get(1).setClock(1334);
+        AdministraDados.listaRAM.get(1).setMarca(16);
+        AdministraDados.listaRAM.get(1).setPreco(600);
+        AdministraDados.listaRAM.get(1).setCapacidade(9);
+        AdministraDados.listaRAM.get(1).setClock(4000);
+        AdministraDados.listaRAM.get(1).setQuantidade(20);
+
         AdministraDados.cadastraRAM();
-        AdministraDados.listaRAM.get(2).setMarca(4);
+        AdministraDados.listaRAM.get(2).setMarca(5);
         AdministraDados.listaRAM.get(2).setPreco(295);
         AdministraDados.listaRAM.get(2).setCapacidade(6);
-        AdministraDados.listaRAM.get(2).setClock(2666);
-        
-        AdministraDados.cadastraMotherboard();
-        AdministraDados.listaMB.get(0).setMarca(1);
-        AdministraDados.listaMB.get(0).setPreco(770);
-        AdministraDados.listaMB.get(0).setChipset(8);
-        AdministraDados.listaMB.get(0).setTamanho(0);
+        AdministraDados.listaRAM.get(2).setClock(3200);
+        AdministraDados.listaRAM.get(2).setQuantidade(14);
 
+        AdministraDados.cadastraRAM();
+        AdministraDados.listaRAM.get(3).setMarca(13);
+        AdministraDados.listaRAM.get(3).setPreco(350);
+        AdministraDados.listaRAM.get(3).setCapacidade(6);
+        AdministraDados.listaRAM.get(3).setClock(2400);
+        AdministraDados.listaRAM.get(3).setQuantidade(21);
+
+        AdministraDados.cadastraRAM();
+        AdministraDados.listaRAM.get(4).setMarca(7);
+        AdministraDados.listaRAM.get(4).setPreco(80);
+        AdministraDados.listaRAM.get(4).setCapacidade(2);
+        AdministraDados.listaRAM.get(4).setClock(887);
+        AdministraDados.listaRAM.get(4).setQuantidade(39);
+        
+        // MB =======================
+        AdministraDados.cadastraMotherboard();
+        AdministraDados.listaMB.get(0).setMarca(2);
+        AdministraDados.listaMB.get(0).setPreco(570);
+        AdministraDados.listaMB.get(0).setChipset(1);
+        AdministraDados.listaMB.get(0).setTamanho(2);
+        AdministraDados.listaMB.get(0).setQuantidade(19);
+
+        AdministraDados.cadastraMotherboard();
+        AdministraDados.listaMB.get(1).setMarca(1);
+        AdministraDados.listaMB.get(1).setPreco(1200);
+        AdministraDados.listaMB.get(1).setChipset(9);
+        AdministraDados.listaMB.get(1).setTamanho(1);
+        AdministraDados.listaMB.get(1).setQuantidade(3);
+
+        AdministraDados.cadastraMotherboard();
+        AdministraDados.listaMB.get(2).setMarca(17);
+        AdministraDados.listaMB.get(2).setPreco(440);
+        AdministraDados.listaMB.get(2).setChipset(18);
+        AdministraDados.listaMB.get(2).setTamanho(2);
+        AdministraDados.listaMB.get(2).setQuantidade(9);
+
+        AdministraDados.cadastraMotherboard();
+        AdministraDados.listaMB.get(3).setMarca(18);
+        AdministraDados.listaMB.get(3).setPreco(1890);
+        AdministraDados.listaMB.get(3).setChipset(16);
+        AdministraDados.listaMB.get(3).setTamanho(0);
+        AdministraDados.listaMB.get(3).setQuantidade(4);
+
+        AdministraDados.cadastraMotherboard();
+        AdministraDados.listaMB.get(4).setMarca(19);
+        AdministraDados.listaMB.get(4).setPreco(690);
+        AdministraDados.listaMB.get(4).setChipset(3);
+        AdministraDados.listaMB.get(4).setTamanho(3);
+        AdministraDados.listaMB.get(4).setQuantidade(12);
+
+        // PESSOAS =======================
         AdministraDados.cadastraGerente();
         AdministraDados.funcionarioLista.get(0).setNome("Jober Arauto");
         AdministraDados.funcionarioLista.get(0).setEmail("joarauto@galpoes.com");

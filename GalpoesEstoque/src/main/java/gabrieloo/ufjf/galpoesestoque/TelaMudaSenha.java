@@ -124,26 +124,31 @@ public class TelaMudaSenha extends JFrame {
         principalMudaSenha.setLayout(new BorderLayout());
 
 //<<<<<<< HEAD
+//        configuraPainelSuperior();
+//        configuraFormulario();
+//
+//        principalMudaSenha.add(topPanel, BorderLayout.NORTH);
+//        principalMudaSenha.add(formulario, BorderLayout.SOUTH);
+//    }
+//=======
+
         configuraPainelSuperior();
+
         configuraFormulario();
 
-        principalMudaSenha.add(topPanel, BorderLayout.NORTH);
-        principalMudaSenha.add(formulario, BorderLayout.SOUTH);
+        configuraBotoes();
+
+        principalMudaSenha.add (topPanel, BorderLayout.NORTH);
+
+        principalMudaSenha.add (formulario, BorderLayout.CENTER);
+
+        principalMudaSenha.add (botoes, BorderLayout.SOUTH);
     }
-//=======
-//		configuraPainelSuperior();
-//		configuraFormulario();
-//		configuraBotoes();
-//
-//		principalMudaSenha.add(topPanel, BorderLayout.NORTH);
-//		principalMudaSenha.add(formulario, BorderLayout.CENTER);
-//		principalMudaSenha.add(botoes, BorderLayout.SOUTH);
-//	}
 //>>>>>>> d2887d41665219fac6e7dddce84e94a308f97250
 
     public void configuraBotoes() {
-		botoes = new JPanel();
-		botoes.setLayout(new BoxLayout(botoes, BoxLayout.X_AXIS));
+        botoes = new JPanel();
+        botoes.setLayout(new BoxLayout(botoes, BoxLayout.X_AXIS));
 
         this.btnTelaPrincipal = new JButton("Voltar");
         this.btnTelaPrincipal.addActionListener((ActionEvent e) -> {
@@ -152,27 +157,25 @@ public class TelaMudaSenha extends JFrame {
             dispose();
         });
 
-		this.btnMudaSenha = new JButton("Confirmar");
-		this.btnMudaSenha.addActionListener((ActionEvent e) -> {
-			if(Autenticacao.md5(campoSenha.getText()).equals(funcionario.getSenha()))
-			{
-				funcionario.setSenha(Autenticacao.md5(campoNovaSenha.getText()));
-				TelaPrincipal tela = new TelaPrincipal(this.funcionario);
-				tela.abreTela();
-				dispose();
-				System.out.println("Senha alterada");
-			}
-			else {
-				aviso.setText("Senha atual incorreta.");
-			}
-		});
+        this.btnMudaSenha = new JButton("Confirmar");
+        this.btnMudaSenha.addActionListener((ActionEvent e) -> {
+            if (Autenticacao.md5(campoSenha.getText()).equals(funcionario.getSenha())) {
+                funcionario.setSenha(Autenticacao.md5(campoNovaSenha.getText()));
+                TelaPrincipal tela = new TelaPrincipal(this.funcionario);
+                tela.abreTela();
+                dispose();
+                System.out.println("Senha alterada");
+            } else {
+                aviso.setText("Senha atual incorreta.");
+            }
+        });
 
-		aviso = new JLabel("");
-		aviso.setForeground(Color.red);
+        aviso = new JLabel("");
+        aviso.setForeground(Color.red);
 
-		botoes.add(btnMudaSenha, BorderLayout.WEST);
-		botoes.add(btnTelaPrincipal, BorderLayout.EAST);
-		botoes.add(aviso);
+        //botoes.add(btnMudaSenha);
+        botoes.add(btnTelaPrincipal);
+        botoes.add(aviso);
     }
 
     public void abreTela() {

@@ -19,17 +19,10 @@ public class GPU extends Produto {
     public GPU() {
     }
 
-    public int getQuantidade() {
-        return quantidade;
-    }
-
     public String getMemoria() {
         return memoria;
     }
 
-    public void setQuantidade(int quantidade) {
-        this.quantidade = quantidade;
-    }
 
     public void setMemoria(int index) {
         this.memoria = AdministraDados.memoriaCapacidadeLista.get(index);
