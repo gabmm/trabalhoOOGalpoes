@@ -116,8 +116,14 @@ public class TelaPessoas extends JFrame {
         this.btnRemoveUsuario = new JButton("Remove");
         this.btnRemoveUsuario.addActionListener((ActionEvent e) -> {
             try {
-
-            } catch (ArrayIndexOutOfBoundsException ex) {
+                int opcao = comboPessoa.getSelectedIndex();
+                int prod = listaPessoas.getSelectedIndex();
+                if (AdministraDados.removeProduto(opcao, prod)) {
+                    TelaProduto repintandoTela = new TelaProduto(funcionario);
+                    repintandoTela.abreTela();
+                    dispose();
+                }
+            } catch (ArrayIndexOutOfBoundsException ex1) {
                 System.out.println("Usuario tentou remover sem selecionar");
             }
         });

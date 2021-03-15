@@ -388,18 +388,12 @@ quantidadeProdutos += valor*/
             }
         }
     }
-// tratar o remove, antes de remover verificar se o produto esta em listaVenda
-//percorrer itens de Venda e dentro de cada item veificar os produtos
-// Cadastrar produtos na lista
+    
     public static boolean removeProduto(int categoria, int produto) {
         /*descadastro de produto, pergunta categoria, mostra lista de objetos da
 categoria, seleciona objeto, seta atributos do objeto para atributos padrao
 (remover pode gerar execoes), quantidade da classe do objeto -= quantidade do
 objeto, quantidadeProdutos -= quantidade do objeto*/
-//        if(naoRemovaProduto(categoria, produto)){
-//            System.out.println("Produto não pode ser removido!");
-//            return false;
-//        }
         int aux;
         if (categoria == 0) {
             aux = JOptionPane.showConfirmDialog(null, "Você esta querendo remover: "
