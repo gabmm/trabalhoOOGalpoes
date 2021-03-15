@@ -44,7 +44,7 @@ public class Main {
         AdministraDados.listaCPU.get(5).setPreco(890);
         AdministraDados.listaCPU.get(5).setNome("Core I7 3770");
         AdministraDados.listaCPU.get(5).setCoreThreads(5);
-        
+
         AdministraDados.cadastraDA();
         AdministraDados.listaDA.get(0).setMarca(7);
         AdministraDados.listaDA.get(0).setPreco(250);
@@ -81,6 +81,31 @@ public class Main {
         AdministraDados.listaFonte.get(0).setPreco(500);
         AdministraDados.listaFonte.get(0).setEficiencia(2);
         AdministraDados.listaFonte.get(0).setPower(6);
+        AdministraDados.cadastraFonte();
+        AdministraDados.listaFonte.get(1).setMarca(12);
+        AdministraDados.listaFonte.get(1).setPreco(150);
+        AdministraDados.listaFonte.get(1).setEficiencia(0);
+        AdministraDados.listaFonte.get(1).setPower(4);
+        AdministraDados.cadastraFonte();
+        AdministraDados.listaFonte.get(2).setMarca(0);
+        AdministraDados.listaFonte.get(2).setPreco(300);
+        AdministraDados.listaFonte.get(2).setEficiencia(1);
+        AdministraDados.listaFonte.get(2).setPower(4);
+        AdministraDados.cadastraFonte();
+        AdministraDados.listaFonte.get(3).setMarca(13);
+        AdministraDados.listaFonte.get(3).setPreco(410);
+        AdministraDados.listaFonte.get(3).setEficiencia(1);
+        AdministraDados.listaFonte.get(3).setPower(5);
+        AdministraDados.cadastraFonte();
+        AdministraDados.listaFonte.get(4).setMarca(13);
+        AdministraDados.listaFonte.get(4).setPreco(660);
+        AdministraDados.listaFonte.get(4).setEficiencia(2);
+        AdministraDados.listaFonte.get(4).setPower(9);
+        AdministraDados.cadastraFonte();
+        AdministraDados.listaFonte.get(5).setMarca(14);
+        AdministraDados.listaFonte.get(5).setPreco(50);
+        AdministraDados.listaFonte.get(5).setEficiencia(0);
+        AdministraDados.listaFonte.get(5).setPower(3);
 
         AdministraDados.cadastraGPU();
         AdministraDados.listaGPU.get(0).setMarca(0);

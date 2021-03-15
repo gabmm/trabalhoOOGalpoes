@@ -197,6 +197,9 @@ public class AdministraDados {
         marcaLista.add("PowerColor");
         marcaLista.add("Kingston");
         marcaLista.add("Seagate");
+        marcaLista.add("ATX");
+        marcaLista.add("Corsair");
+        marcaLista.add("Fortrek");
     }
 
     private static void adicionaTipoArmazenamento(ArrayList<String> tipoArmazenamentoLista) {
