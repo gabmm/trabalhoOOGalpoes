@@ -10,25 +10,26 @@ package gabrieloo.ufjf.galpoesestoque;
 import gabrieloo.ufjf.galpoesestoque.pessoas.Funcionario;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
+import javax.swing.Box;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
+import javax.swing.JOptionPane;
 
 public class TelaMudaSenha extends JFrame {
 
 	private JPasswordField campoSenha;
 	private JPasswordField campoNovaSenha;
 
-	private JLabel aviso;
     private JLabel senha;
     private JLabel novaSenha;
-	private JLabel nomeFuncionario;
 
     private JPanel principalMudaSenha;
 	private JPanel topPanel;
@@ -45,26 +46,19 @@ public class TelaMudaSenha extends JFrame {
         this.funcionario = funcionario;
     }
 
-    public void configuraPainelSuperior() {
-        topPanel = new JPanel();
-        topPanel.setLayout(new BorderLayout());
-		nomeFuncionario = new JLabel(funcionario.getClass().getSimpleName() + " " + funcionario.getNome());
-        topPanel.add(nomeFuncionario, BorderLayout.WEST);
-    }
-
-	public void configuraFormulario() {
+   	public void configuraFormulario() {
 		formulario = new JPanel();
 		formulario.setLayout(new BoxLayout(formulario, BoxLayout.Y_AXIS));
 		senha = new JLabel("Senha atual: ");
 		formulario.add(senha);
 
-		campoSenha = new JPasswordField(30);
+		campoSenha = new JPasswordField(40);
 		formulario.add(campoSenha);
 
 		novaSenha = new JLabel("Nova senha: ");
 		formulario.add(novaSenha);
 
-		campoNovaSenha = new JPasswordField(30);
+		campoNovaSenha = new JPasswordField(40);
 		formulario.add(campoNovaSenha);
 	}
 
@@ -74,11 +68,9 @@ public class TelaMudaSenha extends JFrame {
 		principalMudaSenha.setBorder(BorderFactory.createTitledBorder("Mudar Senha"));
         principalMudaSenha.setLayout(new BorderLayout());
 
-		configuraPainelSuperior();
 		configuraFormulario();
 		configuraBotoes();
 
-		principalMudaSenha.add(topPanel, BorderLayout.NORTH);
 		principalMudaSenha.add(formulario, BorderLayout.CENTER);
 		principalMudaSenha.add(botoes, BorderLayout.SOUTH);
 	}
@@ -102,19 +94,17 @@ public class TelaMudaSenha extends JFrame {
 				TelaPrincipal tela = new TelaPrincipal(this.funcionario);
 				tela.abreTela();
 				dispose();
-				System.out.println("Senha alterada");
+				JOptionPane.showMessageDialog(null,"Senha alterada");
 			}
 			else {
-				aviso.setText("Senha atual incorreta.");
+				JOptionPane.showMessageDialog(null,"Senha atual incorreta");
 			}
 		});
 
-		aviso = new JLabel("");
-		aviso.setForeground(Color.red);
-
-		botoes.add(btnMudaSenha, BorderLayout.WEST);
-		botoes.add(btnTelaPrincipal, BorderLayout.EAST);
-		botoes.add(aviso);
+		this.botoes.add(btnTelaPrincipal);
+		this.botoes.add(Box.createHorizontalGlue());
+		this.botoes.add(Box.createRigidArea(new Dimension(5,0)));
+		this.botoes.add(btnMudaSenha);
     }
 
     public void abreTela() {

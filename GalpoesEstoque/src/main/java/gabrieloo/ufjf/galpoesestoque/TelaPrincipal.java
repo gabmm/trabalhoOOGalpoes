@@ -105,13 +105,13 @@ public class TelaPrincipal extends JFrame {
         this.topPanel = new JPanel();
         this.topPanel.setLayout(new BoxLayout(this.topPanel, BoxLayout.X_AXIS));
 
-        String msgSuperior = "Bem vindo, " + this.tipoUsuario + " " + this.nomeUsuario + this.usuarioAtual.getLogin();
+        String msgSuperior = "Bem vindo, " + this.tipoUsuario + " " + this.nomeUsuario;
         this.topPanel.add(new JLabel(msgSuperior));
-        this.topPanel.add(Box.createRigidArea(new Dimension(10, 0)));
+        this.topPanel.add(Box.createRigidArea(new Dimension(30, 0)));
 		this.topPanel.add(btnTelaMudaSenha);
-        this.topPanel.add(Box.createRigidArea(new Dimension(10, 0)));
+        this.topPanel.add(Box.createRigidArea(new Dimension(30, 0)));
         this.topPanel.add(btnTelaLogin);
-        this.topPanel.add(Box.createRigidArea(new Dimension(10, 0)));
+        this.topPanel.add(Box.createRigidArea(new Dimension(30, 0)));
 
     }
 
