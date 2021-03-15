@@ -58,15 +58,15 @@ public class Main {
         AdministraDados.funcionarioLista.get(0).setNome("Jober Arauto");
         AdministraDados.funcionarioLista.get(0).setEmail("joarauto@galpoes.com");
         AdministraDados.funcionarioLista.get(0).setSalarioBase(4800);
-        AdministraDados.funcionarioLista.get(2).setLogin("jober");
-        AdministraDados.funcionarioLista.get(2).setSenha(Autenticacao.md5("jojo123"));
+        AdministraDados.funcionarioLista.get(0).setLogin("jober");
+        AdministraDados.funcionarioLista.get(0).setSenha(Autenticacao.md5("jojo123"));
 
         AdministraDados.cadastraGerente();
         AdministraDados.funcionarioLista.get(1).setNome("Roberto Justus");
         AdministraDados.funcionarioLista.get(1).setEmail("jusus@galpoes.com");
         AdministraDados.funcionarioLista.get(1).setSalarioBase(4800);
-        AdministraDados.funcionarioLista.get(2).setLogin("justus");
-        AdministraDados.funcionarioLista.get(2).setSenha(Autenticacao.md5("juju123"));
+        AdministraDados.funcionarioLista.get(1).setLogin("justus");
+        AdministraDados.funcionarioLista.get(1).setSenha(Autenticacao.md5("juju123"));
 
         AdministraDados.cadastraCliente();
         AdministraDados.clienteLista.get(0).setNome("Julia Trista");

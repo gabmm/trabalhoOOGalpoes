@@ -151,14 +151,14 @@ public class TelaVenda extends JFrame {
             for (int i = 0; i < modelOrdem.getSize(); i++) {
                 produtos.add(modelOrdem.get(i));
             }
-
-            AdministraDados.realizaVenda(this.funcionario, this.modelTodosClientes.getElementAt(comboMostraCliente.getSelectedIndex()), this.ehCartao.isSelected(), produtos);
             
             int escolha = JOptionPane.showConfirmDialog(null, "Deseja prosseguir com a venda?");
             
             if(escolha != JOptionPane.YES_OPTION){
                 return;
             }
+            
+            AdministraDados.realizaVenda(this.funcionario, this.modelTodosClientes.getElementAt(comboMostraCliente.getSelectedIndex()), this.ehCartao.isSelected(), produtos);
                     
             JOptionPane.showMessageDialog(null, "Venda realizada com sucesso!", "Confirmação de Venda", JOptionPane.INFORMATION_MESSAGE, null);
                
