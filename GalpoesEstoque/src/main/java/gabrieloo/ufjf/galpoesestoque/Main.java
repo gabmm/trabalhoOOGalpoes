@@ -7,8 +7,6 @@
  */
 package gabrieloo.ufjf.galpoesestoque;
 
-import java.util.Date;
-
 public class Main {
 
     private static void rotinaInicializacao() {
@@ -333,32 +331,6 @@ public class Main {
     public static void main(String[] args) {
 
         rotinaInicializacao();
-
-//        System.out.println(AdministraDados.listaCPU.get(0));
-//        System.out.println(AdministraDados.listaDA.get(0));
-//        System.out.println(AdministraDados.listaFonte.get(0));
-//        System.out.println(AdministraDados.listaGPU.get(0));
-//        System.out.println(AdministraDados.listaRAM.get(0));
-//        System.out.println(AdministraDados.listaRAM.get(1));
-//        System.out.println(AdministraDados.listaMB.get(0));
-//        System.out.println("");
-//        System.out.println(AdministraDados.clienteLista.get(0));
-//        System.out.println("");
-//        System.out.println(AdministraDados.funcionarioLista.get(0));
-//        System.out.println("Salario: R$" + AdministraDados.funcionarioLista.get(0).calculaSalario());
-//        System.out.println(AdministraDados.funcionarioLista.get(1));
-//        System.out.println("Salario: R$" + AdministraDados.funcionarioLista.get(1).calculaSalario());
-//        System.out.println("");
-//        System.out.println(AdministraDados.funcionarioLista.get(1).vendasRealizadas.get(0));
-//        System.out.println(AdministraDados.clienteLista.get(0).ordens.get(1));
-//        System.out.println("Valor em caixa: R$" + Caixa.getCaixa());
-//        System.out.println("Valor a pagar de salarios: R$" + Caixa.calculaPagamentoSalarios());
-//        System.out.println("Saldo: R$" + Caixa.getSaldo());
-//
-//        TelaLogin tela = new TelaLogin();
-//        tela.abreTela();
-//        TelaProduto tela = new TelaProduto();
-//        tela.incializaTelaProduto();
         TelaPrincipal telaPrincipal = new TelaPrincipal(AdministraDados.funcionarioLista.get(1));
         telaPrincipal.abreTela();
     }
