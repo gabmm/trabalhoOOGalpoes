@@ -7,6 +7,8 @@
  */
 package gabrieloo.ufjf.galpoesestoque;
 
+import java.util.Date;
+
 public class Main {
 
     private static void rotinaInicializacao() {
@@ -71,18 +73,37 @@ public class Main {
         AdministraDados.cadastraCliente();
         AdministraDados.clienteLista.get(0).setNome("Julia Trista");
         AdministraDados.clienteLista.get(0).setEmail("jujuzinha2014@hotmail.com");
+        AdministraDados.clienteLista.get(0).setTelefone("(21) 9 9188-9988");
+        AdministraDados.clienteLista.get(0).setEndereco("R. das Pedras, 301 - Rio de Janeiro");
+        AdministraDados.clienteLista.get(0).setDataNascimento("11/01/1998");
 
         AdministraDados.cadastraCliente();
         AdministraDados.clienteLista.get(1).setNome("Enzo Valentino");
         AdministraDados.clienteLista.get(1).setEmail("valenteenzo69@gmail.com");
-        
+        AdministraDados.clienteLista.get(1).setTelefone("(32) 9 9188-9988");
+        AdministraDados.clienteLista.get(1).setEndereco("Av. Rio Branco, 1010 - Juiz de Fora");
+        AdministraDados.clienteLista.get(1).setDataNascimento("27/01/1998");
+
         AdministraDados.cadastraCliente();
         AdministraDados.clienteLista.get(2).setNome("Caetano Veloso");
         AdministraDados.clienteLista.get(2).setEmail("velosocaetano@gmail.com");
+        AdministraDados.clienteLista.get(2).setTelefone("(61) 9 9188-9988");
+        AdministraDados.clienteLista.get(2).setEndereco("R. Almeira Vilela, 699 - Brasília");
+        AdministraDados.clienteLista.get(2).setDataNascimento("01/03/1961");
 
         AdministraDados.cadastraCliente();
         AdministraDados.clienteLista.get(3).setNome("Rainha Elizabeth II");
         AdministraDados.clienteLista.get(3).setEmail("elizabethtk@gmail.com");
+        AdministraDados.clienteLista.get(3).setTelefone("+13 (555) 1927-6541");
+        AdministraDados.clienteLista.get(3).setEndereco("John Rutherford St., 301 - Londres");
+        AdministraDados.clienteLista.get(3).setDataNascimento("13/07/1929");
+
+        AdministraDados.cadastraCliente();
+        AdministraDados.clienteLista.get(4).setNome("Luiz Inácio");
+        AdministraDados.clienteLista.get(4).setEmail("lula@partido.pt.com");
+        AdministraDados.clienteLista.get(4).setTelefone("(11) 9 9992-4416");
+        AdministraDados.clienteLista.get(4).setEndereco("R. dos Bandeirantes, 22 - São Bernardo");
+        AdministraDados.clienteLista.get(4).setDataNascimento("01/05/1951");
 
         AdministraDados.cadastraVendedor();
         AdministraDados.funcionarioLista.get(2).setNome("Ana Gabriela de Passos Lima");
@@ -133,7 +154,6 @@ public class Main {
 //
 //        TelaLogin tela = new TelaLogin();
 //        tela.abreTela();
-
 //        TelaProduto tela = new TelaProduto();
 //        tela.incializaTelaProduto();
         TelaPrincipal telaPrincipal = new TelaPrincipal(AdministraDados.funcionarioLista.get(1));

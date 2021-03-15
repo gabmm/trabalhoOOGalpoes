@@ -113,7 +113,6 @@ public class TelaProduto extends JFrame {
 
     public JList<Produto> getListaProduto() {
         return listaProdutos;
-
     }
 
     public JLabel getPrecoProduto() {
