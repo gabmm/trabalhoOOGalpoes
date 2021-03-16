@@ -124,7 +124,7 @@ public class TelaCaixa extends JFrame {
 
         configuraPainelPrincipal();
 
-        this.setSize(400, 200);
+        this.setSize(500, 200);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.add(principalCaixa);
         this.setLocationRelativeTo(null);
